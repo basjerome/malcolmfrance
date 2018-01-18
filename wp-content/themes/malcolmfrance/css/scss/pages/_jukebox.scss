@@ -1,0 +1,352 @@
+/*---------------*\
+  $JUKEBOX
+\*---------------*/
+/**
+ * DEFAULT........
+ * FONT...........
+ * ANIMATION......
+ * HEADER.........
+ * PLAYER.........
+ * FOOTER.........
+ */
+
+
+
+body.page-template-jukebox {
+
+
+
+  /*---------------*\
+    $DEFAULT
+  \*---------------*/
+  background: url('../img/bkg/jukebox-01.jpg') no-repeat 50% 50% fixed $color-dark-grey;
+  background-size: cover;
+  -webkit-animation: animBkg 90s infinite;
+     -moz-animation: animBkg 90s infinite;
+      -ms-animation: animBkg 90s infinite;
+          animation: animBkg 90s infinite;
+
+  &::before {
+    background-image: url("../img/bkg/pattern-stripe.png");
+    content: "";
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+
+  ::-webkit-scrollbar {
+    width:  5px;
+    height: 100%;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $color-dark-grey;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+
+
+  /*---------------*\
+    $ANIMATION
+  \*---------------*/
+  @-webkit-keyframes animBkg {
+    11%,22% {
+      background-image: url('../img/bkg/jukebox-02.jpg');
+    }
+    22%,33% {
+      background-image: url('../img/bkg/jukebox-03.jpg');
+    }
+    33%,44% {
+      background-image: url('../img/bkg/jukebox-04.jpg');
+    }
+    44%,55% {
+      background-image: url('../img/bkg/jukebox-05.jpg');
+    }
+    55%,66% {
+      background-image: url('../img/bkg/jukebox-06.jpg');
+    }
+    66%,77% {
+      background-image: url('../img/bkg/jukebox-07.jpg');
+    }
+    77%,88% {
+      background-image: url('../img/bkg/jukebox-08.jpg');
+    }
+    88%,99% {
+      background-image: url('../img/bkg/jukebox-09.jpg');
+    }
+  }
+
+  @-moz-keyframes animBkg {
+    11%,22% {
+      background-image: url('../img/bkg/jukebox-02.jpg');
+    }
+    22%,33% {
+      background-image: url('../img/bkg/jukebox-03.jpg');
+    }
+    33%,44% {
+      background-image: url('../img/bkg/jukebox-04.jpg');
+    }
+    44%,55% {
+      background-image: url('../img/bkg/jukebox-05.jpg');
+    }
+    55%,66% {
+      background-image: url('../img/bkg/jukebox-06.jpg');
+    }
+    66%,77% {
+      background-image: url('../img/bkg/jukebox-07.jpg');
+    }
+    77%,88% {
+      background-image: url('../img/bkg/jukebox-08.jpg');
+    }
+    88%,99% {
+      background-image: url('../img/bkg/jukebox-09.jpg');
+    }
+  }
+
+  @-ms-keyframes animBkg {
+    11%,22% {
+      background-image: url('../img/bkg/jukebox-02.jpg');
+    }
+    22%,33% {
+      background-image: url('../img/bkg/jukebox-03.jpg');
+    }
+    33%,44% {
+      background-image: url('../img/bkg/jukebox-04.jpg');
+    }
+    44%,55% {
+      background-image: url('../img/bkg/jukebox-05.jpg');
+    }
+    55%,66% {
+      background-image: url('../img/bkg/jukebox-06.jpg');
+    }
+    66%,77% {
+      background-image: url('../img/bkg/jukebox-07.jpg');
+    }
+    77%,88% {
+      background-image: url('../img/bkg/jukebox-08.jpg');
+    }
+    88%,99% {
+      background-image: url('../img/bkg/jukebox-09.jpg');
+    }
+  }
+
+  @-webkit-keyframes animNeonGlow {
+    21% {
+      color: $color-white-25;
+      text-shadow: none;
+    }
+    26%, 100% {
+      color: $color-white;
+      text-shadow: 0 0 10px $color-white, 0 0 20px $color-yellow, 0 0 30px $color-yellow;
+    }
+  }
+
+  @-moz-keyframes animNeonGlow {
+    21% {
+      color: $color-white-25;
+      text-shadow: none;
+    }
+    26%, 100% {
+      color: $color-white;
+      text-shadow: 0 0 10px $color-white, 0 0 20px $color-yellow, 0 0 30px $color-yellow;
+    }
+  }
+
+  @-ms-keyframes animNeonGlow {
+    21% {
+      color: $color-white-25;
+      text-shadow: none;
+    }
+    26%, 100% {
+      color: $color-white;
+      text-shadow: 0 0 10px $color-white, 0 0 20px $color-yellow, 0 0 30px $color-yellow;
+    }
+  }
+
+  @-webkit-keyframes animNeonBlink {
+    21%, 39%, 45%, 47%, 53% {
+      color: $color-white-25;
+      text-shadow: none;
+    }
+    26%, 38%, 40%, 44%, 46%, 48% {
+      color: $color-white;
+      text-shadow: 0 0 10px $color-white, 0 0 20px $color-yellow, 0 0 30px $color-yellow;
+    }
+  }
+
+  @-moz-keyframes animNeonBlink {
+    21%, 39%, 45%, 47%, 53% {
+      color: $color-white-25;
+      text-shadow: none;
+    }
+    26%, 38%, 40%, 44%, 46%, 48% {
+      color: $color-white;
+      text-shadow: 0 0 10px $color-white, 0 0 20px $color-yellow, 0 0 30px $color-yellow;
+    }
+  }
+
+  @-ms-keyframes animNeonBlink {
+    21%, 39%, 45%, 47%, 53% {
+      color: $color-white-25;
+      text-shadow: none;
+    }
+    26%, 38%, 40%, 44%, 46%, 48% {
+      color: $color-white;
+      text-shadow: 0 0 10px $color-white, 0 0 20px $color-yellow, 0 0 30px $color-yellow;
+    }
+  }
+
+
+
+  /*---------------*\
+    $HEADER
+  \*---------------*/
+  header {
+    padding: 15px 15px 30px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+
+    @media only screen and (max-width: 767px) {
+      text-align: center;
+    }
+
+    .logo,
+    .logo:focus,
+    .logo:hover {
+      color: $color-white;
+      display: inline-block;
+      font-family: 'Malcolm France', sans-serif;
+      font-size: 5.1875rem;
+      margin: 0;
+      text-decoration: none;
+      @include transition(all, ease, .3s);
+
+      @media only screen and (min-width: 992px) {
+        left: 15px;
+        position: absolute;
+        top: 15px;
+        @include opacity(.25, 25);
+      }
+    }
+
+    .logo:hover {
+      animation-duration: 100ms;
+      animation-iteration-count: infinite;
+      animation-name: shake-little;
+      animation-timing-function: ease-in-out;
+      animation-play-state: running;
+      transform-origin: center center;
+
+      @media only screen and (min-width: 992px) {
+        @include opacity(1, 100);
+      }
+    }
+
+    .title-page {
+      color: $color-white-25;
+      font-family: 'Neon Lights', sans-serif;
+      font-size: 4.6875rem;
+      font-weight: 700;
+      line-height: 1;
+      margin: 0;
+      text-transform: uppercase;
+
+      .glow {
+        -webkit-animation: animNeonGlow 10s forwards;
+           -moz-animation: animNeonGlow 10s forwards;
+            -ms-animation: animNeonGlow 10s forwards;
+                animation: animNeonGlow 10s forwards;
+      }
+
+      .blink {
+        -webkit-animation: animNeonBlink 10s infinite;
+           -moz-animation: animNeonBlink 10s infinite;
+            -ms-animation: animNeonBlink 10s infinite;
+                animation: animNeonBlink 10s infinite;
+      }
+    }
+  }
+
+
+
+  /*---------------*\
+    $PLAYER
+  \*---------------*/
+  .spotify {
+    display: block;
+    margin: auto;
+    z-index: 2;
+
+    @media only screen and (max-width: 767px) {
+      position: relative;
+    }
+
+    @media only screen and (min-width: 768px) {
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      @include translate(-50%, -50%);
+    }
+  }
+
+  #player {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 15px;
+    position: relative;
+    z-index: 2;
+
+    @media only screen and (max-width: 767px) {
+      height: auto !important;
+    }
+  }
+
+  .ttw-music-player {
+    background-color: $color-dark-grey;
+    max-width: 100%;
+    @include box-shadow(0, 0, 0, 15px, $color-dark-grey);
+  }
+
+
+
+  /*---------------*\
+    $FOOTER
+  \*---------------*/
+  footer {
+    color: $color-white;
+    overflow: hidden;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+
+    @media only screen and (max-width: 767px) {
+      position: relative;
+    }
+
+    @media only screen and (min-width: 768px) {
+      bottom: 0;
+      left: 0;
+      position: fixed;
+    }
+
+    p {
+      color: $color-white;
+      font-size: 0.75rem;
+      line-height: 22px;
+      margin: 0;
+    }
+  }
+
+
+
+}

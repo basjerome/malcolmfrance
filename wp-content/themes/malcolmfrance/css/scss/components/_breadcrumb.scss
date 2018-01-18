@@ -1,0 +1,45 @@
+/*---------------*\
+  $BREADCRUMB
+\*---------------*/
+/**
+ * breadcrumb...
+ */
+
+
+
+.main-content {
+
+  .breadcrumb {
+    background-color: transparent;
+    color: $color-grey-3;
+    margin: 0 0 15px;
+    padding: 10px 0 0;
+
+    li {
+      font-size: 0.75rem;
+      line-height: 1;
+
+      .fa {
+        font-size: 1rem;
+      }
+
+      a,
+      a:focus,
+      a:hover {
+        color: $color-grey-3;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: $color-yellow;
+      }
+
+      + li {
+
+        &:before {
+          content: "\003e"
+        }
+      }
+    }
+  }
+}

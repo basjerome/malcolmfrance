@@ -1,0 +1,96 @@
+/*---------------*\
+  $VIDEO
+\*---------------*/
+/**
+ * VIDEOS........
+ * MORE VIDEOS...
+ */
+
+
+
+body.page-template-video {
+
+
+
+  .main-content {
+
+
+
+    /*---------------*\
+      $VIDEO
+    \*---------------*/
+    .video {
+      margin-bottom: 15px;
+    }
+
+
+
+    /*---------------*\
+      $MORE VIDEOS
+    \*---------------*/
+    .more-videos {
+
+      a,
+      a:focus,
+      a:hover {
+        background-color: $color-black;
+        color: $color-white;
+        display: block;
+        margin-bottom: 30px;
+        overflow: hidden;
+        position: relative;
+
+        .fa {
+          font-size: 4.375rem;
+          left: 50%;
+          margin: -35px 0 0 -35px;
+          position: absolute;
+          top: 50%;
+          z-index: 1;
+          @include opacity(.5, 50);
+        }
+
+        span {
+          left: 0;
+          padding: 0 15px;
+          position: absolute;
+          text-align: center;
+          top: 50%;
+          width: 100%;
+          z-index: 2;
+          @include opacity(0, 0);
+          @include transition(all, ease, .3s);
+          @include translate(0, -50%);
+
+          @media only screen and (max-width: 479px){
+            font-size: 0.75rem;
+          }
+        }
+
+        img {
+          width: 100%;
+          @include transition(all, ease, .3s);
+        }
+      }
+
+      a:hover {
+
+        span {
+          @include opacity(1, 100);
+        }
+
+        img {
+          @include opacity(.5, 50);
+          -webkit-transform: scale(1.1);
+                  transform: scale(1.1);
+        }
+      }
+    }
+
+
+
+  }
+
+
+
+}

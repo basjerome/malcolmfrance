@@ -1,0 +1,171 @@
+/*---------------*\
+  $PRODUCT
+\*---------------*/
+/**
+ * DEFAULT........
+ * OWL CAROUSEL...
+ * PRICE..........
+ * TRAILER........
+ * SHARE..........
+ */
+
+
+
+body.page-template-product {
+
+
+
+  /*---------------*\
+    $DEFAULT
+  \*---------------*/
+  .main-content {
+
+    ul {
+      margin: 0 0 30px;
+      padding: 0;
+
+      > li {
+
+        > ul {
+          margin-bottom: 10px;
+          padding-left: 10px;
+
+          > li {
+            background: url("../img/icon/list-style-arrow.png") no-repeat 0 5px;
+            padding-left: 17px;
+          }
+        }
+      }
+    }
+
+    dl {
+      margin: 0;
+    }
+
+    .btn-yellow,
+    .btn-yellow:focus,
+    .btn-yellow:hover {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      line-height: 33px;
+
+      .icon-amazon,
+      .icon-fnac {
+        background: no-repeat 0 0;
+        display: inline-block;
+        height: 33px;
+        line-height: 1;
+        text-indent: -9999px;
+      }
+
+      .icon-amazon {
+        background-image: url('../img/logo/sprite-amazon.png');
+        margin-bottom: -3px;
+        vertical-align: bottom;
+        width: 90px;
+      }
+
+      .icon-fnac {
+        background-image: url('../img/logo/sprite-fnac.png');
+        margin-top: -3px;
+        vertical-align: top;
+        width: 58px;
+      }
+    }
+
+    .btn-yellow:hover {
+
+      .icon-amazon,
+      .icon-fnac {
+        background-position: 0 100%;
+      }
+    }
+
+
+
+    /*---------------*\
+      $OWL CAROUSEL
+    \*---------------*/
+    .owl-container {
+      background-color: $color-white;
+
+      .owl-carousel {
+
+        &#slideshow {
+
+          .owl-item {
+
+            .item {
+              padding: 0;
+            }
+          }
+        }
+
+        .owl-controls {
+
+          .owl-buttons {
+
+            .owl-prev,
+            .owl-next {
+              background-color: transparent;
+            }
+
+            .owl-prev {
+              background-image: url("../img/icon/arrow-left-grey.png");
+            }
+
+            .owl-next {
+              background-image: url("../img/icon/arrow-right-grey.png");
+            }
+          }
+        }
+
+      }
+    }
+
+
+
+    /*---------------*\
+      $PRICE
+    \*---------------*/
+    .price {
+      margin-bottom: 30px;
+      text-align: center;
+
+      span {
+        font-family: 'Avenir Next Condensed', sans-serif;
+        font-size: 2.5rem;
+        font-weight: 500;
+        line-height: 42px;
+
+        > span {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+
+
+    /*---------------*\
+      $TRAILER
+    \*---------------*/
+    .trailer {
+      margin-bottom: 30px;
+    }
+
+
+
+    /*---------------*\
+      $SHARE
+    \*---------------*/
+    .share {
+      margin-top: 30px;
+    }
+
+
+
+  }
+
+
+  
+}

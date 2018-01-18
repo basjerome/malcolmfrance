@@ -1,0 +1,104 @@
+/*---------------*\
+  $AUTHOR
+\*---------------*/
+/**
+ * PLUG...
+ */
+
+
+
+body.page-author {
+
+
+
+  .main-content {
+
+
+
+    /*---------------*\
+      $PLUG
+    \*---------------*/
+    .plug {
+      background-color: $color-off-white;
+      margin-bottom: 30px;
+      padding: 15px;
+      text-align: center;
+
+      @media only screen and (min-width: 992px) {
+        text-align: left;
+      }
+
+      .page-title {
+        margin-bottom: 0;
+      }
+
+      p {
+        margin-bottom: 5px;
+      }
+
+      a:hover {
+
+        &.facebook {
+          .fa-circle {
+          color: #3a5ba2;
+          }
+        }
+
+        &.dailymotion {
+          .fa-circle {
+            color: #0066dc;
+          }
+        }
+
+        &.google-plus {
+          .fa-circle {
+            color: #e1584b;
+          }
+        }
+
+        &.linkedin {
+
+          .fa-circle {
+            color: #0177B5;
+          }
+        }
+
+        &.pinterest {
+          .fa-circle {
+            color: #b12324;
+          }
+        }
+
+        &.snapchat {
+          .fa-circle {
+            color: #ffff00;
+          }
+        }
+
+        &.twitter {
+          .fa-circle {
+            color: #55acee;
+          }
+        }
+
+        &.vine {
+          .fa-circle {
+            color: #00bf8f;
+          }
+        }
+
+        &.youtube {
+          .fa-circle {
+            color: #e62117;
+          }
+        }
+      }
+    }
+
+
+
+  }
+
+
+
+}

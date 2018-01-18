@@ -1,0 +1,50 @@
+/*---------------*\
+  $BUTTONS
+\*---------------*/
+/**
+ * DEFAULT......
+ * BTN YELLOW...
+ */
+
+
+
+a,
+a:focus,
+a:hover,
+button,
+button:focus,
+button:hover {
+  outline: none !important;
+}
+
+.btn-yellow,
+.btn-yellow:focus,
+.btn-yellow:hover {
+  background: -webkit-linear-gradient(#f5d864, #f3ce3b) !important;
+  background:    -moz-linear-gradient(#f5d864, #f3ce3b) !important;
+  background:      -o-linear-gradient(#f5d864, #f3ce3b) !important;
+  background:         linear-gradient(#f5d864, #f3ce3b) !important;
+  color: $color-grey-1 !important;
+  display: inline-block;
+  font-family: 'Avenir Next Condensed', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 19px;
+  padding: 3px 13px;
+  text-decoration: none;
+  text-transform: uppercase;
+  @include border-radius(0);
+  @include transition(all, ease, .3s);
+
+  .fa {
+    font-size: 1rem;
+    margin-top: -2px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+}
+
+.btn-yellow:hover {
+  background: $color-grey-1 !important;
+  color: $color-yellow !important;
+}

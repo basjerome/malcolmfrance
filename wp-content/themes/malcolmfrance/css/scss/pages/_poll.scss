@@ -1,0 +1,96 @@
+/*---------------*\
+  $POLL
+\*---------------*/
+/**
+ * POLL...
+ *-- VOTE...
+ *-- RESULTS...
+ *-- VERSUS...
+ */
+
+
+
+body.page-poll {
+
+
+
+  .main-content {
+
+
+
+    /*---------------*\
+      $POLL
+    \*---------------*/
+    .vote {
+      margin-bottom: 30px;
+
+      ul {
+
+        li {
+          font-size: 1.171875rem;
+        }
+      }
+    }
+
+    .results {
+      margin-bottom: 30px;
+
+      .progress-bar {
+        color: $color-grey-1;
+
+        > span {
+          white-space: nowrap;
+        }
+      }
+    }
+
+    .versus {
+      margin-bottom: 30px;
+      text-align: center;
+
+      label {
+        cursor: pointer;
+        font-size: 1.171875rem;
+
+        .img {
+          display: block;
+          margin-bottom: 15px;
+          overflow: hidden;
+
+          img {
+            @include transition(all, ease, .3s);
+          }
+        }
+
+        &:hover {
+
+          .img {
+
+            img {
+              -webkit-transform: scale(1.1);
+                  -ms-transform: scale(1.1);
+                      transform: scale(1.1);
+            }
+          }
+        }
+
+        &.disabled {
+
+          .img {
+
+            img {
+              @include opacity(.75, 75);
+            }
+          }
+        }
+      }
+    }
+
+
+
+  }
+
+
+
+
+}

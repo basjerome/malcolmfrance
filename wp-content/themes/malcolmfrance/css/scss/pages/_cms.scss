@@ -1,0 +1,120 @@
+/*---------------*\
+  $CMS
+\*---------------*/
+/**
+ * LIST......
+ * HISTORY...
+ * MOSAIC....
+ * WEBSITE...
+ * TEAM......
+ */
+
+
+
+body.page {
+
+
+
+  .main-content {
+
+
+
+    /*---------------*\
+      $LIST
+    \*---------------*/
+    .page-content {
+
+      > ul {
+
+        > li {
+          background: url("../img/icon/list-style-arrow.png") no-repeat 0 5px;
+          padding-left: 17px;
+        }
+      }
+    }
+
+
+
+    /*---------------*\
+      $HISTORY
+    \*---------------*/
+    .history {
+      margin: 0 0 30px;
+    }
+
+
+
+    /*---------------*\
+      $MOSAIC
+    \*---------------*/
+    .mosaic {
+      margin: 0 0 30px;
+
+      a,
+      a:focus,
+      a:hover {
+        float: left;
+        overflow: hidden;
+        width: 20%;
+
+        img {
+          @include transition(all, ease, .3s);
+        }
+      }
+
+      a:hover {
+
+        img {
+          -webkit-transform: scale(1.1);
+                  transform: scale(1.1);
+        }
+      }
+    }
+
+
+
+    /*---------------*\
+      $WEBSITE
+    \*---------------*/
+    .website {}
+
+
+
+    /*---------------*\
+      $TEAM
+    \*---------------*/
+    .team {
+      margin: 0 0 30px;
+
+      .credits {
+        background-color: $color-off-white;
+        padding: 30px 15px 10px;
+
+        dl {
+
+          dt {
+            text-align: center;
+
+            @media only screen and (min-width: 992px) {
+              text-align: right;
+            }
+          }
+
+          dd {
+            text-align: center;
+
+            @media only screen and (min-width: 992px) {
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+
+
+
+  }
+
+
+
+}

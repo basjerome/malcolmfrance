@@ -1,0 +1,387 @@
+/*---------------*\
+  $SHOWSHANK
+\*---------------*/
+/**
+ * DEFAULT...
+ * CONTENT...
+ * FOOTER....
+ */
+
+
+
+body.page-showshank {
+
+
+
+  /*---------------*\
+    $DEFAULT
+  \*---------------*/
+  background: rgb(0,86,0);
+  background: -webkit-linear-gradient(-45deg, rgba(0,86,0,1) 0%, rgba(0,138,11,1) 100%);
+  background:    -moz-linear-gradient(-45deg, rgba(0,86,0,1) 0%, rgba(0,138,11,1) 100%);
+  background:         linear-gradient(135deg, rgba(0,86,0,1) 0%, rgba(0,138,11,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005600', endColorstr='#008a0b',GradientType=1 );
+  overflow: hidden;
+  position: relative;
+
+
+
+  /*---------------*\
+    $CONTENT
+  \*---------------*/
+  .parallax {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    li {
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      bottom: 0;
+      height: 110%;
+      left: 0;
+      margin-top: -2.5%;
+      margin-left: -5%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 110%;
+
+      .logo-container {
+        left: 50%;
+        position: absolute;
+        top: 30px;
+        @include translate(-50%, 0);
+      }
+
+      .logo,
+      .logo:focus,
+      .logo:hover {
+        color: $color-yellow;
+        display: inline-block;
+        font-family: 'Malcolm France', sans-serif;
+        font-size: 6.25rem;
+        line-height: 1;
+        margin: 0;
+        text-decoration: none;
+        text-shadow: 0 0 30px $color-black;
+        @include transition(all, ease, .3s);
+
+        @media only screen and (min-width: 768px) {
+          font-size: 12.5rem;
+        }
+      }
+
+      .logo:hover {
+        animation-duration: 100ms;
+        animation-iteration-count: infinite;
+        animation-name: shake-little;
+        animation-timing-function: ease-in-out;
+        animation-play-state: running;
+        transform-origin: center center;
+      }
+
+      img {
+        bottom: -75px;
+        left: 50%;
+        max-height: 100%;
+        position: absolute;
+        @include translate(-50%, 0);
+      }
+    }
+  }
+
+  .balloon-container {
+    position: absolute;
+    right: 0;
+    top: 10%;
+    z-index: 100;
+    -webkit-animation: animBalloonContainer 6s ease-in-out infinite;
+            animation: animBalloonContainer 6s ease-in-out infinite;
+
+    .balloon {
+      background-image: url('../img/showshank/balloon.png');
+      display: block;
+      height: 262px;
+      width: 193px;
+      z-index: 2;
+      -webkit-animation: animBalloon 1s linear infinite;
+              animation: animBalloon 1s linear infinite;
+      -webkit-transform-origin: 50% 100%;
+          -ms-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+
+    .rope {
+      background-image: url('../img/showshank/rope.png');
+      display: block;
+      height: 357px;
+      left: 50%;
+      margin-top: -20px;
+      position: relative;
+      width: 32px;
+      z-index: 1;
+      -webkit-animation-name: animRope;
+              animation-name: animRope;
+      @include translate(-50%, 0);
+    }
+
+    .diaper {
+      margin-top: -35px;
+      position: relative;
+      z-index: 2;
+      -webkit-animation: animDiaper 1s linear infinite;
+              animation: animDiaper 1s linear infinite;
+      -webkit-transform-origin: 50% 0;
+          -ms-transform-origin: 50% 0;
+              transform-origin: 50% 0;
+
+      &::after {
+        background-image: url('../img/showshank/diaper.png');
+        content: "";
+        display: block;
+        height: 177px;
+        left: 50%;
+        position: relative;
+        width: 160px;
+        @include translate(-50%, 0);
+      }
+    }
+  }
+
+
+
+  /*---------------*\
+    $FOOTER
+  \*---------------*/
+  footer {
+    bottom: 0;
+    color: $color-white;
+    left: 0;
+    padding: 15px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+
+    .btn-yellow,
+    .btn-yellow:focus,
+    .btn-yellow:hover {
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 27px;
+      position: relative;
+      @include box-shadow(0, 0, 30px, 0, $color-black);
+
+      @media only screen and (min-width: 768px) {
+        font-size: 1.25rem;
+        line-height: 42px;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+      }
+
+      &::before {
+        background-image: url("../img/showshank/scotch-1.png");
+        bottom: 0;
+        height: 23px;
+        left: 0;
+        width: 39px;
+        @include translate(-50%, 50%);
+      }
+
+      &::after {
+        background-image: url("../img/showshank/scotch-2.png");
+        height: 40px;
+        right: 0;
+        top: 0;
+        width: 41px;
+        @include translate(50%, -50%);
+      }
+
+      .fa {
+        font-size: 0.75rem;
+
+        @media only screen and (min-width: 768px) {
+          font-size: 1.25rem;
+        }
+      }
+    }
+
+    .partners {
+      margin: 30px 0 30px;
+
+      @media only screen and (min-width: 768px) {
+        margin: 100px 0 30px;
+      }
+
+      a,
+      a:focus,
+      a:hover {
+
+        img {
+          margin: 0 15px;
+          @include transition(all, ease, .3s);
+
+          @media only screen and (max-width: 767px) {
+            height: 35px;
+            margin: 0 5px;
+          }
+        }
+      }
+
+      a:hover {
+
+        img {
+          -webkit-transform: scale(0.9);
+              -ms-transform: scale(0.9);
+                  transform: scale(0.9);
+        }
+      }
+    }
+
+    p {
+      color: $color-white;
+      font-size: 0.625rem;
+      line-height: 22px;
+      margin: 0;
+      text-shadow: 0 0 10px $color-black-75;
+      white-space: nowrap;
+
+      @media only screen and (min-width: 768px) {
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+
+
+  /*---------------*\
+   $ANIMATE
+  \*---------------*/
+  @-webkit-keyframes animBalloonContainer {
+    0%,100%{ -webkit-transform:translateY(0) rotate(-6deg);}
+    50%{ -webkit-transform:translateY(-20px) rotate(8deg); }
+  }
+  @-moz-keyframes animBalloonContainer {
+    0%,100%{ -moz-transform:translateY(0) rotate(-6deg);}
+    50%{ -moz-transform:translateY(-20px) rotate(8deg); }
+  }
+  @-o-keyframes animBalloonContainer {
+    0%,100%{ -o-transform:translateY(0) rotate(-6deg);}
+    50%{ -o-transform:translateY(-20px) rotate(8deg); }
+  }
+  @keyframes animBalloonContainer {
+    0%,100%{ transform:translateY(0) rotate(-6deg);}
+    50%{ transform:translateY(-20px) rotate(8deg); }
+  }
+  .animBalloonContainer {
+    -webkit-animation-name: animBalloonContainer;
+            animation-name: animBalloonContainer;
+  }
+
+
+
+  @-webkit-keyframes animBalloon {
+    from, to {
+      -webkit-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    50% {
+      -webkit-transform: rotate(-1deg);
+          -ms-transform: rotate(-1deg);
+              transform: rotate(-1deg);
+    }
+  }
+
+  @keyframes animBalloon {
+    from, to {
+      -webkit-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    50% {
+      -webkit-transform: rotate(-1deg);
+          -ms-transform: rotate(-1deg);
+              transform: rotate(-1deg);
+    }
+  }
+
+  .animBalloon {
+    -webkit-animation-name: animBalloon;
+            animation-name: animBalloon;
+  }
+
+  @-webkit-keyframes animRope {
+    0% {
+      bottom: -153px;
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+
+  @keyframes animRope {
+    0% {
+      bottom: -153px;
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+
+  @-webkit-keyframes animDiaper {
+    from, 50%, to {
+      -webkit-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    25% {
+      -webkit-transform: rotate(1deg);
+          -ms-transform: rotate(1deg);
+              transform: rotate(1deg);
+    }
+    75% {
+      -webkit-transform: rotate(-1deg);
+          -ms-transform: rotate(-1deg);
+              transform: rotate(-1deg);
+    }
+  }
+
+  @keyframes animDiaper {
+    from, 50%, to {
+      -webkit-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    25% {
+      -webkit-transform: rotate(1deg);
+          -ms-transform: rotate(1deg);
+              transform: rotate(1deg);
+    }
+    75% {
+      -webkit-transform: rotate(-1deg);
+          -ms-transform: rotate(-1deg);
+              transform: rotate(-1deg);
+    }
+  }
+
+  .animDiaper {
+    -webkit-animation-name: animDiaper;
+            animation-name: animDiaper;
+  }
+
+
+
+}

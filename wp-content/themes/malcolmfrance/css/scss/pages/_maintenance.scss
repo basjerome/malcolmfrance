@@ -1,0 +1,197 @@
+/*---------------*\
+  $MAINTENANCE
+\*---------------*/
+/**
+ * DEFAULT...
+ * HEADER....
+ * FOOTER....
+ * CONTENT...
+ */
+
+
+
+body.page-template-maintenance {
+
+
+
+  /*---------------*\
+    $DEFAULT
+  \*---------------*/
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+
+  @media only screen and (max-width: 767px) and (orientation : portrait) {
+    background-image: url('../img/bkg/maintenance-mobile.jpg');
+  }
+
+  @media only screen and (min-width: 768px) {
+    background-image: url('../img/bkg/maintenance.jpg');
+  }
+
+  &.alternative {
+
+    @media only screen and (max-width: 767px) and (orientation : portrait) {
+      background-image: url('../img/bkg/maintenance-2-mobile.jpg');
+    }
+
+    @media only screen and (min-width: 768px) {
+      background-image: url('../img/bkg/maintenance-2.jpg');
+    }
+  }
+
+  &::before {
+    background-image: url("../img/bkg/pattern-stripe.png");
+    content: "";
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+
+
+  /*---------------*\
+    $HEADER
+  \*---------------*/
+  header {
+    left: 0;
+    padding: 15px 15px 30px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+
+    @media only screen and (max-width: 767px) {
+      text-align: center;
+    }
+
+    .logo,
+    .logo:focus,
+    .logo:hover {
+      color: $color-white;
+      cursor: default;
+      display: inline-block;
+      font-family: 'Malcolm France', sans-serif;
+      font-size: 5.1875rem;
+      line-height: 1;
+      margin: 0;
+      text-decoration: none;
+      @include transition(all, ease, .3s);
+
+      @media only screen and (min-width: 992px) {
+        @include opacity(.25, 25);
+      }
+    }
+
+    .logo:hover {
+      animation-duration: 100ms;
+      animation-iteration-count: infinite;
+      animation-name: shake-little;
+      animation-timing-function: ease-in-out;
+      animation-play-state: running;
+      transform-origin: center center;
+
+      @media only screen and (min-width: 992px) {
+        @include opacity(1, 100);
+      }
+    }
+  }
+
+
+
+  /*---------------*\
+    $FOOTER
+  \*---------------*/
+  footer {
+    bottom: 0;
+    color: $color-white;
+    left: 0;
+    overflow: hidden;
+    padding: 15px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+
+    p {
+      color: $color-white;
+      font-size: 0.75rem;
+      line-height: 22px;
+      margin: 0;
+      text-shadow: 0 0 10px $color-black-75;
+    }
+  }
+
+
+
+  /*---------------*\
+    $CONTENT
+  \*---------------*/
+  .content {
+    left: 0;
+    padding: 0 15px;
+    position: absolute;
+    text-align: left;
+    top: 50%;
+    width: 100%;
+    z-index: 2;
+    @include translate(0, -50%);
+
+    @media only screen and (min-width: 768px) {
+      left: 25%;
+      padding: 0;
+      width: 75%;
+    }
+
+    p {
+      color: $color-white;
+      font-family: 'Avenir Next Condensed';
+      font-size: 2.5rem;
+      line-height: 1;
+      margin: 0 0 15px;
+      text-shadow: 0 0 10px $color-black-75;
+      text-transform: uppercase;
+
+      @media only screen and (max-width: 479px) {
+        font-size: 1.875rem;
+      }
+    }
+  }
+
+  video {
+    display: block;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+
+  .video-controls {
+    //bottom: 15px;
+    //position: absolute;
+    //right: 15px;
+    //text-align: center;
+    //z-index: 3;
+
+    button {
+      background: none;
+      border: 0 none;
+      color: $color-white;
+      font-size: 1.875rem;
+      outline: none;
+      padding: 0;
+      text-shadow: 0 0 10px $color-black-75;
+      width: 30px;
+    }
+  }
+
+
+
+}

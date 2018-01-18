@@ -1,0 +1,134 @@
+/*---------------*\
+  $PAGINATION
+\*---------------*/
+/**
+ * PAGINATION...
+ */
+
+
+
+ul.page-numbers {
+  display: inline-block;
+  font-size: 0;
+  list-style: none;
+  margin: 0 0 30px;
+  padding: 0;
+
+  > li {
+    display: inline;
+    font-size: 0.9375rem;
+    line-height: 22px;
+
+    > a,
+    > span {
+      background-color: $color-yellow;
+      border: 1px solid $color-yellow;
+      color: $color-grey-1;
+      display: inline-block;
+      font-size: 0.75rem;
+      line-height: 19px;
+      padding: 3px 13px;
+      text-decoration: none;
+      text-transform: uppercase;
+      @include transition(all, ease, .3s);
+
+      &:hover,
+      &:focus {
+        background-color: $color-dark-grey;
+        border-color: $color-grey-1;
+        color: $color-yellow;
+
+        .arrow-left,
+        .arrow-right {
+          background-position: 0 -11px;
+        }
+
+        .arrow-left {
+          -webkit-animation: animArrowLeft .3s linear;
+                  animation: animArrowLeft .3s linear;
+        }
+
+        .arrow-right {
+          -webkit-animation: animArrowRight .3s linear;
+                  animation: animArrowRight .3s linear;
+        }
+      }
+
+      .arrow-left,
+      .arrow-right {
+        background: no-repeat 0 0;
+        content: "";
+        display: inline-block;
+        height: 11px;
+        line-height: 1;
+        margin-top: -2px;
+        position: relative;
+        vertical-align: middle;
+        width: 9px;
+      }
+
+      .arrow-left {
+        background-image: url("../img/icon/sprite-arrow-left.png");
+        margin-right: 5px;
+      }
+
+      .arrow-right {
+        background-image: url("../img/icon/sprite-arrow-right.png");
+        margin-left: 5px;
+      }
+    }
+
+    &:first-child {
+
+      > a,
+      > span {
+        @include border-radius(0);
+
+        @media only screen and (max-width: 991px) {
+          font-size: 0;
+        }
+      }
+    }
+
+    &:last-child {
+
+      > a,
+      > span {
+        @include border-radius(0);
+
+        @media only screen and (max-width: 991px) {
+          font-size: 0;
+        }
+      }
+    }
+  }
+
+  .current,
+  .current:hover,
+  .current:focus {
+    background-color: $color-dark-grey;
+    border-color: $color-grey-1;
+    color: $color-yellow;
+  }
+
+  > .disabled {
+
+    > span,
+    > span:hover,
+    > span:focus,
+    > a,
+    > a:hover,
+    > a:focus {
+      background-color: $color-off-white;
+      border-color: $color-off-white;
+      color: $color-grey-1;
+
+      .arrow-left,
+      .arrow-right {
+        background-position: 0 0;
+        -webkit-animation: none;
+                animation: none;
+      }
+    }
+  }
+}

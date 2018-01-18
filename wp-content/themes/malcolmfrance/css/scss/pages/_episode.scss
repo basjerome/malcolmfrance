@@ -1,0 +1,380 @@
+/*---------------*\
+  $EPISODE
+\*---------------*/
+/**
+ * RATING............
+ * OWL CAROUSEL......
+ * TECHNICAL SHEET...
+ * SUMMARY...........
+ * ANECDOTES.........
+ * QUOTES............
+ * MUSIC.............
+ * ERRORS............
+ * NEXT EPISODE......
+ */
+
+
+
+body.page-episode {
+
+
+
+  .main-content {
+
+
+
+    /*---------------*\
+      $RATING
+    \*---------------*/
+    .rating {
+      margin-bottom: 15px;
+
+      @media only screen and (min-width: 1200px) {
+        padding-right: 30px;
+      }
+
+      @media only screen and (min-width: 768px) {
+        text-align: right;
+      }
+
+      .title {
+        border-right: 2px solid $color-grey-1;
+        color: $color-grey-1;
+        font-family: 'Avenir Light', sans-serif;
+        font-size: 1.25rem;
+        display: inline-block;
+        height: 32px;
+        line-height: 32px;
+        margin: 0 9px 0 0;
+        padding-right: 15px;
+        text-transform: uppercase;
+        vertical-align: middle;
+
+        @media (min-width: 768px) and (max-width: 991px) {
+          display: block;
+          border: 0 none;
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      .fa {
+        color: $color-yellow;
+        font-size: 1.4375rem;
+        vertical-align: middle;
+      }
+    }
+
+
+
+    /*---------------*\
+      $OWL CAROUSEL
+    \*---------------*/
+    .owl-container {
+      margin: 0;
+    }
+
+
+
+    /*---------------*\
+      $TECHNICAL SHEET
+    \*---------------*/
+    .technical-sheet {
+      background-color: $color-dark-grey;
+      color: $color-white;
+      margin-bottom: 30px;
+      padding: 15px;
+
+      a,
+      a:focus,
+      a:hover {
+        color: $color-white;
+        text-decoration: underline;
+      }
+
+      a:hover {
+        color: $color-yellow;
+      }
+    }
+
+
+
+    /*---------------*\
+      $SUMMARY
+    \*---------------*/
+    .summary {
+      margin-bottom: 30px;
+
+      .label {
+        background-color: $color-off-white;
+        color: $color-grey-1;
+        font-size: 0.875rem;
+        font-weight: 400;
+        height: 18px;
+        line-height: 16px;
+        padding: 1px 5px;
+        position: relative;
+        text-transform: uppercase;
+        -webkit-border-radius: 0;
+           -moz-border-radius: 0;
+                border-radius: 0;
+      }
+    }
+
+
+
+    /*---------------*\
+      $ANECDOTES
+    \*---------------*/
+    .anecdotes {
+      margin-bottom: 30px;
+
+      > ul {
+
+        > li {
+          background: url("../img/icon/list-style-arrow.png") no-repeat 0 5px;
+          margin-bottom: 15px;
+          padding-left: 17px;
+        }
+      }
+    }
+
+
+
+    /*---------------*\
+      $QUOTES
+    \*---------------*/
+    .quotes {
+      margin-bottom: 30px;
+
+      > ul {
+
+        > li {
+          background-color: $color-off-white;
+          border-radius: 3px;
+          margin: 0 0 30px;
+          padding: 2px 2px 2px 17px;
+          position: relative;
+          @include transition(all, ease, .3s);
+
+          &::before {
+            background-image: url("../img/icon/list-style-arrow.png");
+            content: "";
+            height: 11px;
+            left: 2px;
+            position: absolute;
+            top: 7px;
+            width: 9px;
+          }
+
+          &:hover {
+            background: -webkit-linear-gradient(90deg, #e8e8e8, #d8d9d9);
+            background:    -moz-linear-gradient(90deg, #e8e8e8, #d8d9d9);
+            background:      -o-linear-gradient(90deg, #e8e8e8, #d8d9d9);
+            background:         linear-gradient(90deg, #e8e8e8, #d8d9d9);
+            cursor: pointer;
+          }
+
+          > ul {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+
+
+    /*---------------*\
+      $MUSIC
+    \*---------------*/
+    .music {
+      margin-bottom: 30px;
+
+      > ul {
+
+        > li {
+          background: url("../img/icon/list-style-arrow.png") no-repeat 0 5px;
+          padding-left: 17px;
+        }
+      }
+
+      .label {
+        background-color: $color-off-white;
+        color: $color-grey-1;
+        font-size: 0.875rem;
+        font-weight: 400;
+        height: 18px;
+        line-height: 16px;
+        padding: 1px 5px;
+        position: relative;
+        text-transform: uppercase;
+        -webkit-border-radius: 0;
+           -moz-border-radius: 0;
+                border-radius: 0;
+      }
+    }
+
+
+
+    /*---------------*\
+      $ERRORS
+    \*---------------*/
+    .errors {
+      margin-bottom: 30px;
+
+      > ul {
+
+        > li {
+          background: url("../img/icon/list-style-arrow.png") no-repeat 0 5px;
+          margin-bottom: 15px;
+          padding-left: 17px;
+        }
+      }
+
+      .label {
+        background-color: $color-off-white;
+        color: $color-grey-1;
+        font-size: 0.875rem;
+        font-weight: 400;
+        height: 18px;
+        line-height: 16px;
+        padding: 1px 5px;
+        position: relative;
+        -webkit-border-radius: 0;
+           -moz-border-radius: 0;
+                border-radius: 0;
+      }
+    }
+
+
+
+    /*---------------*\
+      $NEXT EPISODE
+    \*---------------*/
+    .next-episode {
+
+      a,
+      a:focus,
+      a:hover {
+
+        background-color: $color-black;
+        display: block;
+        margin-bottom: 30px;
+        overflow: hidden;
+        text-align: center;
+        text-decoration: none;
+
+        .title {
+          color: $color-white;
+          display: none;
+          left: 0;
+          position: absolute;
+          text-align: center;
+          top: 50%;
+          width: 100%;
+          z-index: 2;
+          @include translate(0, -50%);
+
+          @media only screen and (max-width: 479px){
+            font-size: 0.75rem;
+          }
+        }
+
+        .img {
+          display: block;
+          overflow: hidden;
+          position: relative;
+        }
+
+        img {
+          width: 100%;
+          -webkit-transition: all 0.3s;
+                  transition: all 0.3s;
+        }
+
+        .btn {
+          background: -webkit-linear-gradient(#f5d864, #f3ce3b);
+             background: -moz-linear-gradient(#f5d864, #f3ce3b);
+               background: -o-linear-gradient(#f5d864, #f3ce3b);
+                  background: linear-gradient(#f5d864, #f3ce3b);
+          border-radius: 0;
+          color: $color-grey-1;
+          display: block;
+          font-size: 0.75rem;
+          line-height: 19px;
+          padding: 3px 13px;
+          position: relative;
+          text-transform: uppercase;
+          z-index: 1;
+          -webkit-transition: all 0.3s;
+                  transition: all 0.3s;
+
+          @media only screen and (max-width: 479px){
+            font-size: 0.5625rem;
+          }
+
+          .arrow-left,
+          .arrow-right {
+            background: no-repeat 0 0;
+            content: "";
+            display: inline-block;
+            height: 11px;
+            line-height: 1;
+            margin-top: -2px;
+            position: relative;
+            vertical-align: middle;
+            width: 9px;
+          }
+
+          .arrow-left {
+            background-image: url("../img/icon/sprite-arrow-left.png");
+            margin-right: 5px;
+          }
+
+          .arrow-right {
+            background-image: url("../img/icon/sprite-arrow-right.png");
+            margin-left: 5px;
+          }
+        }
+      }
+
+      a:hover {
+
+        .title {
+          display: block;
+        }
+
+        img {
+          @include opacity(.5, 50);
+          -webkit-transform: scale(1.1);
+              -ms-transform: scale(1.1);
+                  transform: scale(1.1);
+        }
+
+        .btn {
+          background: $color-grey-1;
+          color: $color-yellow;
+
+          .arrow-left,
+          .arrow-right {
+            background-position: 0 -11px;
+          }
+
+          .arrow-left {
+            animation: animArrowLeft .3s linear;
+          }
+
+          .arrow-right {
+            animation: animArrowRight .3s linear;
+          }
+        }
+      }
+    }
+
+
+
+  }
+
+
+
+}

@@ -1,0 +1,296 @@
+/*---------------*\
+  $SIDEBAR
+\*---------------*/
+/**
+ * SIDEBAR
+ */
+
+
+
+.sidebar {
+  background-color: $color-white;
+  @include box-shadow(-4px, -2px, 4px, 0, $color-shadow);
+
+  @media only screen and (min-width: 992px) {
+    float: left;
+    width: 33.33333%;
+  }
+
+  .title {
+    color: $color-yellow;
+    font-family: 'Avenir Next Condensed', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0 0 15px;
+    text-align: center;
+    text-transform: uppercase;
+
+    span {
+      display: inline-block;
+      padding: 0 40px;
+      position: relative;
+      vertical-align: middle;
+      z-index: 2;
+
+      @media only screen and (min-width: 992px) {
+        padding: 0 80px;
+      }
+
+      &::before,
+      &::after {
+        border-top: 1px solid $color-yellow;
+        border-bottom: 1px solid $color-yellow;
+        content: "";
+        height: 4px;
+        position: absolute;
+        top: 50%;
+        width: 30px;
+        z-index: 1;
+        @include translate(0, -50%);
+
+        @media only screen and (min-width: 992px) {
+          width: 70px;
+        }
+      }
+
+      &::before {
+        left: 0;
+      }
+
+      &::after {
+        right: 0;
+      }
+    }
+  }
+
+  .subtitle {
+    color: $color-grey-1;
+    font-family: 'Avenir Next Condensed', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0 0 15px;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media only screen and (min-width: 992px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  section {
+    background: -webkit-linear-gradient(#f9f9f9, #f2f2f2);
+    background:    -moz-linear-gradient(#f9f9f9, #f2f2f2);
+    background:      -o-linear-gradient(#f9f9f9, #f2f2f2);
+    background:         linear-gradient(#f9f9f9, #f2f2f2);
+    padding: 30px 15px;
+
+    &.poll,
+    &.broadcasts,
+    &.shop,
+    &.social-networks {
+      display: none;
+
+      @media only screen and (min-width: 992px) {
+        display: block;
+      }
+    }
+
+    &.poll {
+
+      label {
+        font-weight: 400;
+      }
+    }
+
+    &.broadcasts {
+
+      img {
+        float: left;
+        margin-right: 15px;
+        max-width: 70px;
+      }
+
+      p {
+        line-height: 23px;
+        padding-top: 15px;
+      }
+
+     .table {
+       margin: 0 0 30px;
+
+       > thead {
+
+         > tr {
+
+           > th {
+             color: $color-grey-1;
+             font-size: 0.875rem;
+             font-weight: 400;
+             text-transform: uppercase;
+           }
+         }
+       }
+
+       > tbody {
+
+         > tr {
+
+           > td {
+             font-size: 0.75rem;
+
+             &:first-child {
+               color: $color-grey-3;
+               white-space: nowrap;
+               width: 76px;
+             }
+
+             &.hour {
+               font-weight: 700;
+               text-align: center;
+             }
+
+             &.channel {
+               text-align: center;
+             }
+
+             a,
+             a:focus,
+             a:hover {
+               background-image: -webkit-linear-gradient(top, $color-yellow, $color-yellow);
+               background-image:      linear-gradient(180deg, $color-yellow, $color-yellow);
+               background-position: 0 1rem;
+               background-repeat: no-repeat;
+               background-size: 100% 100%;
+               color: $color-grey-1;
+               text-decoration: none;
+               @include transition(all, ease, .1s);
+             }
+
+             a:hover {
+               background-position: 0 0;
+             }
+           }
+         }
+       }
+     }
+    }
+
+    &.shop {
+
+      a,
+      a:focus,
+      a:hover {
+        color: $color-grey-1;
+        text-decoration: none;
+      }
+
+      .btn-yellow:hover {
+        color: $color-yellow;
+      }
+
+      img {
+        float: left;
+        margin-right: 15px;
+        max-width: 65px;
+      }
+
+      .product-name,
+      .product-price {
+        display: block;
+        line-height: 23px;
+      }
+    }
+
+    &.social-networks {
+      overflow: hidden;
+    }
+
+    &.ad {
+      background: -webkit-linear-gradient(#f9f9f9, #ffffff);
+      background:    -moz-linear-gradient(#f9f9f9, #ffffff);
+      background:      -o-linear-gradient(#f9f9f9, #ffffff);
+      background:         linear-gradient(#f9f9f9, #ffffff);
+      overflow: hidden;
+    }
+  }
+
+  article {
+    margin-left: -15px;
+    margin-right: -15px;
+
+    a,
+    a:focus,
+    a:hover {
+      color: $color-grey-1;
+      display: block;
+      padding: 7px 15px;
+      text-decoration: none;
+      @include transition(all, ease, .3s);
+    }
+
+    a:hover {
+      background: -webkit-linear-gradient(90deg, #e8e8e8, #d8d9d9);
+         background: -moz-linear-gradient(90deg, #e8e8e8, #d8d9d9);
+           background: -o-linear-gradient(90deg, #e8e8e8, #d8d9d9);
+              background: linear-gradient(90deg, #e8e8e8, #d8d9d9);
+
+      .img-container {
+
+        .img {
+          -webkit-transform: scale(1.1);
+              -ms-transform: scale(1.1);
+                  transform: scale(1.1);
+        }
+      }
+    }
+
+    .date,
+    .post-title {
+      display: block;
+    }
+
+    .date {
+      color: $color-grey-3;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+    }
+
+    .post-title {
+      font-size: 1rem;
+      line-height: 19px;
+    }
+
+    .img-container {
+      display: block;
+      float: left;
+      margin-right: 15px;
+      overflow: hidden;
+
+      .img {
+        display: block;
+        height: 90px;
+        position: relative;
+        width: 90px;
+        @include transition(all, ease, .3s);
+
+        img {
+          height: 100%;
+          left: 50%;
+          max-width: inherit;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          @include translate(-50%, -50%);
+        }
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0 0 7px;
+    padding: 0 0 0 35px;
+  }
+}

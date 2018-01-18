@@ -1,0 +1,111 @@
+/*---------------*\
+  $TITLES
+\*---------------*/
+/**
+ * title-highlight...
+ * page-title........
+ * section-title.....
+ */
+
+
+
+.main-content {
+
+  .title-highlight {
+    color: $color-yellow;
+    font-family: 'Avenir Next Condensed', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0 0 15px;
+    text-align: center;
+    text-transform: uppercase;
+
+    span {
+      display: inline-block;
+      padding: 0 30px;
+      position: relative;
+      vertical-align: middle;
+      z-index: 2;
+
+      @media only screen and (min-width: 768px) {
+        padding: 0 90px;
+      }
+
+      &::before,
+      &::after {
+        border-top: 1px solid $color-yellow;
+        border-bottom: 1px solid $color-yellow;
+        content: "";
+        height: 4px;
+        position: absolute;
+        top: 50%;
+        width: 20px;
+        z-index: 1;
+        @include translate(0, -50%);
+
+        @media only screen and (min-width: 768px) {
+          width: 80px;
+        }
+      }
+
+      &::before {
+        left: 0;
+      }
+
+      &::after {
+        right: 0;
+      }
+    }
+  }
+
+  .page-title {
+    color: $color-grey-1;
+    font-family: 'Avenir Next Condensed', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 42px;
+    margin: 0 0 15px;
+  }
+
+  .section-title {
+    color: $color-dark-grey;
+    font-family: 'Avenir Next Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 33px;
+    margin: 0 0 15px;
+    position: relative;
+    text-transform: uppercase;
+
+    &::before,
+    &::after {
+      background-color: $color-dark-grey;
+      content: "";
+      height: 1px;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 100%;
+      z-index: 1;
+    }
+
+    &::before {
+      margin-top: -3px;
+    }
+
+    &::after {
+      margin-bottom: -3px;
+    }
+
+    span {
+      background-color: $color-white;
+      display: inline;
+      padding-right: 8px;
+      position: relative;
+      vertical-align: baseline;
+      z-index: 2;
+    }
+  }
+}

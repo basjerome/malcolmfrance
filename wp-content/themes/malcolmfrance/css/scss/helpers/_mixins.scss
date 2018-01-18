@@ -1,0 +1,65 @@
+/*---------------*\
+  $MIXINS
+\*---------------*/
+/**
+ * BORDER-RADIUS...
+ * BOX-SHADOW......
+ * OPACITY.........
+ * TRANSLATE.......
+ * TRANSITION......
+ */
+
+
+
+/*---------------*\
+  $BORDER-RADIUS
+\*---------------*/
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+
+/*---------------*\
+  $BOX-SHADOW
+\*---------------*/
+@mixin box-shadow($x, $y, $blur, $spread, $color) {
+  -webkit-box-shadow: $x $y $blur $spread $color;
+     -moz-box-shadow: $x $y $blur $spread $color;
+      -ms-box-shadow: $x $y $blur $spread $color;
+          box-shadow: $x $y $blur $spread $color;
+}
+
+
+
+/*---------------*\
+  $OPACITY
+\*---------------*/
+@mixin opacity($opacity, $alpha) {
+  opacity: $opacity;
+  filter: alpha(opacity=$alpha);
+}
+
+
+
+/*---------------*\
+  $TRANSLATE
+\*---------------*/
+@mixin translate($y, $x) {
+  -webkit-transform: translate($y,$x);
+      -ms-transform: translate($y,$x);
+          transform: translate($y,$x);
+}
+
+
+
+/*---------------*\
+  $TRANSITION
+\*---------------*/
+@mixin transition($property, $timing, $delay) {
+  -webkit-transition: $property $timing $delay;
+          transition: $property $timing $delay;
+}
