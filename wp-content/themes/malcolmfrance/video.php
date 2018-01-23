@@ -28,23 +28,23 @@
 			<h1 class="page-title" itemprop="name"><?php the_title(); ?></h1>
 			<h3 class="section-title"><span>Description</span></h3>
 			<div itemprop="description"><?php the_content(); ?></div>
-				<?php 
-					$posts = get_field('mf_video_episode');
-					if( $posts ):
-				?>
-				<section class="origine">
-					<ul>
-						<li>Extrait de l'épisode</li>
-						<?php foreach( $posts as $post): ?>
-						<?php setup_postdata($post); ?>
-						<li>
-							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">&laquo; <?php the_title(); ?> &raquo;</a>
-						</li>
-						<?php endforeach; ?>
-					</ul>
-				</section>
-				<?php wp_reset_postdata(); ?>
-				<?php endif; ?>
+			<?php
+				$posts = get_field('mf_video_episode');
+				if( $posts ):
+			?>
+			<section class="origine">
+				<ul>
+					<li>Extrait de l'épisode</li>
+					<?php foreach( $posts as $post): ?>
+					<?php setup_postdata($post); ?>
+					<li>
+						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">&laquo; <?php the_title(); ?> &raquo;</a>
+					</li>
+					<?php endforeach; ?>
+				</ul>
+			</section>
+			<?php wp_reset_postdata(); ?>
+			<?php endif; ?>
 		</div>
 		<?php endwhile; ?>
 		<?php endif; ?>

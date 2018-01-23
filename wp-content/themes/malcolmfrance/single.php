@@ -69,40 +69,43 @@
 					(adsbygoogle = window.adsbygoogle || []).push({});
 				</script>
 			</div>
+			<?php
+				$tags = wp_get_post_terms( get_queried_object_id(), 'post_tag', ['fields' => 'ids'] );
+				$args = [
+					'post__not_in'        => array( get_queried_object_id() ),
+					'posts_per_page'      => 3,
+					'ignore_sticky_posts' => 1,
+					'orderby'             => 'rand',
+					'tax_query' => [
+						[
+							'taxonomy' => 'post_tag',
+							'terms'    => $tags
+						]
+					]
+				];
+				$my_query = new wp_query( $args );
+				if( $my_query->have_posts() ) : ?>
 			<section class="similar-items">
 				<h4 class="section-title"><span>Sur le même sujet</span></h4>
 				<?php the_tags( __( 'Mots clés', 'malcolmfrance' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
 				<div class="row">
 					<?php
-						$tags = wp_get_post_terms( get_queried_object_id(), 'post_tag', ['fields' => 'ids'] );
-						$args = [
-							'post__not_in'        => array( get_queried_object_id() ),
-							'posts_per_page'      => 3,
-							'ignore_sticky_posts' => 1,
-							'orderby'             => 'rand',
-							'tax_query' => [
-								[
-									'taxonomy' => 'post_tag',
-									'terms'    => $tags
-								]
-							]
-						];
-						$my_query = new wp_query( $args );
-						if( $my_query->have_posts() ) {
-							while( $my_query->have_posts() ) {
-								$my_query->the_post(); ?>
-								<article class="col-md-4">
-									<a href="<?php the_permalink()?>" class="clearfix" title="<?php the_title(); ?>">
-										<span class="img"><img src="<?php echo the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="img-responsive" /></span>
-										<span class="post-title"><?php the_title(); ?></span>
-									</a>
-								</article>
-							<?php }
-							wp_reset_postdata();
-						}
+						while( $my_query->have_posts() ) :
+						$my_query->the_post();
+					?>
+					<article class="col-md-4">
+						<a href="<?php the_permalink()?>" class="clearfix" title="<?php the_title(); ?>">
+							<span class="img"><img src="<?php echo the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="img-responsive" /></span>
+							<span class="post-title"><?php the_title(); ?></span>
+						</a>
+					</article>
+					<?php
+						endwhile;
+						wp_reset_postdata();
 					?>
 				</div>
 			</section><!-- /similar-items end -->
+			<?php endif; ?>
 			<?php comments_template(); ?>
 		</article>
 		<?php endwhile; ?>
