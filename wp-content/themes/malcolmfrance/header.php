@@ -33,7 +33,6 @@
 		<meta name="twitter:title" content="<?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?>">
 		<meta name="twitter:description" content="<?php bloginfo('description'); ?>">
 		<meta name="twitter:image" content="<?php echo get_template_directory_uri(); ?>/img/page/default.jpg">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<script src="<?php echo get_template_directory_uri(); ?>/js/ie10-viewport-bug-workaround.js" type="text/javascript"></script>
 		<!-- Malcolm France shim and Respond.js IE8 support of Malcolm France elements and media queries -->

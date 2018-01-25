@@ -27,197 +27,189 @@
 
 html,
 body {
-  font-size: 100%;
-  height: 100%;
+	font-size: 100%;
+	height: 100%;
 }
 
 body {
-  //background: url('../img/bkg/body.jpg') 50% 0 $color-yellow;
-  background-color: $color-yellow;
-  color: $color-grey-1;
-  font-family: 'Avenir Roman', 'Arial', sans-serif;
-  font-size: 16px;
+	//background: url('../img/bkg/body.jpg') 50% 0 $color-yellow;
+	background-color: $color-yellow;
+	color: $color-grey-1;
+	font-family: "Avenir Roman", "Arial", sans-serif;
+	font-size: 16px;
 }
 
 .img-responsive {
-  display: inline-block;
+	display: inline-block;
 }
 
 @media only screen and (max-width: 1199px) {
-  .container {
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 15px;
-    padding-left: 15px;
-    width: auto;
-  }
+	.container {
+		margin-right: auto;
+		margin-left: auto;
+		padding-right: 15px;
+		padding-left: 15px;
+		width: auto;
+	}
 }
 
 .main-container {
-  background-color: $color-white;
+	background-color: $color-white;
 }
 
 a,
 a:focus,
 a:hover {
-  color: $color-grey-1;
-  text-decoration: underline;
+	color: $color-grey-1;
+	text-decoration: underline;
 }
 
 a:hover {
-  color: $color-yellow;
+	color: $color-yellow;
 }
 
 .color-white {
-  color: $color-white !important;
+	color: $color-white !important;
 }
 
 .color-black {
-  color: $color-black !important;
+	color: $color-black !important;
 }
 
 .color-grey {
-  color: $color-grey-3 !important;
+	color: $color-grey-3 !important;
 }
 
 .color-dark-grey {
-  color: $color-grey-1 !important;
+	color: $color-grey-1 !important;
 }
 
 .color-light-grey {
-  color: $color-grey-2 !important;
+	color: $color-grey-2 !important;
 }
 
 .color-yellow {
-  color: $color-yellow !important;
+	color: $color-yellow !important;
 }
 
 .color-red {
-  color: $color-red !important;
+	color: $color-red !important;
 }
 
 .opacity-hidden {
-  @include opacity(0, 0);
+	@include opacity(0, 0);
 }
 
 .opacity-visible {
-  @include opacity(1, 100);
+	@include opacity(1, 100);
 }
 
 .main-banner {
-  background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f2f2f2));
-  background: linear-gradient(#f9f9f9, #f2f2f2);
-  overflow: hidden;
-  padding: 30px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f2f2f2));
+	background: linear-gradient(#f9f9f9, #f2f2f2);
+	overflow: hidden;
+	padding: 30px;
 }
 
 .main-content {
-  padding: 0 15px;
+	padding: 0 15px;
 
-  @media only screen and (min-width: 992px) {
-    float: left;
-    padding: 0 30px;
-    width: 66.66667%;
-  }
+	@media only screen and (min-width: 992px) {
+		float: left;
+		padding: 0 30px;
+		width: 66.66667%;
+	}
 }
 
 .alert-cookies {
-  bottom: 0;
-  font-size: 0.75rem;
-  left: 0;
-  line-height: 1.42857143;
-  margin: 0;
-  position: fixed;
-  text-align: left;
-  width: 100%;
-  z-index: 10;
-  @include border-radius(0);
+	bottom: 0;
+	font-size: .75rem;
+	left: 0;
+	line-height: 1.42857143;
+	margin: 0;
+	position: fixed;
+	text-align: left;
+	width: 100%;
+	z-index: 10;
+	@include border-radius(0);
 
-  &::before {
+	&::before {
+		@media only screen and (min-width: 768px) {
+			background-image: url("../img/bkg/cookies.png");
+			bottom: 0;
+			content: "";
+			display: block;
+			height: 153px;
+			left: 0;
+			position: absolute;
+			width: 150px;
+			-webkit-animation: animSlideUp 3s ease;
+			        animation: animSlideUp 3s ease;
+		}
+	}
 
-    @media only screen and (min-width: 768px) {
-      background-image: url('../img/bkg/cookies.png');
-      bottom: 0;
-      content: "";
-      display: block;
-      height: 153px;
-      left: 0;
-      position: absolute;
-      width: 150px;
-      -webkit-animation: animSlideUp 3s ease;
-              animation: animSlideUp 3s ease;
-    }
-  }
+	.close {
+		position: absolute;
+		right: 5px;
+		top: 5px;
+	}
 
-  .close {
+	.container {
+		@media only screen and (min-width: 768px) {
+			padding-left: 160px;
+			padding-right: 160px;
+		}
+	}
 
-    position: absolute;
-    right: 5px;
-    top: 5px;
-  }
+	.media {
+		margin: 0;
+		width: 100%;
 
-  .container {
+		.media-body,
+		.media-left,
+		.media-right {
+			@media only screen and (max-width: 767px) {
+				display: block;
+			}
+		}
 
-    @media only screen and (min-width: 768px) {
-      padding-left: 160px;
-      padding-right: 160px;
-    }
-  }
+		.media-body {
+			@media only screen and (max-width: 767px) {
+				margin-bottom: 10px;
+				width: auto;
+			}
+		}
 
-  .media {
-    margin: 0;
-    width: 100%;
-
-    .media-body,
-    .media-left,
-    .media-right {
-
-      @media only screen and (max-width: 767px) {
-        display: block;
-      }
-    }
-
-    .media-body {
-
-      @media only screen and (max-width: 767px) {
-        margin-bottom: 10px;
-        width: auto;
-      }
-    }
-
-    .media-left,
-    .media-right {
-
-      @media only screen and (max-width: 767px) {
-        padding: 0;
-        text-align: center;
-      }
-    }
-  }
+		.media-left,
+		.media-right {
+			@media only screen and (max-width: 767px) {
+				padding: 0;
+				text-align: center;
+			}
+		}
+	}
 }
 
 .row-table {
-
-  @media only screen and (min-width: 992px) {
-    display: table;
-    margin-right: 0;
-    margin-left: 0;
-    width: 100%;
-  }
+	@media only screen and (min-width: 992px) {
+		display: table;
+		margin-right: 0;
+		margin-left: 0;
+		width: 100%;
+	}
 }
 
 .col-table-cell {
-
-  @media only screen and (min-width: 992px) {
-    display: table-cell;
-    float: none;
-    vertical-align: top;
-  }
+	@media only screen and (min-width: 992px) {
+		display: table-cell;
+		float: none;
+		vertical-align: top;
+	}
 }
 
 .progress-bar {
-  color: $color-grey-1;
-  white-space: nowrap;
+	color: $color-grey-1;
+	white-space: nowrap;
 }
 
 
@@ -226,963 +218,942 @@ a:hover {
  $MAIN CONTENT
 \*---------------*/
 .main-content {
-
-
-
- /*---------------*\
+	/*---------------*\
    $DEFAULT
  \*---------------*/
- h1, h2, h3, h4, h5, h6 {
-   font-family: 'Avenir Next Condensed', sans-serif;
-   font-weight: 500;
-   margin: 0 0 15px;
- }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: "Avenir Next Condensed", sans-serif;
+		font-weight: 500;
+		margin: 0 0 15px;
+	}
 
- h1 {
-   font-size: 1.875rem;
- }
+	h1 {
+		font-size: 1.875rem;
+	}
 
- h2 {
-   font-size: 1.6875rem;
- }
+	h2 {
+		font-size: 1.6875rem;
+	}
 
- h3 {
-   font-size: 1.5rem;
- }
+	h3 {
+		font-size: 1.5rem;
+	}
 
- h4 {
-   font-size: 1.3125rem;
- }
+	h4 {
+		font-size: 1.3125rem;
+	}
 
- h5 {
-   font-size: 1.125rem;
- }
+	h5 {
+		font-size: 1.125rem;
+	}
 
- h6 {
-   font-size: 1rem;
- }
+	h6 {
+		font-size: 1rem;
+	}
 
-.avenir-light {
-  font-family: 'Avenir Light';
-}
+	.avenir-light {
+		font-family: "Avenir Light";
+	}
 
-.avenir-roman {
-  font-family: 'Avenir Roman';
-}
+	.avenir-roman {
+		font-family: "Avenir Roman";
+	}
 
-.avenir-next-condensed {
-  font-family: 'Avenir Next Condensed';
-}
+	.avenir-next-condensed {
+		font-family: "Avenir Next Condensed";
+	}
 
-.malcolm-france {
-  font-family: 'Malcolm France';
-}
+	.malcolm-france {
+		font-family: "Malcolm France";
+	}
 
-.neon-lights {
-  font-family: 'Neon Lights';
-}
+	.neon-lights {
+		font-family: "Neon Lights";
+	}
 
- p {
-   font-size: 0.9375rem;
-   line-height: 22px;
-   margin: 0 0 30px;
-   text-align: justify;
+	p {
+		font-size: .9375rem;
+		line-height: 22px;
+		margin: 0 0 30px;
+		text-align: justify;
 
-   &.text-left {
-    text-align: left !important;
-   }
+		&.text-left {
+			text-align: left !important;
+		}
 
-   &.text-center {
-    text-align: center !important;
-   }
+		&.text-center {
+			text-align: center !important;
+		}
 
-   &.text-right {
-    text-align: right !important;
-   }
+		&.text-right {
+			text-align: right !important;
+		}
 
-   a,
-   a:focus,
-   a:hover {
-     background-image:      -webkit-gradient(linear, left top, left bottom, from($color-yellow), to($color-yellow));
-     background-image:      linear-gradient(180deg, $color-yellow, $color-yellow);
-     background-position: 0 1rem;
-     background-repeat: no-repeat;
-     background-size: 100% 100%;
-     color: $color-grey-1;
-     text-decoration: none;
-     @include transition(all, ease, .1s);
-   }
+		a,
+		a:focus,
+		a:hover {
+			background-image: -webkit-gradient(linear, left top, left bottom, from($color-yellow), to($color-yellow));
+			background-image: linear-gradient(180deg, $color-yellow, $color-yellow);
+			background-position: 0 1rem;
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			color: $color-grey-1;
+			text-decoration: none;
+			@include transition(all, ease, .1s);
+		}
 
-   a:hover {
-     background-position: 0 0;
-   }
- }
+		a:hover {
+			background-position: 0 0;
+		}
+	}
 
- ul {
-   list-style: none;
-   margin: 0 0 30px;
-   padding: 0 0 0 15px;
+	ul {
+		list-style: none;
+		margin: 0 0 30px;
+		padding: 0 0 0 15px;
 
-   li {
-     font-size: 0.9375rem;
-     line-height: 22px;
+		li {
+			font-size: .9375rem;
+			line-height: 22px;
 
-     ul {
-       list-style: none;
-       padding: 0;
-     }
-   }
- }
+			ul {
+				list-style: none;
+				padding: 0;
+			}
+		}
+	}
 
- dl {
+	dl {
+		dt,
+		dd {
+			font-size: .9375rem;
+			line-height: 22px;
+		}
+	}
 
-   dt,
-   dd {
-     font-size: 0.9375rem;
-     line-height: 22px;
-   }
- }
+	blockquote {
+		border: 0 none;
+		margin: 0 0 30px;
+		padding: 13px 15px 13px 35px;
+		position: relative;
 
- blockquote {
-   border: 0 none;
-   margin: 0 0 30px;
-   padding: 13px 15px 13px 35px;
-   position: relative;
+		&:before {
+			color: $color-yellow;
+			content: "“";
+			font-family: "Arial", sans-serif;
+			font-size: 6.25rem;
+			font-style: normal;
+			left: 0;
+			line-height: 1;
+			position: absolute;
+			top: 0;
+		}
 
-   &:before {
-     color: $color-yellow;
-     content: "“";
-     font-family: 'Arial', sans-serif;
-     font-size: 6.25rem;
-     font-style: normal;
-     left: 0;
-     line-height: 1;
-     position: absolute;
-     top: 0;
-   }
+		p {
+			font-size: .9375rem;
+			font-style: italic;
+			line-height: 22px;
+			text-align: left;
+		}
 
-   p {
-     font-size: 0.9375rem;
-     font-style: italic;
-     line-height: 22px;
-     text-align: left;
-   }
+		&.wide {
+			padding: 26px 15px 26px 70px;
 
-   &.wide {
-     padding: 26px 15px 26px 70px;
+			&:before {
+				font-size: 12.5rem;
+			}
 
-     &:before {
-       font-size: 12.5rem;
-     }
-
-     p {
-       color: $color-grey-3 ;
-       font-family: 'Avenir Next Condensed';
-       font-size: 1.875rem;
-       font-weight: 500;
-       line-height: 44px;
-     }
-   }
- }
-
+			p {
+				color: $color-grey-3 ;
+				font-family: "Avenir Next Condensed";
+				font-size: 1.875rem;
+				font-weight: 500;
+				line-height: 44px;
+			}
+		}
+	}
 
 
- /*---------------*\
+
+	/*---------------*\
    $ILLUSTRATION
  \*---------------*/
- .illustration {
-   position: relative;
-   text-align: center;
+	.illustration {
+		position: relative;
+		text-align: center;
 
-   img {
-     width: 100%;
-   }
+		img {
+			width: 100%;
+		}
 
-   .copyright {
-     background-color: $color-black-25;
-     bottom: 0;
-     color: $color-grey-3;
-     cursor: default;
-     font-size: 0.75rem;
-     line-height: 15px;
-     padding: 1px 5px;
-     position: absolute;
-     right: 0;
-   }
- }
+		.copyright {
+			background-color: $color-black-25;
+			bottom: 0;
+			color: $color-grey-3;
+			cursor: default;
+			font-size: .75rem;
+			line-height: 15px;
+			padding: 1px 5px;
+			position: absolute;
+			right: 0;
+		}
+	}
 
- .legend {
-   background-color: $color-dark-grey;
-   color: $color-white;
-   font-size: 0.75rem;
-   margin-bottom: 30px;
-   padding: 5px 15px;
- }
+	.legend {
+		background-color: $color-dark-grey;
+		color: $color-white;
+		font-size: .75rem;
+		margin-bottom: 30px;
+		padding: 5px 15px;
+	}
 
 
 
- /*---------------*\
+	/*---------------*\
    $ORIGINE
  \*---------------*/
- .origine {
-   margin-bottom: 30px;
+	.origine {
+		margin-bottom: 30px;
 
-   ul {
-     list-style: none;
-     margin: 0 0 10px;
-     padding: 0;
+		ul {
+			list-style: none;
+			margin: 0 0 10px;
+			padding: 0;
 
-     li {
-       display: inline;
-       font-size: 0.875rem;
-       font-weight: 700;
-       margin-bottom: 5px;
-       text-transform: uppercase;
+			li {
+				display: inline;
+				font-size: .875rem;
+				font-weight: 700;
+				margin-bottom: 5px;
+				text-transform: uppercase;
 
-       a,
-       a:focus,
-       a:hover {
-         background-color: $color-off-white;
-         display: inline-block;
-         font-weight: 400;
-         padding: 1px 4px;
-         text-decoration: none;
-         text-transform: none;
-         @include transition(all, ease, .3s);
-       }
+				a,
+				a:focus,
+				a:hover {
+					background-color: $color-off-white;
+					display: inline-block;
+					font-weight: 400;
+					padding: 1px 4px;
+					text-decoration: none;
+					text-transform: none;
+					@include transition(all, ease, .3s);
+				}
 
-       a:hover {
-         background-color: $color-dark-grey;
-         color: $color-yellow;
-       }
-     }
-   }
- }
+				a:hover {
+					background-color: $color-dark-grey;
+					color: $color-yellow;
+				}
+			}
+		}
+	}
 
 
 
- /*---------------*\
+	/*---------------*\
    $TAGS
  \*---------------*/
- .tags {
-  font-size: 0.875rem;
-  font-weight: 700;
-  margin-bottom: 30px;
-  text-transform: uppercase;
+	.tags {
+		font-size: .875rem;
+		font-weight: 700;
+		margin-bottom: 30px;
+		text-transform: uppercase;
 
-  > a,
-  > a:focus,
-  > a:hover {
-    background-color: $color-off-white;
-    color: $color-grey-1;
-    display: inline;
-    font-weight: 400;
-    margin-bottom: 5px;
-    padding: 1px 4px;
-    text-decoration: none;
-    text-transform: none;
-    @include transition(all, ease, .3s);
-  }
+		 > a,
+		 > a:focus,
+		 > a:hover {
+			background-color: $color-off-white;
+			color: $color-grey-1;
+			display: inline;
+			font-weight: 400;
+			margin-bottom: 5px;
+			padding: 1px 4px;
+			text-decoration: none;
+			text-transform: none;
+			@include transition(all, ease, .3s);
+		}
 
-  > a:hover {
-    background-color: $color-dark-grey;
-    color: $color-yellow;
-  }
- }
+		 > a:hover {
+			background-color: $color-dark-grey;
+			color: $color-yellow;
+		}
+	}
 
 
 
- /*---------------*\
+	/*---------------*\
    $ADDTHIS
  \*---------------*/
- .share {
-   margin: 0 0 15px;
+	.share {
+		margin: 0 0 15px;
 
-   @media only screen and (min-width: 1200px) {
-     padding-left: 30px;
-   }
+		@media only screen and (min-width: 1200px) {
+			padding-left: 30px;
+		}
 
-   .title {
-     border-right: 2px solid $color-grey-1;
-     display: inline-block;
-     font-family: 'Avenir Light', sans-serif;
-     font-size: 1.25rem;
-     height: 32px;
-     line-height: 32px;
-     margin: 0 9px 0 0;
-     padding-right: 15px;
-     text-transform: uppercase;
-     vertical-align: top;
+		.title {
+			border-right: 2px solid $color-grey-1;
+			display: inline-block;
+			font-family: "Avenir Light", sans-serif;
+			font-size: 1.25rem;
+			height: 32px;
+			line-height: 32px;
+			margin: 0 9px 0 0;
+			padding-right: 15px;
+			text-transform: uppercase;
+			vertical-align: top;
 
-     @media (min-width: 768px) and (max-width: 991px) {
-       display: block;
-       border: 0 none;
-       margin: 0;
-       padding: 0;
-     }
-   }
+			@media (min-width: 768px) and (max-width: 991px) {
+				display: block;
+				border: 0 none;
+				margin: 0;
+				padding: 0;
+			}
+		}
 
-   .addthis {
-     display: inline-block;
-     vertical-align: top;
+		.addthis {
+			display: inline-block;
+			vertical-align: top;
 
-     a,
-     a:focus,
-     a:hover {
-       @include transition(all, ease, .3s);
-     }
+			a,
+			a:focus,
+			a:hover {
+				@include transition(all, ease, .3s);
+			}
 
-     a:hover {
-       @include opacity(.5, 50);
-     }
-   }
- }
+			a:hover {
+				@include opacity(.5, 50);
+			}
+		}
+	}
 
 
 
- /*---------------*\
+	/*---------------*\
    $AD
  \*---------------*/
- .ad {
-   margin-bottom: 30px;
-   max-width: 100%;
-   overflow: hidden;
- }
+	.ad {
+		margin-bottom: 30px;
+		max-width: 100%;
+		overflow: hidden;
+	}
 
 
 
- /*---------------*\
+	/*---------------*\
    $ITEMS
  \*---------------*/
- .items {
+	.items {
+		article {
+			@media only screen and (max-width: 767px) {
+				border-bottom: 1px solid $color-off-white;
+				margin: 0 0 30px;
+				padding-bottom: 23px;
+			}
 
-   article {
+			@media only screen and (min-width: 768px) {
+				margin: 0 -15px 15px;
+			}
 
-     @media only screen and (max-width: 767px) {
-       border-bottom: 1px solid $color-off-white;
-       margin: 0 0 30px;
-       padding-bottom: 23px;
-     }
+			a,
+			a:focus,
+			a:hover {
+				color: $color-grey-1;
+				display: block;
+				text-decoration: none;
+				@include transition(all, ease, .3s);
 
-     @media only screen and (min-width: 768px) {
-       margin: 0 -15px 15px;
-     }
+				@media only screen and (min-width: 768px) {
+					padding: 7px 15px;
+				}
 
-     a,
-     a:focus,
-     a:hover {
-       color: $color-grey-1;
-       display: block;
-       text-decoration: none;
-       @include transition(all, ease, .3s);
+				img {
+					width: 100%;
+					@include transition(all, ease, .3s);
+				}
+			}
 
-       @media only screen and (min-width: 768px) {
-         padding: 7px 15px;
-       }
+			a:hover {
+				background: -webkit-gradient(linear, left top, right top, from(#e8e8e8), to(#d8d9d9));
+				background: linear-gradient(90deg, #e8e8e8, #d8d9d9);
 
-       img {
-         width: 100%;
-         @include transition(all, ease, .3s);
-       }
-     }
+				img {
+					-webkit-transform: scale(1.1);
+					        transform: scale(1.1);
+				}
+			}
 
-     a:hover {
-       background:         -webkit-gradient(linear, left top, right top, from(#e8e8e8), to(#d8d9d9));
-       background:         linear-gradient(90deg, #e8e8e8, #d8d9d9);
+			.img {
+				display: block;
+				margin-bottom: 15px;
+				overflow: hidden;
 
-       img {
-         -webkit-transform: scale(1.1);
-                 transform: scale(1.1);
-       }
-     }
+				@media only screen and (min-width: 768px) {
+					float: left;
+					margin: 0 15px 0 0;
+					width: 33.333%;
+				}
+			}
 
-     .img {
-       display: block;
-       margin-bottom: 15px;
-       overflow: hidden;
+			.post-meta {
+				color: $color-grey-3;
+				display: block;
+				font-size: .6875rem;
+				margin-bottom: 5px;
+				text-transform: uppercase;
 
-       @media only screen and (min-width: 768px) {
-         float: left;
-         margin: 0 15px 0 0;
-         width: 33.333%;
-       }
-     }
+				.date,
+				.hour {
+					display: inline-block;
+				}
+			}
 
-     .post-meta {
-       color: $color-grey-3;
-       display: block;
-       font-size: 0.6875rem;
-       margin-bottom: 5px;
-       text-transform: uppercase;
+			.post-title {
+				color: $color-black;
+				display: block;
+				font-family: "Avenir Next Condensed", sans-serif;
+				font-size: 1.5rem;
+				font-weight: 500;
+				line-height: 1.575rem;
+			}
 
-       .date,
-       .hour {
-         display: inline-block;
-       }
-     }
-
-     .post-title {
-       color: $color-black;
-       display: block;
-       font-family: 'Avenir Next Condensed', sans-serif;
-       font-size: 1.5rem;
-       font-weight: 500;
-       line-height: 1.575rem;
-     }
-
-     .post-desc {
-       display: block;
-       font-size: 0.9375rem;
-       line-height: 22px;
-       text-align: justify;
-     }
-   }
- }
+			.post-desc {
+				display: block;
+				font-size: .9375rem;
+				line-height: 22px;
+				text-align: justify;
+			}
+		}
+	}
 
 
 
- /*---------------*\
+	/*---------------*\
    $INSERTS
  \*---------------*/
- .inserts {
+	.inserts {
+		a,
+		a:focus,
+		a:hover {
+			background-color: $color-black;
+			color: $color-white;
+			display: block;
+			margin-bottom: 30px;
+			overflow: hidden;
+			position: relative;
 
-   a,
-   a:focus,
-   a:hover {
-     background-color: $color-black;
-     color: $color-white;
-     display: block;
-     margin-bottom: 30px;
-     overflow: hidden;
-     position: relative;
+			.content {
+				background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .25)), to(rgba(0, 0, 0, .75)));
+				background: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .75));
+				height: 100%;
+				left: 0;
+				padding: 5px 15px;
+				position: absolute;
+				text-align: center;
+				/*text-shadow: 0 0 5px $color-black-50, 0 0 10px $color-black-50, 0 0 15px $color-black-50;*/
+				top: 50%;
+				width: 100%;
+				z-index: 1;
+				@include transition(all, ease, .3s);
 
-     .content {
-       background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .25)), to(rgba(0, 0, 0, .75)));
-       background: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .75));
-       height: 100%;
-       left: 0;
-       padding: 5px 15px;
-       position: absolute;
-       text-align: center;
-       /*text-shadow: 0 0 5px $color-black-50, 0 0 10px $color-black-50, 0 0 15px $color-black-50;*/
-       top: 50%;
-       width: 100%;
-       z-index: 1;
-       @include transition(all, ease, .3s);
+				@media only screen and (max-width: 991px) {
+					top: 0;
+				}
 
-       @media only screen and (max-width: 991px) {
-         top: 0;
-       }
+				.category {
+					color: $color-white;
+					display: block;
+					font-family: "Avenir Next Condensed", sans-serif;
+					font-size: .875rem;
+					font-weight: 500;
+					line-height: 1;
+					margin: 5px 0 10px;
+					text-transform: uppercase;
 
-        .category {
-          color: $color-white;
-          display: block;
-          font-family: 'Avenir Next Condensed', sans-serif;
-          font-size: 0.875rem;
-          font-weight: 500;
-          line-height: 1;
-          margin: 5px 0 10px;
-          text-transform: uppercase;
+					@media only screen and (min-width: 1200px) {
+						font-size: 1rem;
+					}
 
-          @media only screen and (min-width: 1200px) {
-            font-size: 1rem;
-          }
+					span {
+						background-color: $color-yellow;
+						display: inline;
+						padding: 0 8px;
+						vertical-align: baseline;
+					}
+				}
 
-          span {
-            background-color: $color-yellow;
-            display: inline;
-            padding: 0px 8px;
-            vertical-align: baseline;
-          }
-        }
+				.number {
+					color: $color-yellow;
+					display: block;
+					font-size: .5rem;
+					line-height: 1;
+					margin: auto;
+					padding: 3px 5px 0;
+					text-align: center;
+					text-transform: uppercase;
+					vertical-align: middle;
+					width: 45px;
 
-       .number {
-         color: $color-yellow;
-         display: block;
-         font-size: 0.5rem;
-         line-height: 1;
-         margin: auto;
-         padding: 3px 5px 0;
-         text-align: center;
-         text-transform: uppercase;
-         vertical-align: middle;
-         width: 45px;
+					span {
+						display: block;
+						font-size: 1.125rem;
+					}
+				}
 
-         span {
-           display: block;
-           font-size: 1.125rem;
-         }
-       }
+				.title {
+					display: block;
+					font-family: "Avenir Next Condensed", sans-serif;
+					font-size: 1.75rem;
+					font-weight: 500;
+					line-height: 1;
+					margin-bottom: 15px;
+					text-transform: uppercase;
+					@include transition(all, ease, .3s);
 
-       .title {
-         display: block;
-         font-family: 'Avenir Next Condensed', sans-serif;
-         font-size: 1.75rem;
-         font-weight: 500;
-         line-height: 1;
-         margin-bottom: 15px;
-         text-transform: uppercase;
-         @include transition(all, ease, .3s);
+					@media only screen and (max-width: 1199px) {
+						font-size: 1.25rem;
+					}
+				}
 
-         @media only screen and (max-width: 1199px) {
-          font-size: 1.25rem;
-         }
-       }
+				.desc {
+					display: block;
+					font-size: .75rem;
+					line-height: 1;
+					@include opacity(0, 0);
+					@include transition(all, ease, .3s);
 
-       .desc {
-         display: block;
-         font-size: 0.75rem;
-         line-height: 1;
-         @include opacity(0, 0);
-         @include transition(all, ease, .3s);
+					@media only screen and (max-width: 991px) {
+						@include opacity(1, 100);
+					}
+				}
+			}
 
-         @media only screen and (max-width: 991px) {
-          @include opacity(1, 100);
-         }
-       }
-     }
+			img {
+				@include transition(all, ease, .3s);
+			}
+		}
 
-     img {
-       @include transition(all, ease, .3s);
-     }
-   }
+		a:hover {
+			.content {
+				top: 0;
 
-   a:hover {
+				.desc {
+					@include opacity(1, 100);
+				}
+			}
 
-     .content {
-       top: 0;
-
-       .desc {
-         @include opacity(1, 100);
-       }
-     }
-
-     img {
-       -webkit-transform: scale(1.1);
-               transform: scale(1.1);
-     }
-   }
- }
+			img {
+				-webkit-transform: scale(1.1);
+				        transform: scale(1.1);
+			}
+		}
+	}
 
 
 
-  /*---------------*\
+	/*---------------*\
     $ACCORDION
   \*---------------*/
-  .accordion {
-    margin-bottom: 30px;
+	.accordion {
+		margin-bottom: 30px;
 
-    dl {
+		dl {
+			dt {
+				font-weight: 700;
+				margin-top: 15px;
 
-      dt {
-        font-weight: 700;
-        margin-top: 15px;
+				a,
+				a:focus,
+				a:hover {
+					color: $color-grey-1;
+					text-decoration: none;
+				}
+			}
 
-        a,
-        a:focus,
-        a:hover {
-          color: $color-grey-1;
-          text-decoration: none;
-        }
-      }
+			dd {
+				padding: 5px;
+			}
+		}
 
-      dd {
-        padding: 5px;
-      }
-    }
+		.label {
+			background-color: $color-off-white;
+			color: $color-grey-1;
+			font-size: .875rem;
+			font-weight: 400;
+			height: 18px;
+			line-height: 16px;
+			padding: 1px 5px 1px 26px;
+			position: relative;
+			text-transform: uppercase;
+			-webkit-border-radius: 0;
+			   -moz-border-radius: 0;
+			        border-radius: 0;
 
-    .label {
-      background-color: $color-off-white;
-      color: $color-grey-1;
-      font-size: 0.875rem;
-      font-weight: 400;
-      height: 18px;
-      line-height: 16px;
-      padding: 1px 5px 1px 26px;
-      position: relative;
-      text-transform: uppercase;
-      -webkit-border-radius: 0;
-         -moz-border-radius: 0;
-              border-radius: 0;
-
-      .fa {
-        font-size: 1rem;
-        height: 16px;
-        left: 5px;
-        position: absolute;
-        top: 1px;
-        width: 16px;
-        @include transition(all, ease, .3s);
-      }
-    }
-    .collapsed {
-
-      .label {
-
-        .fa {
-        -webkit-transform: rotate(-90deg);
-            -ms-transform: rotate(-90deg);
-                transform: rotate(-90deg);
-        }
-      }
-    }
-  }
+			.fa {
+				font-size: 1rem;
+				height: 16px;
+				left: 5px;
+				position: absolute;
+				top: 1px;
+				width: 16px;
+				@include transition(all, ease, .3s);
+			}
+		}
+		.collapsed {
+			.label {
+				.fa {
+					-webkit-transform: rotate(-90deg);
+					    -ms-transform: rotate(-90deg);
+					        transform: rotate(-90deg);
+				}
+			}
+		}
+	}
 
 
 
- /*---------------*\
+	/*---------------*\
    $POST META
  \*---------------*/
- .post-meta {
-   color: $color-grey-3;
-   font-family: 'Avenir Light', sans-serif;
-   font-size: 0.6875rem;
-   margin-bottom: 15px;
-   text-transform: uppercase;
+	.post-meta {
+		color: $color-grey-3;
+		font-family: "Avenir Light", sans-serif;
+		font-size: .6875rem;
+		margin-bottom: 15px;
+		text-transform: uppercase;
 
-   a,
-   a:focus,
-   a:hover {
-     color: $color-grey-3;
-     text-decoration: none;
-   }
+		a,
+		a:focus,
+		a:hover {
+			color: $color-grey-3;
+			text-decoration: none;
+		}
 
-   a:hover {
-     color: $color-yellow;
-   }
+		a:hover {
+			color: $color-yellow;
+		}
 
-   .author,
-   .edit,
-   .date,
-   .hour,
-   .comments {
-     display: inline-block;
-     margin-bottom: 10px;
-     vertical-align: middle;
+		.author,
+		.edit,
+		.date,
+		.hour,
+		.comments {
+			display: inline-block;
+			margin-bottom: 10px;
+			vertical-align: middle;
 
-     + span {
-       margin-left: 10px;
-     }
+			 + span {
+				margin-left: 10px;
+			}
 
-     &.author {
-
-       a,
-       a:focus,
-       a:hover {
-         font-weight: 700;
-       }
-     }
-   }
- }
-
+			&.author {
+				a,
+				a:focus,
+				a:hover {
+					font-weight: 700;
+				}
+			}
+		}
+	}
 
 
- /*---------------*\
+
+	/*---------------*\
    $VIDEOS
  \*---------------*/
- .videos {
+	.videos {
+		a,
+		a:focus,
+		a:hover {
+			background-color: $color-black;
+			color: $color-white;
+			display: inline-block;
+			margin-bottom: 30px;
+			overflow: hidden;
+			position: relative;
 
-   a,
-   a:focus,
-   a:hover {
-     background-color: $color-black;
-     color: $color-white;
-     display: inline-block;
-     margin-bottom: 30px;
-     overflow: hidden;
-     position: relative;
+			.fa {
+				font-size: 4.375rem;
+				left: 50%;
+				margin: -35px 0 0 -35px;
+				position: absolute;
+				top: 50%;
+				z-index: 1;
+				@include opacity(.5, 50);
+			}
 
-     .fa {
-       font-size: 4.375rem;
-       left: 50%;
-       margin: -35px 0 0 -35px;
-       position: absolute;
-       top: 50%;
-       z-index: 1;
-       @include opacity(.5, 50);
-     }
+			span {
+				font-size: 1rem;
+				left: 0;
+				position: absolute;
+				text-align: center;
+				top: 50%;
+				width: 100%;
+				z-index: 2;
+				@include translate(0, -50%);
 
-     span {
-       font-size: 1rem;
-       left: 0;
-       position: absolute;
-       text-align: center;
-       top: 50%;
-       width: 100%;
-       z-index: 2;
-       @include translate(0, -50%);
+				@media only screen and (min-width: 992px) {
+					display: none;
+				}
+			}
 
-       @media only screen and (min-width: 992px){
-         display: none;
-       }
-     }
+			img {
+				width: 100%;
+				@include transition(all, ease, .3s);
 
-     img {
-       width: 100%;
-       @include transition(all, ease, .3s);
+				@media only screen and (max-width: 991px) {
+					@include opacity(.5, 50);
+				}
+			}
+		}
 
-       @media only screen and (max-width: 991px){
-        @include opacity(.5, 50);
-       }
-     }
-   }
+		a:hover {
+			span {
+				display: block;
+			}
 
-   a:hover {
-
-     span {
-       display: block;
-     }
-
-     img {
-       @include opacity(.5, 50);
-       -webkit-transform: scale(1.1);
-               transform: scale(1.1);
-     }
-   }
- }
+			img {
+				@include opacity(.5, 50);
+				-webkit-transform: scale(1.1);
+				        transform: scale(1.1);
+			}
+		}
+	}
 
 
 
- /*---------------*\
+	/*---------------*\
    $QUOTES
  \*---------------*/
- .quotes {
-   margin-bottom: 30px;
+	.quotes {
+		margin-bottom: 30px;
 
-   > ul {
+		 > ul {
+			 > li {
+				background-color: $color-off-white;
+				margin: 0 0 30px;
+				padding: 2px 2px 2px 17px;
+				position: relative;
+				@include border-radius(3px);
+				@include transition(all, ease, .3s);
 
-     > li {
-       background-color: $color-off-white;
-       margin: 0 0 30px;
-       padding: 2px 2px 2px 17px;
-       position: relative;
-       @include border-radius(3px);
-       @include transition(all, ease, .3s);
+				&::before {
+					background-image: url("../img/icon/list-style-arrow.png");
+					content: "";
+					height: 11px;
+					left: 2px;
+					position: absolute;
+					top: 7px;
+					width: 9px;
+				}
 
-       &::before {
-         background-image: url("../img/icon/list-style-arrow.png");
-         content: "";
-         height: 11px;
-         left: 2px;
-         position: absolute;
-         top: 7px;
-         width: 9px;
-       }
+				&:hover {
+					background: -webkit-gradient(linear, left top, right top, from(#e8e8e8), to(#d8d9d9));
+					background: linear-gradient(90deg, #e8e8e8, #d8d9d9);
+					cursor: pointer;
+				}
 
-       &:hover {
-         background:         -webkit-gradient(linear, left top, right top, from(#e8e8e8), to(#d8d9d9));
-         background:         linear-gradient(90deg, #e8e8e8, #d8d9d9);
-         cursor: pointer;
-       }
+				 > ul {
+					margin: 0;
+				}
+			}
+		}
 
-       > ul {
-         margin: 0;
-       }
-     }
-   }
+		blockquote {
+			 > ul {
+				 > li {
+					color: $color-grey-3;
+					font-family: "Avenir Next Condensed";
+					font-size: 1.25rem;
+					font-weight: 500;
+					line-height: 30px;
 
-   blockquote {
-
-     > ul {
-
-       > li {
-         color: $color-grey-3;
-         font-family: 'Avenir Next Condensed';
-         font-size: 1.25rem;
-         font-weight: 500;
-         line-height: 30px;
-
-         @media only screen and (min-width: 992px) {
-           font-size: 1.875rem;
-           line-height: 44px;
-         }
-       }
-     }
-   }
- }
+					@media only screen and (min-width: 992px) {
+						font-size: 1.875rem;
+						line-height: 44px;
+					}
+				}
+			}
+		}
+	}
 
 
 
- /*---------------*\
+	/*---------------*\
    $SIMILAR ITEMS
  \*---------------*/
- .similar-items {
-   font-size: 0.875rem;
-   font-weight: 700;
-   margin-bottom: 30px;
-   text-transform: uppercase;
+	.similar-items {
+		font-size: .875rem;
+		font-weight: 700;
+		margin-bottom: 30px;
+		text-transform: uppercase;
 
-   > a,
-   > a:focus,
-   > a:hover {
-     background-color: $color-off-white;
-     color: $color-grey-1;
-     display: inline;
-     font-weight: 400;
-     margin-bottom: 5px;
-     padding: 1px 4px;
-     text-decoration: none;
-     text-transform: none;
-     @include transition(all, ease, .3s);
-   }
+		 > a,
+		 > a:focus,
+		 > a:hover {
+			background-color: $color-off-white;
+			color: $color-grey-1;
+			display: inline;
+			font-weight: 400;
+			margin-bottom: 5px;
+			padding: 1px 4px;
+			text-decoration: none;
+			text-transform: none;
+			@include transition(all, ease, .3s);
+		}
 
-   > a:hover {
-     background-color: $color-dark-grey;
-     color: $color-yellow;
-   }
+		 > a:hover {
+			background-color: $color-dark-grey;
+			color: $color-yellow;
+		}
 
-   article {
-     margin: 10px 0 5px;
+		article {
+			margin: 10px 0 5px;
 
-     a,
-     a:focus,
-     a:hover {
-       color: $color-grey-1;
-       display: block;
-       padding: 7px 15px;
-       text-decoration: none;
+			a,
+			a:focus,
+			a:hover {
+				color: $color-grey-1;
+				display: block;
+				padding: 7px 15px;
+				text-decoration: none;
 
-       @media only screen and (min-width: 992px) {
-         padding: 5px;
-       }
+				@media only screen and (min-width: 992px) {
+					padding: 5px;
+				}
 
-       .img {
-         display: block;
-         float: left;
-         margin-right: 15px;
-         max-width: 90px;
-         overflow: hidden;
+				.img {
+					display: block;
+					float: left;
+					margin-right: 15px;
+					max-width: 90px;
+					overflow: hidden;
 
-         @media only screen and (min-width: 992px) {
-           float: none;
-           margin-right: 0;
-           max-width: inherit;
-         }
+					@media only screen and (min-width: 992px) {
+						float: none;
+						margin-right: 0;
+						max-width: inherit;
+					}
 
-         img {
-           @include transition(all, ease, .3s);
-         }
-       }
-     }
+					img {
+						@include transition(all, ease, .3s);
+					}
+				}
+			}
 
-     a:hover {
-       background:         -webkit-gradient(linear, left top, right top, from(#e8e8e8), to(#d8d9d9));
-       background:         linear-gradient(90deg, #e8e8e8, #d8d9d9);
+			a:hover {
+				background: -webkit-gradient(linear, left top, right top, from(#e8e8e8), to(#d8d9d9));
+				background: linear-gradient(90deg, #e8e8e8, #d8d9d9);
 
-       @media only screen and (min-width: 992px) {
-         background:         -webkit-gradient(linear, left top, left bottom, from(#e8e8e8), to(#d8d9d9));
-         background:         linear-gradient(#e8e8e8, #d8d9d9);
-       }
+				@media only screen and (min-width: 992px) {
+					background: -webkit-gradient(linear, left top, left bottom, from(#e8e8e8), to(#d8d9d9));
+					background: linear-gradient(#e8e8e8, #d8d9d9);
+				}
 
-       .img {
+				.img {
+					img {
+						-webkit-transform: scale(1.1) rotate(.01deg);
+						        transform: scale(1.1) rotate(.01deg);
+					}
+				}
+			}
 
-         img {
-           -webkit-transform: scale(1.1) rotate(0.01deg);
-                   transform: scale(1.1) rotate(0.01deg);
-         }
-       }
-     }
-
-     .post-title {
-       display: block;
-       font-family: 'Avenir Next Condensed', sans-serif;
-       font-size: 1rem;
-       font-weight: 500;
-       line-height: 24px;
-       margin: 0;
-       padding: 10px 10px 5px;
-       text-transform: none;
-     }
-   }
- }
-
+			.post-title {
+				display: block;
+				font-family: "Avenir Next Condensed", sans-serif;
+				font-size: 1rem;
+				font-weight: 500;
+				line-height: 24px;
+				margin: 0;
+				padding: 10px 10px 5px;
+				text-transform: none;
+			}
+		}
+	}
 
 
- /*---------------*\
+
+	/*---------------*\
    $BROADCASTS
  \*---------------*/
- .broadcasts {
+	.broadcasts {
+		.table {
+			margin: 0 0 30px;
 
-   .table {
-     margin: 0 0 30px;
+			 > thead {
+				 > tr {
+					 > th {
+						color: $color-grey-1;
+						font-size: .875rem;
+						font-weight: 400;
+						text-transform: uppercase;
+					}
+				}
+			}
 
-     > thead {
+			 > tbody {
+				 > tr {
+					 > td {
+						font-size: .75rem;
 
-       > tr {
+						&:first-child {
+							color: $color-grey-3;
+							text-transform: capitalize;
+							white-space: nowrap;
+							width: 200px;
+						}
 
-         > th {
-           color: $color-grey-1;
-           font-size: 0.875rem;
-           font-weight: 400;
-           text-transform: uppercase;
-         }
-       }
-     }
+						&.hour {
+							font-weight: 700;
+							text-align: center;
+						}
 
-     > tbody {
+						&.channel {
+							text-align: center;
+						}
 
-       > tr {
+						a,
+						a:focus,
+						a:hover {
+							background-image: -webkit-gradient(linear, left top, left bottom, from($color-yellow), to($color-yellow));
+							background-image: linear-gradient(180deg, $color-yellow, $color-yellow);
+							background-position: 0 1rem;
+							background-repeat: no-repeat;
+							background-size: 100% 100%;
+							color: $color-grey-1;
+							text-decoration: none;
+							@include transition(all, ease, .1s);
+						}
 
-         > td {
-           font-size: 0.75rem;
-
-           &:first-child {
-             color: $color-grey-3;
-             white-space: nowrap;
-             width: 76px;
-           }
-
-           &.hour {
-             font-weight: 700;
-             text-align: center;
-           }
-
-           &.channel {
-             text-align: center;
-           }
-
-           a,
-           a:focus,
-           a:hover {
-             background-image:      -webkit-gradient(linear, left top, left bottom, from($color-yellow), to($color-yellow));
-             background-image:      linear-gradient(180deg, $color-yellow, $color-yellow);
-             background-position: 0 1rem;
-             background-repeat: no-repeat;
-             background-size: 100% 100%;
-             color: $color-grey-1;
-             text-decoration: none;
-             @include transition(all, ease, .1s);
-           }
-
-           a:hover {
-             background-position: 0 0;
-           }
-         }
-       }
-     }
-   }
- }
+						a:hover {
+							background-position: 0 0;
+						}
+					}
+				}
+			}
+		}
+	}
 
 
 
- /*---------------*\
+	/*---------------*\
    $GIFTS
  \*---------------*/
- .gifs {
+	.gifs {
+		.embed-responsive {
+			margin-bottom: 30px;
 
-   .embed-responsive {
-     margin-bottom: 30px;
-
-     img {
-       left: 0;
-       position: absolute;
-       top: 50%;
-       width: 100%;
-       @include translate(0, -50%);
-     }
-   }
- }
-
-
-
+			img {
+				left: 0;
+				position: absolute;
+				top: 50%;
+				width: 100%;
+				@include translate(0, -50%);
+			}
+		}
+	}
 }

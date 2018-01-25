@@ -57,39 +57,33 @@
 					<table class="table table-hover table-condensed">
 						<thead>
 							<tr>
-								<th>Date</th>
-								<th class="text-center">Heure</th>
+								<th>Date &amp; heure</th>
 								<th>Épisode</th>
 								<th class="text-center">Chaîne</th>
 							</tr>
 						</thead>
 						<tbody>
 							<?php while( have_rows('mf_broadcasts') ): the_row();
-								$date = get_field('mf_broadcasts_date', false, false);
-								$date = new DateTime($date);
+								$date = get_sub_field('mf_broadcasts_date');
 								$episode = get_sub_field('mf_broadcasts_episode');
 								$channel = get_sub_field('mf_broadcasts_channel');
 							?>
 							<tr itemscope="" itemtype="http://schema.org/Event">
 								<td>
-									<meta itemprop="startDate" content="<?php echo $date->format('c'); ?>">
-									<?php echo $date->format('l j F Y'); ?>
+									<meta itemprop="startDate" content="<?php echo $date; ?>">
+									<?php echo $date; ?>
 								</td>
-								<td class="hour"><?php echo $date->format('g'); ?>H<?php echo $date->format('i'); ?></td>
 								<td>
-									<?php
-										$posts = get_field('mf_broadcasts_episode');
-										if( $posts ):
-									?>
-										<?php foreach( $posts as $post): ?>
-										<a href="<?php echo get_permalink( $post->ID ); ?>" title="<?php echo get_the_title( $post->ID ); ?>" itemprop="url"><span itemprop="name"><?php echo get_the_title( $post->ID ); ?></span></a>
-										<?php endforeach; ?>
-									<?php endif; ?>
+									<?php foreach( $episode as $ep ): ?>
+									<a href="<?php echo get_permalink( $ep->ID ); ?>" title="<?php echo get_the_title( $ep->ID ); ?>" itemprop="url">
+										<span itemprop="name"><?php echo get_the_title( $ep->ID ); ?></span>
+									</a>
+									<?php endforeach; ?>
 								</td>
 								<td class="channel" itemprop="location" itemscope="" itemtype="http://schema.org/Place">
 									<span class="hidden" itemprop="name">Malcolm</span>
 									<span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-										<span itemprop="addressLocality"><?php echo $channel; ?></span>
+										<span itemprop="addressLocality"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/<?php echo $channel; ?>.svg" alt="" width="24" /></span>
 										<span class="hidden" itemprop="addressRegion">FRANCE</span>
 									</span>
 								</td>
