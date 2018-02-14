@@ -135,14 +135,14 @@ function malcolmfrance_header_scripts()
 }
 
 //Making jQuery Google API
-function modify_jquery() {
+function modify_jquery()
+{
     if (!is_admin()) {
         wp_deregister_script('jquery');
-        wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', false, '2.1.4');
-        wp_enqueue_script('jquery');
+        wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array(), '2.1.4');
     }
 }
-add_action('init', 'modify_jquery');
+add_action('wp_enqueue_scripts', 'modify_jquery');
 
 // Load Malcolm France conditional scripts
 function malcolmfrance_conditional_scripts()
