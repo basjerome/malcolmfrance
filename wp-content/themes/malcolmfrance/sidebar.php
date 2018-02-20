@@ -19,53 +19,61 @@
 				<?php endwhile; ?>
 			<?php endif; ?>
 		</section>
-		<section class="poll">
-			<h4 class="title"><span>Sondage</span></h4>
-			<p>Êtes-vous fan de la série Malcolm ?</p>
-			<ul>
-				<li><label><input name="poll" type="radio"> Yes</label></li>
-				<li><label><input name="poll" type="radio"> No</label></li>
-				<li><label><input name="poll" type="radio"> Maybe</label></li>
-				<li><label><input name="poll" type="radio"> I don't know</label></li>
-				<li><label><input name="poll" type="radio"> Can you repeat the question ?</label></li>
-			</ul>
-			<p class="text-center">
-				<a href="#" class="btn btn-yellow" title="Sondage Malcolm">Voter</a>
-			</p>
-		</section>
-		<section class="poll">
-			<h4 class="title"><span>Sondage</span></h4>
-			<p>Êtes-vous fan de la série Malcolm ?</p>
-			<div class="progress">
-				<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-					<span>84% Yes</span>
-				</div>
-			</div>
-			<div class="progress">
-				<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" style="width: 1%">
-					<span>1% No</span>
-				</div>
-			</div>
-			<div class="progress">
-				<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" style="width: 1%">
-					<span>1% Maybe</span>
-				</div>
-			</div>
-			<div class="progress">
-				<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" style="width: 1%">
-					<span>1% I don't know</span>
-				</div>
-			</div>
-			<div class="progress">
-				<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="13" aria-valuemin="0" aria-valuemax="100" style="width: 13%">
-					<span>13% Can you repeat the question ?</span>
-				</div>
-			</div>
-			<p class="text-center">
-				<a href="#" class="btn btn-yellow" title="Sondage Malcolm">Tous les sondages</a>
-			</p>
-		</section>
+		<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-1')) ?>
+
+
+
+
+
+		<?php /* if( have_rows('mf_broadcasts') ) : */ ?>
 		<section class="broadcasts">
+			<h4 class="title"><span>Diffusions</span></h4>
+			<div class="table-responsive">
+				<table class="table table-hover table-condensed">
+					<thead>
+						<tr>
+							<th>Date &amp; heure</th>
+							<th>Épisode</th>
+							<th class="text-center">Chaîne</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php while( have_rows('mf_broadcasts') ): the_row();
+							$date = get_sub_field('mf_broadcasts_date');
+							$episode = get_sub_field('mf_broadcasts_episode');
+							$channel = get_sub_field('mf_broadcasts_channel');
+						?>
+						<tr itemscope="" itemtype="http://schema.org/Event">
+							<td>
+								<meta itemprop="startDate" content="<?php echo $date; ?>">
+								<?php echo $date; ?>
+							</td>
+							<td>
+								<?php foreach( $episode as $ep ): ?>
+								<a href="<?php echo get_permalink( $ep->ID ); ?>" title="<?php echo get_the_title( $ep->ID ); ?>" itemprop="url">
+									<span itemprop="name"><?php echo get_the_title( $ep->ID ); ?></span>
+								</a>
+								<?php endforeach; ?>
+							</td>
+							<td class="channel" itemprop="location" itemscope="" itemtype="http://schema.org/Place">
+								<span class="hidden" itemprop="name">Malcolm</span>
+								<span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+									<span itemprop="addressLocality"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/<?php echo $channel; ?>.svg" alt="" width="24" /></span>
+									<span class="hidden" itemprop="addressRegion">FRANCE</span>
+								</span>
+							</td>
+						</tr>
+						<?php endwhile; ?>
+					</tbody>
+				</table>
+			</div>
+			<div class="text-center">
+				<a href="<?php echo home_url(); ?>/category/actualites/diffusions/" class="btn btn-yellow" title="Diffusions Malcolm">Toutes les diffusions</a>
+			</div>
+		</section>
+		<?php /* endif; */ ?>
+
+		<!--section class="broadcasts">
 			<h4 class="title"><span>Diffusions</span></h4>
 			<div class="clearfix">
 				<img src="img/bkg/broadcasts.png" alt="" class="img-responsive" />
@@ -129,7 +137,12 @@
 			<div class="text-center">
 				<a href="#" class="btn btn-yellow" title="Diffusions Malcolm">Toutes les diffusions</a>
 			</div>
-		</section>
+		</section-->
+
+
+
+
+
 		<section class="shop">
 			<h4 class="title"><span>Boutique</span></h4>
 			<a href="#" class="clearfix" title="Malcolm : l'intégrale de la saison 1 &Eacute;dition POP-UP">
@@ -160,6 +173,5 @@
 			(adsbygoogle = window.adsbygoogle || []).push({});
 			</script>
 		</section>
-		<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-1')) ?>
 	</aside><!-- /sidebar end -->
 </div><!-- /clearfix end -->

@@ -2190,15 +2190,16 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 				return apply_filters( "{$prefix}output_option", '', $args );
 			}
 			if ( in_array( $options['type'], array(
-					'multiselect',
-					'select',
-					'multicheckbox',
-					'radio',
-					'checkbox',
-					'textarea',
-					'text',
-					'submit',
-					'hidden',
+				'multiselect',
+				'select',
+				'multicheckbox',
+				'radio',
+				'checkbox',
+				'textarea',
+				'text',
+				'submit',
+				'hidden',
+				'date',
 				) ) && is_string( $value )
 			) {
 				$value = esc_attr( $value );
@@ -2212,6 +2213,9 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 			}
 			if ( isset( $opts['id'] ) ) {
 				$attr .= " id=\"{$opts['id']}\" ";
+			}
+			if ( isset( $options['required'] ) && true === $options['required'] ) {
+				$attr .= ' required';
 			}
 			switch ( $options['type'] ) {
 				case 'multiselect':
@@ -2249,6 +2253,10 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 				case 'esc_html':
 					$buf .= "<pre>" . esc_html( $value ) . "</pre>\n";
 					break;
+				case 'date':
+					// firefox and IE < 11 do not have support for HTML5 date, so we will fall back to the datepicker.
+					wp_enqueue_script( 'jquery-ui-datepicker' );
+					// fall through.
 				default:
 					$buf .= "<input name='$name' type='{$options['type']}' $attr value='$value'>\n";
 			}

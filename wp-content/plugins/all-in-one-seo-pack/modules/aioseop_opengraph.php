@@ -640,7 +640,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 
 			// Only ping Facebook if Social SEO is enabled on this post type.
 			if ( $this->option_isset( 'types' ) && is_array( $this->options['aiosp_opengraph_types'] ) && in_array( $current_post_type, $this->options['aiosp_opengraph_types'] ) ) {
-				$post_url = get_permalink( $post->ID );
+				$post_url = aioseop_get_permalink( $post->ID );
 				$endpoint = sprintf( 'https://graph.facebook.com/?%s', http_build_query( array(
 					'id'     => $post_url,
 					'scrape' => true,
@@ -652,19 +652,19 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 		/**
 		 * Forces FaceBook OpenGraph refresh on update.
 		 *
-		 * @param $post_ID
+		 * @param $post_id
 		 * @param $post_after
 		 *
 		 * @see   https://developers.facebook.com/docs/sharing/opengraph/using-objects#update
 		 * @since 2.3.11
 		 */
-		function force_fb_refresh_update( $post_ID, $post_after ) {
+		function force_fb_refresh_update( $post_id, $post_after ) {
 
 			$current_post_type = get_post_type();
 
 			// Only ping Facebook if Social SEO is enabled on this post type.
 			if ( 'publish' === $post_after->post_status && $this->option_isset( 'types' ) && is_array( $this->options['aiosp_opengraph_types'] ) && in_array( $current_post_type, $this->options['aiosp_opengraph_types'] ) ) {
-				$post_url = get_permalink( $post_ID );
+				$post_url = aioseop_get_permalink( $post_id );
 				$endpoint = sprintf( 'https://graph.facebook.com/?%s', http_build_query( array(
 					'id'     => $post_url,
 					'scrape' => true,

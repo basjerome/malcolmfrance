@@ -1405,7 +1405,7 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 			$url = apply_filters( 'aioseop_canonical_url', $url );
 		}
 		if ( ! $url ) {
-			$url = get_permalink();
+			$url = aioseop_get_permalink();
 		}
 
 		$title       = $this->apply_cf_fields( $title );
@@ -2675,7 +2675,7 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 					return false;
 			}
 		} elseif ( $query->is_home && ( get_option( 'show_on_front' ) == 'page' ) && ( $pageid = get_option( 'page_for_posts' ) ) ) {
-			$link = get_permalink( $pageid );
+			$link = aioseop_get_permalink( $pageid );
 		} elseif ( is_front_page() || ( $query->is_home && ( get_option( 'show_on_front' ) != 'page' || ! get_option( 'page_for_posts' ) ) ) ) {
 			if ( function_exists( 'icl_get_home_url' ) ) {
 				$link = icl_get_home_url();
@@ -2684,7 +2684,7 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 			}
 		} elseif ( ( $query->is_single || $query->is_page ) && $haspost ) {
 			$post = $query->posts[0];
-			$link = get_permalink( $post->ID );
+			$link = aioseop_get_permalink( $post->ID );
 		} elseif ( $query->is_author && $haspost ) {
 			$author = get_userdata( get_query_var( 'author' ) );
 			if ( false === $author ) {

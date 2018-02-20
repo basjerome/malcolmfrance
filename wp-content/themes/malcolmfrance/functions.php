@@ -218,10 +218,10 @@ if (function_exists('register_sidebar'))
         'name' => __('Sidebar', 'malcolmfrance'),
         'description' => __('Géstion des éléments de la sidebar', 'malcolmfrance'),
         'id' => 'widget-area-1',
-        'before_widget' => '<div id="%1$s" class="%2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>'
+        'before_widget' => '<section id="%1$s" class="%2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h4 class="title"><span>',
+        'after_title' => '</span></h4>'
     ));
 
     // Define Sidebar Widget Area 2
@@ -231,8 +231,8 @@ if (function_exists('register_sidebar'))
         'id' => 'widget-area-2',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>'
+        'before_title' => '<h4 class="title">',
+        'after_title' => '</h4>'
     ));
 }
 

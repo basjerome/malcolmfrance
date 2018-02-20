@@ -64,7 +64,7 @@ if ( ! class_exists( 'aioseop_google_analytics' ) ) {
 				) ) {
 					$autotrack = apply_filters(
 						'aiosp_google_autotrack',
-						'https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.0/autotrack.js'
+						AIOSEOP_PLUGIN_URL . 'public/js/autotrack.js'
 					);
 					?><script async src="<?php echo $autotrack ?>"></script>
 <?php // Requested indent #921 

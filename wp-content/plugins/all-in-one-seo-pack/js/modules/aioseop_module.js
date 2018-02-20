@@ -708,3 +708,17 @@ jQuery( document ).ready(function() {
             return false;
     });
 });
+
+
+jQuery(document).ready( function() {
+    // TODO: consider moving EVERYTHING that needs ready() to this function
+    initAll(jQuery);
+});
+
+function initAll($){
+    if ( $('.aiseop-date').length > 0 && $('.aiseop-date').eq(0).prop('type').toLowerCase() === 'text' ) {
+        $('.aiseop-date').datepicker({
+            dateFormat: "yy-mm-dd"
+        });
+    }
+}

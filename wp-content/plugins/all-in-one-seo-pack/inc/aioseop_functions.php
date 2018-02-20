@@ -8,6 +8,22 @@
  * @version 2.3.13
  */
 
+if ( ! function_exists( 'aioseop_get_permalink' ) ) {
+	/**
+	 * Support UTF8 URLs.
+	 *
+	 * @param int|object|null $post_id The post.
+	 */
+	function aioseop_get_permalink( $post_id = null ) {
+		if ( is_null( $post_id ) ) {
+			global $post;
+			$post_id = $post;
+		}
+
+		return urldecode( get_permalink( $post_id ) );
+	}
+}
+
 if ( ! function_exists( 'aioseop_load_modules' ) ) {
 	/**
 	 * Load the module manager.
@@ -406,39 +422,50 @@ function aioseop_ajax_update_oembed() {
 if ( ! function_exists( 'aioseop_ajax_save_url' ) ) {
 
 	function aioseop_ajax_save_url() {
+		$valid   = true;
 		aioseop_ajax_init();
 		$options = Array();
 		parse_str( $_POST['options'], $options );
 		foreach ( $options as $k => $v ) {
+			// all values are mandatory while adding to the sitemap.
+			// this should work in the same way for news and video sitemaps too, but tackling only regular sitemaps for now.
+			if ( 'sitemap_addl_pages' === $_POST['settings'] && empty( $v ) ) {
+				$valid    = false;
+				break;
+			}
 			$_POST[ $k ] = $v;
 		}
-		$_POST['action'] = 'aiosp_update_module';
-		global $aiosp, $aioseop_modules;
-		aioseop_load_modules();
-		$aiosp->admin_menu();
-		if ( ! empty( $_POST['settings'] ) && ( $_POST['settings'] === 'video_sitemap_addl_pages' ) ) {
-			$module = $aioseop_modules->return_module( 'All_in_One_SEO_Pack_Video_Sitemap' );
-		} elseif ( ! empty( $_POST['settings'] ) && ( $_POST['settings'] === 'news_sitemap_addl_pages' ) ) {
-			$module = $aioseop_modules->return_module( 'All_in_One_SEO_Pack_News_Sitemap' );
+		if ( $valid ) {
+			$_POST['action'] = 'aiosp_update_module';
+			global $aiosp, $aioseop_modules;
+			aioseop_load_modules();
+			$aiosp->admin_menu();
+			if ( ! empty( $_POST['settings'] ) && ( $_POST['settings'] === 'video_sitemap_addl_pages' ) ) {
+				$module = $aioseop_modules->return_module( 'All_in_One_SEO_Pack_Video_Sitemap' );
+			} elseif ( ! empty( $_POST['settings'] ) && ( $_POST['settings'] === 'news_sitemap_addl_pages' ) ) {
+				$module = $aioseop_modules->return_module( 'All_in_One_SEO_Pack_News_Sitemap' );
+			} else {
+				$module = $aioseop_modules->return_module( 'All_in_One_SEO_Pack_Sitemap' );
+			}
+			$_POST['location'] = null;
+			$_POST['Submit']   = 'ajax';
+			$module->add_page_hooks();
+			$prefix = $module->get_prefix();
+			$_POST  = $module->get_current_options( $_POST, null );
+			$module->handle_settings_updates( null );
+			$options = $module->get_current_options( Array(), null );
+			$output  = $module->display_custom_options( '', Array(
+				'name'  => $prefix . 'addl_pages',
+				'type'  => 'custom',
+				'save'  => true,
+				'value' => $options[ $prefix . 'addl_pages' ],
+				'attr'  => '',
+			) );
+			$output  = str_replace( "'", "\'", $output );
+			$output  = str_replace( "\n", '\n', $output );
 		} else {
-			$module = $aioseop_modules->return_module( 'All_in_One_SEO_Pack_Sitemap' );
+			$output   = __( 'All values are mandatory.', 'all-in-one-seo-pack' );
 		}
-		$_POST['location'] = null;
-		$_POST['Submit']   = 'ajax';
-		$module->add_page_hooks();
-		$prefix = $module->get_prefix();
-		$_POST  = $module->get_current_options( $_POST, null );
-		$module->handle_settings_updates( null );
-		$options = $module->get_current_options( Array(), null );
-		$output  = $module->display_custom_options( '', Array(
-			'name'  => $prefix . 'addl_pages',
-			'type'  => 'custom',
-			'save'  => true,
-			'value' => $options[ $prefix . 'addl_pages' ],
-			'attr'  => '',
-		) );
-		$output  = str_replace( "'", "\'", $output );
-		$output  = str_replace( "\n", '\n', $output );
 		die( sprintf( AIOSEOP_AJAX_MSG_TMPL, $output ) );
 	}
 }
@@ -602,6 +629,10 @@ if ( ! function_exists( 'aioseop_ajax_save_settings' ) ) {
 			$output = '<div id="aioseop_settings_header"><div id="message" class="updated fade"><p>' . $output . '</p></div></div><style>body.all-in-one-seo_page_all-in-one-seo-pack-pro-aioseop_feature_manager .aioseop_settings_left { margin-top: 45px !important; }</style>';
 		} else {
 			$output = '<div id="aioseop_settings_header"><div id="message" class="updated fade"><p>' . $output . '</p></div></div><style>body.all-in-one-seo_page_all-in-one-seo-pack-aioseop_feature_manager .aioseop_settings_left { margin-top: 45px !important; }</style>';
+		}
+
+		if ( defined( 'AIOSEOP_UNIT_TESTING' ) ) {
+			return;
 		}
 
 		die( sprintf( AIOSEOP_AJAX_MSG_TMPL, $output ) );
