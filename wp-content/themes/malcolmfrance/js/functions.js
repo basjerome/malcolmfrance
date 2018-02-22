@@ -400,7 +400,7 @@ function contactInit(){
   if( $(".form-contact").length ){
     $('#formOtherSubject').hide();
     $('#formSubject').change(function(e){
-      if( $(this).val() == 'other' ) {
+      if( $(this).val() == 'Autre : préciser' ) {
         $('#formOtherSubject').fadeIn();
       }
       else {

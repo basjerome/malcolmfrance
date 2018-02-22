@@ -30,13 +30,6 @@
 		<meta name="twitter:description" content="<?php bloginfo('description'); ?>">
 		<meta name="twitter:image" content="<?php echo get_template_directory_uri(); ?>/img/page/default.jpg">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-		<script src="js/ie10-viewport-bug-workaround.js" type="text/javascript"></script>
-		<!-- Malcolm France shim and Respond.js IE8 support of Malcolm France elements and media queries -->
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/malcolmfranceshiv/3.7.2/malcolmfranceshiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
 		<script>
 			// conditionizr.com
 			// configure environment tests
@@ -47,7 +40,7 @@
 		</script>
 	</head>
 	<?php
-		$var = array( 
+		$var = array(
 			'1' => array('1', '', 'Et voilà,<br /> à force de courir<br /> derrière un ballon,<br /> vous vous êtes perdu !'), 
 			'2' => array('2', 'alternative', 'Pas la peine de<br /> demander votre chemin<br /> à un épouvantail...<br /> Vous êtes perdu !'),
 			'3' => array('3', '', 'Et voilà,<br /> à force de courir<br /> derrière un ballon,<br /> vous vous êtes perdu !')
@@ -90,19 +83,7 @@
 						<h4 class="modal-title" id="myModalLabel">Cafter une erreur sur le site</h4>
 					</div>
 					<div class="modal-body">
-						<form>
-							<div class="form-group">
-								<label for="inputError">Erreur rencontrée</label>
-								<textarea class="form-control" rows="3"></textarea>
-							</div>
-							<div class="form-group">
-								<label for="inputTarget">Page recherchée</label>
-								<input type="text" class="form-control" id="inputTarget" placeholder="Lien de la page : http://www.malcolm-france.com/..." />
-							</div>
-							<div class="form-group">
-								<button type="submit" class="btn btn-yellow">Envoyer</button>
-							</div>
-						</form>
+						<?php echo do_shortcode('[contact-form-7 id="644" title="404"]'); ?>
 					</div>
 				</div>
 			</div>
