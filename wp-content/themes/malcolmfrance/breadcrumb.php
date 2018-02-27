@@ -1,5 +1,5 @@
 <?php
-	if (is_page() && !is_front_page() || is_single() || is_category()) {
+	if (is_page() && !is_front_page() || is_single() || is_category() || is_search()) {
 ?>
 	<ul class="breadcrumb">
 		<li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="">
@@ -43,6 +43,9 @@
 			}
 			if (is_page() || is_single()) {
 				echo '<li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><span itemprop="title">'.the_title('', '', false).'</span></li>';
+			}
+			if (is_search()) {
+				echo '<li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><span itemprop="title">Résultat de la recherche</span></li>';
 			}
 		?>
 	</ul>
