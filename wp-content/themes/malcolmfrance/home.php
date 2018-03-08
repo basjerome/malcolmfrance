@@ -185,117 +185,74 @@
       <section class="gifs">
         <h2 class="title-highlight"><span>Gifs</span></h2>
         <div class="embed-responsive embed-responsive-16by9">
-          <img src="img/gif/s01e08-dewey-01.gif" alt="" class="img-responsive" data-static="img/gif/s01e08-dewey-01.gif" data-animated="img/gif/s01e08-dewey-01.gif">
+          <img src="https://media0.giphy.com/media/13PZ0dKw1J3LzO/giphy.gif" alt="" class="img-responsive" data-static="https://media0.giphy.com/media/13PZ0dKw1J3LzO/giphy.gif" data-animated="https://media0.giphy.com/media/13PZ0dKw1J3LzO/giphy.gif">
         </div>
         <div class="share">
           <h5 class="title">Partager</h5>
-          <div class="addthis addthis_sharing_toolbox" data-url="http://malcolm-france.com/v3/site/img/gif/s01e08-dewey-01.gif" data-title="Gif Malcolm | Dewey vs nain de jardin"></div>
+          <div class="addthis addthis_sharing_toolbox" data-url="https://media0.giphy.com/media/13PZ0dKw1J3LzO/giphy.gif" data-title="Gif Malcolm | Dewey vs nain de jardin"></div>
         </div>
         <div class="text-center">
           <a href="#" class="btn btn-yellow" title=""><i class="fa fa-plus-circle" aria-hidden="true"></i> Tous les gifs</a>
         </div>
       </section>
     </div>
+
+
+
+
+
     <section class="broadcasts col-md-6 col-table-cell clearfix">
       <h2 class="title-highlight"><span>Diffusion télé</span></h2>
-      <h3 class="subtitle">Jeudi 1er septembre 2016</h3>
+      <?php if( have_rows('mf_broadcasts', 652) ) : ?>
       <div class="table-responsive">
-        <table class="table table-hover table-condensed">
-          <tbody>
-            <tr>
-              <td class="hour">12h50</td>
-              <td><a href="#" title="" >1.01 – "Je ne suis pas un monstre"</a></td>
-              <td class="channel">W9</td>
-            </tr>
-            <tr>
-              <td class="hour">13h20</td>
-              <td><a href="#" title="">1.02 – "Alerte rouge"</a></td>
-              <td class="channel">W9</td>
-            </tr>
-            <tr>
-              <td class="hour">13h50</td>
-              <td><a href="#" title="">1.03 – "Seuls à la maison"</a></td>
-              <td class="channel">W9</td>
-            </tr>
-            <tr>
-              <td class="hour">14h20</td>
-              <td><a href="#" title="">1.04 – "Honte"</a></td>
-              <td class="channel">W9</td>
-            </tr>
-            <tr>
-              <td class="hour">14h50</td>
-              <td><a href="#" title="">1.07 – "La petite évasion"</a></td>
-              <td class="channel">W9</td>
-            </tr>
-            <tr>
-              <td class="hour">15h20</td>
-              <td><a href="#" title="">1.08 – "Panique au pique-nique"</a></td>
-              <td class="channel">W9</td>
-            </tr>
-            <tr>
-              <td class="hour">15h45</td>
-              <td><a href="#" title="">1.09 – "Ma mère, ce héros"</a></td>
-              <td class="channel">W9</td>
-            </tr>
-            <tr>
-              <td class="hour">16h15</td>
-              <td><a href="#" title="">2.02 – "Il n'y a pas d'heure pour Halloween"</a></td>
-              <td class="channel">W9</td>
-            </tr>
-          </tbody>
-        </table>
+				<table class="table table-hover table-condensed">
+					<thead>
+						<tr>
+							<th>Date &amp; heure</th>
+							<th>Épisode</th>
+							<th class="text-center">Chaîne</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php while( have_rows('mf_broadcasts', 652) ): the_row();
+							$date = get_sub_field('mf_broadcasts_date');
+							$episode = get_sub_field('mf_broadcasts_episode');
+							$channel = get_sub_field('mf_broadcasts_channel');
+						?>
+						<tr itemscope="" itemtype="http://schema.org/Event">
+							<td>
+								<meta itemprop="startDate" content="<?php echo $date; ?>">
+								<?php echo $date; ?>
+							</td>
+							<td>
+								<?php foreach( $episode as $ep ): ?>
+								<a href="<?php echo get_permalink( $ep->ID ); ?>" title="<?php echo get_the_title( $ep->ID ); ?>" itemprop="url">
+									<span itemprop="name"><?php echo get_the_title( $ep->ID ); ?></span>
+								</a>
+								<?php endforeach; ?>
+							</td>
+							<td class="channel" itemprop="location" itemscope="" itemtype="http://schema.org/Place">
+								<span class="hidden" itemprop="name">Malcolm</span>
+								<span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+									<span itemprop="addressLocality"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/<?php echo $channel; ?>.svg" alt="" width="24" /></span>
+									<span class="hidden" itemprop="addressRegion">FRANCE</span>
+								</span>
+							</td>
+						</tr>
+						<?php endwhile; ?>
+					</tbody>
+				</table>
       </div>
-      <h3 class="subtitle">Vendredi 2 septembre 2016</h3>
-      <div class="table-responsive">
-        <table class="table table-hover table-condensed">
-          <tbody>
-            <tr>
-              <td class="hour">12h50</td>
-              <td><a href="#" title="" >2.03 – "Joyeux anniversaire Loïs"</a></td>
-              <td class="channel">W9</td>
-            </tr>
-            <tr>
-              <td class="hour">13h20</td>
-              <td><a href="#" title="">2.04 – "Dîner en ville"</a></td>
-              <td class="channel">W9</td>
-            </tr>
-            <tr>
-              <td class="hour">13h50</td>
-              <td><a href="#" title="">2.05 – "Faites vos jeux"</a></td>
-              <td class="channel">W9</td>
-            </tr>
-            <tr>
-              <td class="hour">14h20</td>
-              <td><a href="#" title="">2.06 – "Le congrès"</a></td>
-              <td class="channel">W9</td>
-            </tr>
-            <tr>
-              <td class="hour">14h50</td>
-              <td><a href="#" title="">2.07 – "Attaque à main armée"</a></td>
-              <td class="channel">W9</td>
-            </tr>
-            <tr>
-              <td class="hour">15h20</td>
-              <td><a href="#" title="">2.08 – "Panique au pique-nique"</a></td>
-              <td class="channel">W9</td>
-            </tr>
-            <tr>
-              <td class="hour">15h45</td>
-              <td><a href="#" title="">2.09 – "Thérapie"</a></td>
-              <td class="channel">W9</td>
-            </tr>
-            <tr>
-              <td class="hour">16h15</td>
-              <td><a href="#" title="">3.01 – "Tout le monde sur le pont"</a></td>
-              <td class="channel">W9</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <?php endif; ?>
       <div class="text-center">
-        <a href="#" class="btn btn-yellow" title=""><i class="fa fa-plus-circle" aria-hidden="true"></i> Toutes les diffusions</a>
+        <a href="<?php echo home_url(); ?>/category/actualites/diffusions/" class="btn btn-yellow" title="Voir toutes les diffusion télé de Malcolm"><i class="fa fa-plus-circle" aria-hidden="true"></i> Toutes les diffusions</a>
       </div>
     </section>
+
+
+
+
+
   </div><!-- /row -->
   <section class="tv-area">
     <div class="row">

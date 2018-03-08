@@ -25,7 +25,7 @@
 
 
 
-		<?php /* if( have_rows('mf_broadcasts') ) : */ ?>
+		<?php if( have_rows('mf_broadcasts', 652) ) : ?>
 		<section class="broadcasts">
 			<h4 class="title"><span>Diffusions</span></h4>
 			<div class="table-responsive">
@@ -38,7 +38,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<?php while( have_rows('mf_broadcasts') ): the_row();
+						<?php while( have_rows('mf_broadcasts', 652) ): the_row();
 							$date = get_sub_field('mf_broadcasts_date');
 							$episode = get_sub_field('mf_broadcasts_episode');
 							$channel = get_sub_field('mf_broadcasts_channel');
@@ -71,73 +71,7 @@
 				<a href="<?php echo home_url(); ?>/category/actualites/diffusions/" class="btn btn-yellow" title="Diffusions Malcolm">Toutes les diffusions</a>
 			</div>
 		</section>
-		<?php /* endif; */ ?>
-
-		<!--section class="broadcasts">
-			<h4 class="title"><span>Diffusions</span></h4>
-			<div class="clearfix">
-				<img src="img/bkg/broadcasts.png" alt="" class="img-responsive" />
-				<p>Aucune diffusion sur les chaînes de télévision française pour le moment.</p>
-			</div>
-			<div class="text-center">
-				<a href="#" class="btn btn-yellow" title="Diffusions Malcolm">Toutes les diffusions</a>
-			</div>
-		</section>
-		<section class="broadcasts">
-			<h4 class="title"><span>Diffusions</span></h4>
-			<h4 class="subtitle">Jeudi 7 septembre 2017</h4>
-			<table class="table table-hover table-condensed">
-				<thead>
-					<tr>
-						<th class="text-center">Heure</th>
-						<th>Épisode</th>
-						<th class="text-center">Chaîne</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr itemscope="" itemtype="http://schema.org/Event">
-						<td class="hour">12h50</td>
-						<td><a href="#" title="" itemprop="url"><span itemprop="name">1.01 – "Je ne suis pas un monstre"</span></a></td>
-						<td class="channel" itemprop="location" itemscope="" itemtype="http://schema.org/Place">
-							<span class="hidden" itemprop="name">Malcolm</span>
-							<span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-								<span itemprop="addressLocality">W9</span>
-								<span class="hidden" itemprop="addressRegion">FRANCE</span>
-							</span>
-						</td>
-					</tr>
-					<tr itemscope="" itemtype="http://schema.org/Event">
-						<td class="hour">13h20</td>
-						<td><a href="#" title="" itemprop="url"><span itemprop="name">1.02 – "Alerte rouge"</span></a></td>
-						<td class="channel" itemprop="location" itemscope="" itemtype="http://schema.org/Place">
-							<span class="hidden" itemprop="name">Malcolm</span>
-							<span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-								<span itemprop="addressLocality">W9</span>
-								<span class="hidden" itemprop="addressRegion">FRANCE</span>
-							</span>
-						</td>
-					</tr>
-					<tr>
-						<td class="hour">13h50</td>
-						<td><a href="#" title="" itemprop="url">1.03 – "Seuls à la maison"</a></td>
-						<td class="channel">W9</td>
-					</tr>
-					<tr>
-						<td class="hour">14h20</td>
-						<td><a href="#" title="" itemprop="url">1.04 – "Honte"</a></td>
-						<td class="channel">W9</td>
-					</tr>
-					<tr>
-						<td class="hour">14h50</td>
-						<td><a href="#" title="" itemprop="url">1.07 – "La petite évasion"</a></td>
-						<td class="channel">W9</td>
-					</tr>
-				</tbody>
-			</table>
-			<div class="text-center">
-				<a href="#" class="btn btn-yellow" title="Diffusions Malcolm">Toutes les diffusions</a>
-			</div>
-		</section-->
+		<?php endif; ?>
 
 
 
