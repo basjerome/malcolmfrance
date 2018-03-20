@@ -1,9 +1,9 @@
 <?php  /* Template Name: Broadcast Page Template */  get_header(); ?>
 <?php get_header(); ?>
 <main role="main" class="main-content" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php get_template_part('breadcrumb'); ?>
 	<div class="page-content" itemscope itemtype="http://schema.org/NewsArticle">
 		<meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://google.com/article"/>
-		<?php get_template_part('breadcrumb'); ?>
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<h2 class="title-highlight"><span>Actualité</span></h2>
@@ -52,14 +52,15 @@
 						</thead>
 						<tbody>
 							<?php while( have_rows('mf_broadcasts') ): the_row();
-								$date = get_sub_field('mf_broadcasts_date');
+								$date = get_sub_field('mf_broadcasts_date', false, false);
+								$date = new DateTime($date);
 								$episode = get_sub_field('mf_broadcasts_episode');
 								$channel = get_sub_field('mf_broadcasts_channel');
 							?>
 							<tr itemscope="" itemtype="http://schema.org/Event">
 								<td>
-									<meta itemprop="startDate" content="<?php echo $date; ?>">
-									<?php echo $date; ?>
+									<meta itemprop="startDate" content="<?php echo $date->format('c'); ?>">
+									<?php echo $date->format('l j F Y G:i'); ?>
 								</td>
 								<td>
 									<?php foreach( $episode as $ep ): ?>

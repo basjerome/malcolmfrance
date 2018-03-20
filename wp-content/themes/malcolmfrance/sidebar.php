@@ -20,12 +20,10 @@
 			<?php endif; ?>
 		</section>
 		<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-1')) ?>
-
-
-
-
-
-		<?php if( have_rows('mf_broadcasts', 652) ) : ?>
+		<?php
+			$i= 0;
+			if( have_rows('mf_broadcasts', 652) ) :
+		?>
 		<section class="broadcasts">
 			<h4 class="title"><span>Diffusions</span></h4>
 			<div class="table-responsive">
@@ -42,11 +40,16 @@
 							$date = get_sub_field('mf_broadcasts_date');
 							$episode = get_sub_field('mf_broadcasts_episode');
 							$channel = get_sub_field('mf_broadcasts_channel');
+              $i++;
+              if( $i > 5 || $strtotimecurrentDate > $strtotimedate ) {
+                break;
+              }
 						?>
 						<tr itemscope="" itemtype="http://schema.org/Event">
 							<td>
 								<meta itemprop="startDate" content="<?php echo $date; ?>">
 								<?php echo $date; ?>
+								<?php the_time('l j F Y G:i') ?>
 							</td>
 							<td>
 								<?php foreach( $episode as $ep ): ?>
@@ -72,11 +75,6 @@
 			</div>
 		</section>
 		<?php endif; ?>
-
-
-
-
-
 		<section class="shop">
 			<h4 class="title"><span>Boutique</span></h4>
 			<a href="#" class="clearfix" title="Malcolm : l'intégrale de la saison 1 &Eacute;dition POP-UP">

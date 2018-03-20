@@ -196,14 +196,12 @@
         </div>
       </section>
     </div>
-
-
-
-
-
     <section class="broadcasts col-md-6 col-table-cell clearfix">
       <h2 class="title-highlight"><span>Diffusion télé</span></h2>
-      <?php if( have_rows('mf_broadcasts', 652) ) : ?>
+      <?php
+        $i= 0;
+        if( have_rows('mf_broadcasts', 652) ) :
+      ?>
       <div class="table-responsive">
 				<table class="table table-hover table-condensed">
 					<thead>
@@ -214,15 +212,25 @@
 						</tr>
 					</thead>
 					<tbody>
-						<?php while( have_rows('mf_broadcasts', 652) ): the_row();
-							$date = get_sub_field('mf_broadcasts_date');
+            <?php while( have_rows('mf_broadcasts', 652) ): the_row();
+              $currentDate = date( 'l j F Y G:i', current_time( 'timestamp', 1 ) );
+              $strtotimecurrentDate = strtotime($currentDate);
+              $date = get_sub_field('mf_broadcasts_date', false, false);
+              $date = new DateTime($date);
+              $strtotimedate = strtotime($date->format('l j F Y G:i'));
 							$episode = get_sub_field('mf_broadcasts_episode');
-							$channel = get_sub_field('mf_broadcasts_channel');
-						?>
+              $channel = get_sub_field('mf_broadcasts_channel');
+              $i++;
+              if( $i > 5 || $strtotimecurrentDate > $strtotimedate ) {
+                break;
+              }
+            ?>
 						<tr itemscope="" itemtype="http://schema.org/Event">
 							<td>
-								<meta itemprop="startDate" content="<?php echo $date; ?>">
-								<?php echo $date; ?>
+								<meta itemprop="startDate" content="<?php echo $date->format('c'); ?>">
+								<?php echo $strtotimecurrentDate; ?><br /><br />
+								<?php echo $strtotimedate; ?><br /><br />
+								<?php echo $date->format('l j F Y G:i'); ?>
 							</td>
 							<td>
 								<?php foreach( $episode as $ep ): ?>
@@ -238,7 +246,7 @@
 									<span class="hidden" itemprop="addressRegion">FRANCE</span>
 								</span>
 							</td>
-						</tr>
+            </tr>
 						<?php endwhile; ?>
 					</tbody>
 				</table>
@@ -248,11 +256,6 @@
         <a href="<?php echo home_url(); ?>/category/actualites/diffusions/" class="btn btn-yellow" title="Voir toutes les diffusion télé de Malcolm"><i class="fa fa-plus-circle" aria-hidden="true"></i> Toutes les diffusions</a>
       </div>
     </section>
-
-
-
-
-
   </div><!-- /row -->
   <section class="tv-area">
     <div class="row">
