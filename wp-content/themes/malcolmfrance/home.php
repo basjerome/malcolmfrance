@@ -220,16 +220,11 @@
               $strtotimedate = strtotime($date->format('l j F Y G:i'));
 							$episode = get_sub_field('mf_broadcasts_episode');
               $channel = get_sub_field('mf_broadcasts_channel');
-              $i++;
-              if( $i > 5 || $strtotimecurrentDate > $strtotimedate ) {
-                break;
-              }
             ?>
+            <?php if( $i < 5 && $strtotimecurrentDate < $strtotimedate ) : ?>
 						<tr itemscope="" itemtype="http://schema.org/Event">
 							<td>
 								<meta itemprop="startDate" content="<?php echo $date->format('c'); ?>">
-								<?php echo $strtotimecurrentDate; ?><br /><br />
-								<?php echo $strtotimedate; ?><br /><br />
 								<?php echo $date->format('l j F Y G:i'); ?>
 							</td>
 							<td>
@@ -247,6 +242,7 @@
 								</span>
 							</td>
             </tr>
+            <?php $i++; endif; ?>
 						<?php endwhile; ?>
 					</tbody>
 				</table>

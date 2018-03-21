@@ -52,11 +52,15 @@
 						</thead>
 						<tbody>
 							<?php while( have_rows('mf_broadcasts') ): the_row();
+								$currentDate = date( 'l j F Y G:i', current_time( 'timestamp', 1 ) );
+								$strtotimecurrentDate = strtotime($currentDate);
 								$date = get_sub_field('mf_broadcasts_date', false, false);
 								$date = new DateTime($date);
+								$strtotimedate = strtotime($date->format('l j F Y G:i'));
 								$episode = get_sub_field('mf_broadcasts_episode');
 								$channel = get_sub_field('mf_broadcasts_channel');
 							?>
+							<?php if( $strtotimecurrentDate < $strtotimedate ) : ?>
 							<tr itemscope="" itemtype="http://schema.org/Event">
 								<td>
 									<meta itemprop="startDate" content="<?php echo $date->format('c'); ?>">
@@ -77,6 +81,7 @@
 									</span>
 								</td>
 							</tr>
+							<?php endif; ?>
 							<?php endwhile; ?>
 						</tbody>
 					</table>

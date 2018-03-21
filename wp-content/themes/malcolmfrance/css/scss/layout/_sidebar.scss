@@ -98,7 +98,7 @@
 		}
 
 		&.broadcasts {
-			img {
+			.img-responsive {
 				float: left;
 				margin-right: 15px;
 				max-width: 70px;
@@ -136,11 +136,10 @@
 
 							&.hour {
 								font-weight: 700;
-								text-align: center;
 							}
 
 							&.channel {
-								text-align: center;
+								text-align: right;
 							}
 
 							a,

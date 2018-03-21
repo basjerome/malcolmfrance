@@ -32,24 +32,24 @@
 						<tr>
 							<th>Date &amp; heure</th>
 							<th>Épisode</th>
-							<th class="text-center">Chaîne</th>
+							<th class="text-right">Chaîne</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php while( have_rows('mf_broadcasts', 652) ): the_row();
-							$date = get_sub_field('mf_broadcasts_date');
+              $currentDate = date( 'l j F Y G:i', current_time( 'timestamp', 1 ) );
+              $strtotimecurrentDate = strtotime($currentDate);
+              $date = get_sub_field('mf_broadcasts_date', false, false);
+              $date = new DateTime($date);
+              $strtotimedate = strtotime($date->format('l j F Y G:i'));
 							$episode = get_sub_field('mf_broadcasts_episode');
-							$channel = get_sub_field('mf_broadcasts_channel');
-              $i++;
-              if( $i > 5 || $strtotimecurrentDate > $strtotimedate ) {
-                break;
-              }
+              $channel = get_sub_field('mf_broadcasts_channel');
 						?>
+						<?php if( $i < 5 && $strtotimecurrentDate < $strtotimedate ) : ?>
 						<tr itemscope="" itemtype="http://schema.org/Event">
 							<td>
-								<meta itemprop="startDate" content="<?php echo $date; ?>">
-								<?php echo $date; ?>
-								<?php the_time('l j F Y G:i') ?>
+								<meta itemprop="startDate" content="<?php echo $date->format('c'); ?>">
+								<?php echo $date->format('D j M G:i'); ?>
 							</td>
 							<td>
 								<?php foreach( $episode as $ep ): ?>
@@ -66,6 +66,7 @@
 								</span>
 							</td>
 						</tr>
+						<?php $i++; endif; ?>
 						<?php endwhile; ?>
 					</tbody>
 				</table>

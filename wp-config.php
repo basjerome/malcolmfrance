@@ -41,6 +41,9 @@ define('DB_CHARSET', 'utf8mb4');
   */
 define('DB_COLLATE', '');
 
+/* Langue */
+define ('WPLANG', 'fr_FR');
+
 /**#@+
  * Clés uniques d’authentification et salage.
  *
