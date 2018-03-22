@@ -13,6 +13,14 @@
 			</div>
 		</div><!-- /post-meta end -->
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+		<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
+		<div class="hidden" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+			<img src="<?php echo the_post_thumbnail_url(); ?>" alt="<?php echo get_post(get_post_thumbnail_id())->post_title; ?>" />
+			<meta itemprop="url" content="<?php echo the_post_thumbnail_url(); ?>">
+			<meta itemprop="width" content="2000">
+			<meta itemprop="height" content="1125">
+		</div>
+		<?php endif; ?>
 		<div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
 			<section class="video">
 			  <meta itemprop="duration" content="T<?php the_field('mf_video_minutes'); ?>M<?php the_field('mf_video_secondes'); ?>S" />
