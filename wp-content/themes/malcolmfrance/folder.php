@@ -22,8 +22,7 @@
 					?>
 				</span>
 				<span class="edit">
-					<i class="fa fa-cog" aria-hidden="true"></i>
-					<?php edit_post_link(); ?>
+					<?php edit_post_link( __( 'Edit', 'malcolmfrance' ), '<i class="fa fa-cog" aria-hidden="true"></i> ', '', null, '' ); ?>
 				</span>
 			</div>
 			<div class="col-sm-6 text-right">

@@ -249,7 +249,7 @@
       </div>
       <?php endif; ?>
       <div class="text-center">
-        <a href="<?php echo home_url(); ?>/category/actualites/diffusions/" class="btn btn-yellow" title="Voir toutes les diffusion télé de Malcolm"><i class="fa fa-plus-circle" aria-hidden="true"></i> Toutes les diffusions</a>
+        <a href="<?php echo home_url(); ?>/diffusions/" class="btn btn-yellow" title="Voir toutes les diffusion télé de Malcolm"><i class="fa fa-plus-circle" aria-hidden="true"></i> Toutes les diffusions</a>
       </div>
     </section>
   </div><!-- /row -->

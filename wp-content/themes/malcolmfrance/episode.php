@@ -6,29 +6,9 @@
 	<h1 class="page-title" itemprop="itemReviewed" itemscope="" itemtype="http://schema.org/Restaurant"><span itemprop="name">&laquo; <?php the_title(); ?> &raquo;</span></h1>
 	<div class="row post-meta">
 		<div class="col-sm-6">
-			<span class="author" itemprop="author" itemscope itemtype="https://schema.org/Person">
-				<i class="fa fa-pencil"></i>
-				<?php
-					$values = get_field( 'mf_authors' );
-					if ( $values ) {
-						$editors = array();
-						foreach ( $values as $value ) {
-							$link = get_author_posts_url( $value['ID'] ); //get the url
-							$nicename = $value['nickname'];
-							$editors[] = sprintf( '<a href="%s" title="">%s</a>', $link, $nicename ); //create a link for each author
-						}
-						echo 'Par ' . implode( ' &amp; ', $editors );
-					}
-				?>
-			</span>
 			<span class="edit">
-				<i class="fa fa-cog" aria-hidden="true"></i>
-				<?php edit_post_link(); ?>
+				<?php edit_post_link( __( 'Edit', 'malcolmfrance' ), '<i class="fa fa-cog" aria-hidden="true"></i> ', '', null, '' ); ?>
 			</span>
-		</div>
-		<div class="col-sm-6 text-right">
-			<span class="date"><i class="fa fa-calendar"></i> <?php the_time('l j F Y'); ?></span>
-			<span class="hour"><i class="fa fa-clock-o"></i> <?php the_time('g'); ?>H<?php the_time('i'); ?></span>
 		</div>
 	</div><!-- /post-meta end -->
 

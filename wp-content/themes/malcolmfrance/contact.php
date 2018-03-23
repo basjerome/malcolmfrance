@@ -17,7 +17,7 @@
 
 				<br class="clear">
 
-				<?php edit_post_link(); ?>
+				<?php edit_post_link( __( 'Edit', 'malcolmfrance' ), '<i class="fa fa-cog" aria-hidden="true"></i> ', '', null, '' ); ?>
 
 			</article>
 			<!-- /article -->

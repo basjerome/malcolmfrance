@@ -25,7 +25,6 @@
 						?>
 					</span>
 					<span class="edit">
-						<i class="fa fa-cog" aria-hidden="true"></i>
 						<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 					</span>
 				</div>
