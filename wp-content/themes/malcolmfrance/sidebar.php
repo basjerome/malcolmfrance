@@ -90,9 +90,6 @@
 		<section class="social-networks text-center">
 			<h4 class="title"><span>Réseaux sociaux</span></h4>
 			<div class="fb-page" data-href="https://www.facebook.com/malcolmfrance" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/malcolmfrance"><a href="https://www.facebook.com/malcolmfrance">Malcolm France</a></blockquote></div></div>
-			<hr />
-			<a href="https://twitter.com/malcolmfrance?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @malcolmfrance</a>
-			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</section>
 		<section class="ad text-center">
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

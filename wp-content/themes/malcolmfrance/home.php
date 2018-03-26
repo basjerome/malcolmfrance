@@ -429,7 +429,7 @@
           </div>
           <div class="col-sm-6">
             <h3 class="title-highlight twitter"><a href="https://twitter.com/malcolmfrance" class="twitter" target="_blank" title="Rejoins-nous !" data-toggle="tooltip" data-placement="bottom" data-original-title="Malcolm France Twitter"><span><i class="fa fa-twitter" aria-hidden="true"></i></span></a></h3>
-            <a class="twitter-timeline"  href="https://twitter.com/hashtag/Malcolm" data-widget-id="755721573009592320">Tweets sur #Malcolm</a>
+            <a class="twitter-timeline"  href="https://twitter.com/hashtag/Malcolm" data-widget-id="978201833691926528">Tweets sur #Malcolm</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
           </div>
         </div><!-- /row -->
