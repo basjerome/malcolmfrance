@@ -98,48 +98,81 @@
 	<section class="technical-sheet">
 		<dl class="row">
 			<dt class="col-sm-5 col-md-4 col-lg-3">Titre</dt>
-			<dd class="col-sm-7 col-md-8 col-md-9">Krelboyne Picnic</dd>
-			<dd class="col-sm-7 col-sm-offset-5 col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3">Panique au pique-nique</dd>
+			<?php if( get_field('mf_episode_title') ): ?>
+			<dd class="col-sm-7 col-md-8 col-md-9"><?php the_field('mf_episode_title'); ?></dd>
+			<?php endif; ?>
+			<dd class="col-sm-7 col-sm-offset-5 col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3"><?php the_title(); ?></dd>
 		</dl>
 
 		<dl class="row">
+			<?php if( get_field('mf_episode_number') ): ?>
 			<dt class="col-sm-5 col-md-4 col-lg-3">Numéro</dt>
-			<dd class="col-sm-7 col-md-8 col-lg-9">8 (1.08)</dd>
+			<dd class="col-sm-7 col-md-8 col-lg-9"><?php the_field('mf_episode_number'); ?> (<?php echo str_replace("Saison ","",get_the_title( $post->post_parent )); ?>.<?php if( get_field('mf_episode_number') < 10) : ?>0<?php endif; ?><?php the_field('mf_episode_number'); ?>)</dd>
+			<?php endif; ?>
+			<?php if( get_field('mf_episode_production_code') ): ?>
 			<dt class="col-sm-5 col-md-4 col-lg-3">Code de production</dt>
-			<dd class="col-sm-7 col-md-8 col-lg-9">06-99-109</dd>
+			<dd class="col-sm-7 col-md-8 col-lg-9"><?php the_field('mf_episode_production_code'); ?></dd>
+			<?php endif; ?>
 		</dl>
 
+		<?php if( get_field('mf_episode_first_broadcast') ): ?>
 		<dl class="row">
 			<dt class="col-sm-5 col-md-4 col-lg-3">Première diffusion</dt>
-			<dd class="col-sm-7 col-md-8 col-lg-9">12 mars 2000</dd>
-			<dd class="col-sm-7 col-sm-offset-5 col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3">02 janvier 2002</dd>
+			<dd class="col-sm-7 col-md-8 col-lg-9">
+				<?php while( have_rows('mf_episode_first_broadcast') ): the_row();
+					$date = get_sub_field('mf_episode_first_broadcast_date');
+					$country = get_sub_field('mf_episode_first_broadcast_country');
+				?>
+				<div><?php echo $date; ?> <?php echo $country; ?></div>
+				<?php endwhile; ?>
+			</dd>
 		</dl>
+		<?php endif; ?>
 
+		<?php if( get_field('mf_episode_scenario') ): ?>
 		<dl class="row">
 			<dt class="col-sm-5 col-md-4 col-lg-3">Scénario</dt>
-			<dd class="col-sm-7 col-md-8 col-lg-9">Michael Glouberman</dd>
-			<dd class="col-sm-7 col-sm-offset-5 col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3">Andrew Orenstein</dd>
+			<dd class="col-sm-7 col-md-8 col-lg-9">
+				<?php while( have_rows('mf_episode_scenario') ): the_row();
+					$scriptwriter = get_sub_field('mf_episode_scriptwriter');
+				?>
+				<div><?php echo $scriptwriter; ?></div>
+				<?php endwhile; ?>
+			</dd>
 		</dl>
+		<?php endif; ?>
 
+		<?php if( get_field('mf_episode_production') ): ?>
 		<dl class="row">
 			<dt class="col-sm-5 col-md-4 col-lg-3">Réalisation</dt>
-			<dd class="col-sm-7 col-md-8 col-lg-9" itemprop="author" itemscope="" itemtype="http://schema.org/Person">Todd Holland</dd>
+			<dd class="col-sm-7 col-md-8 col-lg-9">
+				<?php while( have_rows('mf_episode_production') ): the_row();
+					$director = get_sub_field('mf_episode_director');
+				?>
+				<div itemprop="author" itemscope="" itemtype="http://schema.org/Person"><?php echo $director; ?></div>
+				<?php endwhile; ?>
+			</dd>
 		</dl>
+		<?php endif; ?>
 
+		<?php if( get_field('mf_episode_characters') ): ?>
 		<dl class="row">
 			<dt class="col-sm-5 col-md-4 col-lg-3">Personnages</dt>
-			<dd class="col-sm-7 col-md-8 col-lg-9"><a href="#" title="">Craig Lamar Traylor (Stevie)</a>, <a href="#" title="">Kyle Sullivan (Dabney)</a>, <a href="#" title="">Evan Matthew Cohen (Lloyd)</a>, <a href="#" title="">Will Jennings (Kyle)</a>, <a href="#" title="">Beth Grant (Dorene)</a>, <a href="#" title="">Katherine Ellis (Jody)</a>, <a href="#" title="">Jerry Lambert (Dave)</a>, <a href="#" title="">Mark Rickard (frère de Kyle)</a>, <a href="#" title="">Lianne Pattison (femme)</a></dd>
+			<dd class="col-sm-7 col-md-8 col-lg-9">
+				<a href="#" title="">Craig Lamar Traylor (Stevie)</a>, <a href="#" title="">Kyle Sullivan (Dabney)</a>, <a href="#" title="">Evan Matthew Cohen (Lloyd)</a>, <a href="#" title="">Will Jennings (Kyle)</a>, <a href="#" title="">Beth Grant (Dorene)</a>, <a href="#" title="">Katherine Ellis (Jody)</a>, <a href="#" title="">Jerry Lambert (Dave)</a>, <a href="#" title="">Mark Rickard (frère de Kyle)</a>, <a href="#" title="">Lianne Pattison (femme)</a>
+			</dd>
 		</dl>
+		<?php endif; ?>
 	</section>
 
 	<section class="summary">
 		<h3 class="section-title"><span>Résumé</span></h3>
 		<p><strong class="label">Scène d'introduction</strong> <a href="#" title="">Lois</a> et <a href="#" title="">Hal</a> dorment paisiblement dans leur lit. Mais ils sont rapidement perturbés par les garçons qui comme à leur habitude font des bêtises. Cependant, aucun des deux parents n'est visiblement décidé à aller calmer les esprits, jusqu'à ce que <strong>Hal</strong> craque. En contrepartie, il exige à Lois d'être nue à son retour !</p>
 		<p itemprop="reviewBody">La classe de <a href="#" title="">Malcolm</a> organise un grand pique-nique auquel est convié toute les familles des "<em>Têtes d'ampoule</em>", au grand dam de <strong>Malcolm</strong> qui n'est pas enclin à faire son numéro. <a href="#" title="">Francis</a>, à la maison pour le week-end, lui promet de l'aider à s'échapper.<br>
-			Sur place, <strong>Lois</strong> rencontre <a href="#" title="">Dorene</a>, la présidente de l'association des parents d'élèves et la mère de <a href="#" title="">Dabney</a>. Très vite, son caractère autoritaire exaspère <strong>Lois</strong> et encourage les autres mères à se rebeller contre la dame.<br>
-			Pendant ce temps, <strong>Francis</strong> fait la connaissance d'une jeune fille et engage avec elle une relation express, condamnant <strong>Malcolm</strong> à rester et à faire son numéro. Il décide de s'occuper en manipulant quelques produits chimiques.<br>
-			De son côté, <a href="#" title="">Reese</a> part à la chasse aux "<em>Têtes d'ampoule</em>", constatant qu'il y a du "<em>gibier</em>" ! Mais le grand frère de l'une d'entre elles vient compromettre vient compromettre la traque qui avait bien commencée.<br>
-			Enfin, <strong>Hal</strong> décide de participer à la préparation du repas en s'improvisant cuisinier du barbecue, avec l'aide de <a href="#" title="">Dewey</a>. Mais il n'a pas prévu que la majorité des "<em>Têtes d'ampoule</em>" sont allergiques à la viande…</p>
+		Sur place, <strong>Lois</strong> rencontre <a href="#" title="">Dorene</a>, la présidente de l'association des parents d'élèves et la mère de <a href="#" title="">Dabney</a>. Très vite, son caractère autoritaire exaspère <strong>Lois</strong> et encourage les autres mères à se rebeller contre la dame.<br>
+		Pendant ce temps, <strong>Francis</strong> fait la connaissance d'une jeune fille et engage avec elle une relation express, condamnant <strong>Malcolm</strong> à rester et à faire son numéro. Il décide de s'occuper en manipulant quelques produits chimiques.<br>
+		De son côté, <a href="#" title="">Reese</a> part à la chasse aux "<em>Têtes d'ampoule</em>", constatant qu'il y a du "<em>gibier</em>" ! Mais le grand frère de l'une d'entre elles vient compromettre vient compromettre la traque qui avait bien commencée.<br>
+		Enfin, <strong>Hal</strong> décide de participer à la préparation du repas en s'improvisant cuisinier du barbecue, avec l'aide de <a href="#" title="">Dewey</a>. Mais il n'a pas prévu que la majorité des "<em>Têtes d'ampoule</em>" sont allergiques à la viande…</p>
 	</section>
 
 	<div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -216,6 +249,7 @@
 		</dl>
 	</section>
 
+	<?php if( get_field('mf_episode_anecdotes') ): ?>
 	<section class="anecdotes">
 		<h3 class="section-title"><span>Anecdotes</span></h3>
 		<ul>
@@ -224,7 +258,9 @@
 			<li>À la fin de l'épisode, on peut deviner <strong>Francis</strong> faire un doigt d'honneur. Aux États-Unis, ce geste est banni et systématiquement censuré des programmes. Même ceux d'<em>Eminem</em> ou des acteurs de <em>Jackass</em> sont floutés ou cachés. Dans cet épisode, le geste de <strong>Francis</strong> est ainsi suggéré, camouflé par la casquette de <strong>Dewey</strong>.</li>
 		</ul>
 	</section>
+	<?php endif; ?>
 
+	<?php if( get_field('mf_episode_anecdotes') ): ?>
 	<section class="quotes">
 		<h3 class="section-title"><span>Répliques cultes</span></h3>
 		<ul>
@@ -289,6 +325,7 @@
 
 		</ul>
 	</section>
+	<?php endif; ?>
 
 	<section class="videos">
 		<h3 class="section-title"><span>Extraits vidéos</span></h3>
@@ -317,6 +354,7 @@
 		</div>
 	</section>
 
+	<?php if( get_field('mf_episode_gifs') ): ?>
 	<section class="gifs">
 		<h3 class="section-title"><span>Gifs</span></h3>
 		<div class="row">
@@ -357,7 +395,9 @@
 			</div>
 		</div>
 	</section>
+	<?php endif; ?>
 
+	<?php if( get_field('mf_episode_music') ): ?>
 	<section class="music">
 		<h3 class="section-title"><span>Musiques</span></h3>
 		<ul>
@@ -383,7 +423,9 @@
 			</li>
 		</ul>
 	</section>
+	<?php endif; ?>
 
+	<?php if( get_field('mf_episode_errors') ): ?>
 	<section class="errors">
 		<h3 class="section-title"><span>Erreurs &amp; Faux raccords</span></h3>
 		<ul>
@@ -407,6 +449,7 @@
 			</li>
 		</ul>
 	</section>
+	<?php endif; ?>
 
 	<section class="next-episode">
 		<div class="row">
