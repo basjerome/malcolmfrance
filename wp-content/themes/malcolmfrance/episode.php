@@ -154,75 +154,28 @@
 		<meta itemprop="name" content="Malcolm France">
 	</div>
 
+	<?php if( get_field('mf_episode_stories') ): ?>
 	<section class="intrigues">
 		<h3 class="section-title"><span>Détail des intrigues</span></h3>
 		<dl>
-
+			<?php while( have_rows('mf_episode_stories') ): the_row();
+				$label = get_sub_field('mf_episode_story_label');
+				$title = get_sub_field('mf_episode_story_title');
+				$text = get_sub_field('mf_episode_story_text');
+				$i++;
+			?>
 			<dt>
-				<a href="#intrigue-01" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="intrigue-01">
-					<span class="label"><i class="fa fa-arrow-circle-o-down"></i> Scène d'intro</span> Qui de Lois ou Hal sacrifiera sa grasse matinée pour calmer les enfants ?
+				<a href="#intrigue-<?php echo $i; ?>" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="intrigue-<?php echo $i; ?>">
+					<span class="label"><i class="fa fa-arrow-circle-o-down"></i> <?php echo $label; ?></span> <?php echo $title; ?>
 				</a>
 			</dt>
-			<dd class="collapse" id="intrigue-01">
-				Au petit matin, réveillés par les cris des enfants, Hal et Lois font tous les deux semblant de dormir pour ne pas avoir à intervenir. Hal cède finalement mais exige que Lois soit nue quand il reviendra, condition que Lois accepte sans broncher…
+			<dd class="collapse" id="intrigue-<?php echo $i; ?>">
+				<?php echo $text; ?>
 			</dd>
-
-			<dt>
-				<a href="#intrigue-02" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="intrigue-02">
-					<span class="label"><i class="fa fa-arrow-circle-o-down"></i> Situation</span> Le pique-nique des têtes d'ampoule
-				</a>
-			</dt>
-			<dd class="collapse" id="intrigue-02">
-				A son grand désespoir, Malcolm doit emmener toute sa famille au pique-nique organisé par Caroline Miller en l’honneur des têtes d’ampoules…
-			</dd>
-
-			<dt>
-				<a href="#intrigue-03" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="intrigue-03">
-					<span class="label"><i class="fa fa-arrow-circle-o-down"></i> Intrigue 1</span> Le numéro de calcul mental de Malcolm au cirque des petits génies
-				</a>
-			</dt>
-			<dd class="collapse" id="intrigue-03">
-				Malcolm cherche tous les prétextes pour ne pas avoir à présenter son numéro, par peur de la réaction de sa famille…
-			</dd>
-
-			<dt>
-				<a href="#intrigue-04" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="intrigue-04">
-					<span class="label"><i class="fa fa-arrow-circle-o-down"></i> Intrigue 2</span> Lois contre la mère de Dabney
-				</a>
-			</dt>
-			<dd class="collapse" id="intrigue-04">
-				Lois se fait une ennemie en la personne de la mère de Dabney qui se comporte en vrai tyran vis-à-vis des autres parents d’élèves…
-			</dd>
-
-			<dt>
-				<a href="#intrigue-05" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="intrigue-05">
-					<span class="label"><i class="fa fa-arrow-circle-o-down"></i> Intrigue 3</span> Hal et le barbecue
-				</a>
-			</dt>
-			<dd class="collapse" id="intrigue-05">
-				Hal se charge du barbecue et néglige le dégoût des têtes d’ampoule pour la viande…
-			</dd>
-
-			<dt>
-				<a href="#intrigue-06" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="intrigue-06">
-					<span class="label"><i class="fa fa-arrow-circle-o-down"></i> Intrigue 4</span> Reese le prédateur à la chasse aux têtes d’ampoule
-				</a>
-			</dt>
-			<dd class="collapse" id="intrigue-06">
-				Reese, tel un prédateur, part à la chasse de son gibier favori, les têtes d’ampoule, mais il se heurte à un obstacle de taille : le grand frère de Kyle...
-			</dd>
-
-			<dt>
-				<a href="#intrigue-07" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="intrigue-07">
-					<span class="label"><i class="fa fa-arrow-circle-o-down"></i> Intrigue 5</span> Francis et son histoire d’amour en accéléré avec une fille (Judy)
-				</a>
-			</dt>
-			<dd class="collapse" id="intrigue-07">
-				Francis noue une relation amoureuse aussi éphémère que complexe avec une fille rencontrée le jour même…
-			</dd>
-
+			<?php endwhile; ?>
 		</dl>
 	</section>
+	<?php endif; ?>
 
 	<?php if( get_field('mf_episode_anecdotes') ): ?>
 	<section class="anecdotes">

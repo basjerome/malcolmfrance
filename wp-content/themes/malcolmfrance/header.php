@@ -17,7 +17,7 @@
 		<link href="<?php echo get_template_directory_uri(); ?>/css/owl.transitions.css" rel="stylesheet">
 		<link href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css" rel="stylesheet">
 		<link href="<?php echo get_template_directory_uri(); ?>/css/twentytwenty.css" rel="stylesheet">
-		<link href="<?php echo get_template_directory_uri(); ?>/css/main.css" rel="stylesheet">
+		<link href="<?php echo get_template_directory_uri(); ?>/css/main.min.css" rel="stylesheet">
 		<!-- /Facebook -->
 		<meta property="og:site_name" content="malcolm-france.com">
 		<meta property="fb:app_id" content="654248557947123">
