@@ -296,15 +296,26 @@
 	<?php endif; ?>
 
 	<section class="next-episode">
+		<?php
+			$pagelist = get_pages('sort_column=menu_order&sort_order=asc');
+			$pages = array();
+			foreach ($pagelist as $page) {
+				$pages[] += $page->ID;
+			}
+			$current = array_search(get_the_ID(), $pages);
+			$prevID = $pages[$current-1];
+			$nextID = $pages[$current+1];
+		?>
 		<div class="row">
+			<?php if (!empty($prevID) && !empty(get_field('mf_episode_number', $prevID)) ) { ?>
 			<div class="col-xs-6 col-md-4">
-				<a href="#" title="">
+				<a href="<?php echo get_permalink($prevID); ?>" title="« <?php echo get_the_title($prevID); ?> »">
 					<span class="img">
 						<span class="title">
-							Saison 1, épisode 7<br>
-							« La petite évasion »
+							<?php echo get_the_title($post->post_parent); ?>, épisode <?php the_field('mf_episode_number', $prevID); ?><br />
+							« <?php echo get_the_title($prevID); ?> »
 						</span>
-						<img src="http://malcolm-france.com/images/episodes/107.jpg" alt="" class="img-responsive">
+						<?php echo get_the_post_thumbnail( $prevID, '', array( 'class' => 'img-responsive' ) ); ?>
 					</span>
 					<span class="btn">
 						<i class="arrow-left"></i>
@@ -312,14 +323,16 @@
 					</span>
 				</a>
 			</div>
-			<div class="col-xs-6 col-md-4 col-md-offset-4">
-				<a href="#" title="">
+			<?php }
+			if (!empty($nextID) && !empty(get_field('mf_episode_number', $nextID)) ) { ?>
+			<div class="col-xs-6 col-md-4 pull-right">
+				<a href="<?php echo get_permalink($nextID); ?>" title="« <?php echo get_the_title($nextID); ?> »">
 					<span class="img">
 						<span class="title">
-							Saison 1, épisode 9<br>
-							« Ma mère, ce héros »
+						<?php echo get_the_title($post->post_parent); ?>, épisode <?php the_field('mf_episode_number', $nextID); ?><br />
+							« <?php echo get_the_title($nextID); ?> »
 						</span>
-						<img src="http://malcolm-france.com/images/episodes/109.jpg" alt="" class="img-responsive">
+						<?php echo get_the_post_thumbnail( $nextID, '', array( 'class' => 'img-responsive' ) ); ?>
 					</span>
 					<span class="btn">
 						Épisode suivant
@@ -327,6 +340,7 @@
 					</span>
 				</a>
 			</div>
+			<?php } ?>
 		</div>
 	</section>
 
