@@ -134,7 +134,13 @@
 		<dl class="row">
 			<dt class="col-sm-5 col-md-4 col-lg-3">Personnages</dt>
 			<dd class="col-sm-7 col-md-8 col-lg-9">
-				<a href="#" title="">Craig Lamar Traylor (Stevie)</a>, <a href="#" title="">Kyle Sullivan (Dabney)</a>, <a href="#" title="">Evan Matthew Cohen (Lloyd)</a>, <a href="#" title="">Will Jennings (Kyle)</a>, <a href="#" title="">Beth Grant (Dorene)</a>, <a href="#" title="">Katherine Ellis (Jody)</a>, <a href="#" title="">Jerry Lambert (Dave)</a>, <a href="#" title="">Mark Rickard (frère de Kyle)</a>, <a href="#" title="">Lianne Pattison (femme)</a>
+				<?php
+					$posts = get_field('mf_episode_characters');
+					if( $posts ): ?>
+					<?php foreach( $posts as $p ): ?>
+						<a href="<?php echo get_permalink( $p->ID ); ?>"><?php the_field('mf_actor_firstname', $p->ID); ?> <?php the_field('mf_actor_lastname', $p->ID); ?> (<?php echo get_the_title( $p->ID ); ?>)</a>
+					<?php endforeach; ?>
+				<?php endif; ?>
 			</dd>
 		</dl>
 		<?php endif; ?>
@@ -211,34 +217,27 @@
 		</ul>
 	</section>
 	<?php endif; ?>
-
+	<?php if( get_field('mf_episode_videos') ): ?>
 	<section class="videos">
 		<h3 class="section-title"><span>Extraits vidéos</span></h3>
 		<div class="row">
+			<?php
+				$posts = get_field('mf_episode_videos');
+				if( $posts ):
+			?>
+			<?php foreach( $posts as $p ): ?>
 			<div class="col-xs-6 col-md-4">
-				<a href="#" title="Titre de lextrait vidéo">
+				<a href="<?php echo get_permalink( $p->ID ); ?>" title="<?php echo get_the_title( $p->ID ); ?>">
 					<i class="fa fa-play-circle-o"></i>
-					<span>Titre de lextrait vidéo</span>
-					<img src="<?php echo get_template_directory_uri(); ?>/img/page/default.jpg" alt="" class="img-responsive">
+					<span><?php echo get_the_title( $p->ID ); ?></span>
+					<?php echo get_the_post_thumbnail( $p->ID, '', array( 'class' => 'img-responsive' ) ); ?>
 				</a>
 			</div>
-			<div class="col-xs-6 col-md-4">
-				<a href="#" title="Titre de lextrait vidéo">
-					<i class="fa fa-play-circle-o"></i>
-					<span>Titre de lextrait vidéo</span>
-					<img src="<?php echo get_template_directory_uri(); ?>/img/page/default.jpg" alt="" class="img-responsive">
-				</a>
-			</div>
-			<div class="col-xs-6 col-md-4">
-				<a href="#" title="Titre de lextrait vidéo">
-					<i class="fa fa-play-circle-o"></i>
-					<span>Titre de lextrait vidéo</span>
-					<img src="<?php echo get_template_directory_uri(); ?>/img/page/default.jpg" alt="" class="img-responsive">
-				</a>
-			</div>
+			<?php endforeach; ?>
+			<?php endif; ?>
 		</div>
 	</section>
-
+	<?php endif; ?>
 	<?php if( get_field('mf_episode_gifs') ): ?>
 	<section class="gifs">
 		<h3 class="section-title"><span>Gifs</span></h3>
