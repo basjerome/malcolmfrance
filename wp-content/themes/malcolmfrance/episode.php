@@ -20,14 +20,9 @@
 			</div>
 		</div>
 		<div class="col-sm-6">
-			<div class="rating" itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating">
+			<div class="rating">
 				<h5 class="title">Note</h5>
-				<span class="hidden" itemprop="ratingValue">3.5</span>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star-half-o current"></i>
-				<i class="fa fa-star-o"></i>
+				<?php if(function_exists('the_ratings')) { the_ratings(); } ?>
 			</div>
 		</div>
 	</div>

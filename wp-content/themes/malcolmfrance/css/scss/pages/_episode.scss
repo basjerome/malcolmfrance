@@ -59,10 +59,11 @@ body.page-template-episode {
         }
       }
 
-      .fa {
-        color: $color-yellow;
-        font-size: 1.4375rem;
+      .post-ratings {
+        display: inline-block;
+        font-size: 0;
         vertical-align: middle;
+        width: auto;
       }
     }
 
