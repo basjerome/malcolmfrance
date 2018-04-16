@@ -127,8 +127,8 @@
 				?>
 				<div class="col-sm-4">
 					<img src="<?php echo $poster['url']; ?>" alt="<?php echo $title; ?>" class="img-responsive" />
-					<h4 class="title"><?php the_field('mf_best_of_title'); ?></h4>
-					<h5 class="subtitle"><?php the_field('mf_best_of_role'); ?></h5>
+					<h4 class="title"><?php echo $title; ?></h4>
+					<h5 class="subtitle"><?php echo $role; ?></h5>
 				</div>
 				<?php endwhile; ?>
 			</div>
