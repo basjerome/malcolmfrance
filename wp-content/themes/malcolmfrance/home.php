@@ -315,109 +315,41 @@
       </div><!-- /col-left -->
     </div><!-- /row -->
   </section>
+
+  <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+	<?php if( get_field('mf_homepage_selection') ): $i=0; ?>
   <section class="other">
     <h2 class="title-highlight"><span>Mate ça !</span></h2>
     <div class="row">
-      <div class="col-sm-3">
+			<?php
+				$posts = get_field('mf_homepage_selection');
+				if( $posts ):
+			?>
+			<?php foreach( $posts as $p ): $i++; ?>
+      <div class="col-sm-<?php if( $i === 2 || $i === 4 ) : ?>6<?php else : ?>3<?php endif; ?>">
         <article>
-          <a href="#" class="grid" title="">
+          <a href="<?php echo get_permalink( $p->ID ); ?>" class="grid<?php if( $i === 2 || $i === 4 ) : ?> grid-large<?php endif; ?>" title="<?php echo get_the_title( $p->ID ); ?>">
             <span class="content">
-              <span class="category"><span>Dossier</span></span>
-              <span class="title">Lorem ipsum dolor sit amet</span>
-              <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque nulla doloremque mollitia, eaque recusandae quod, cupiditate molestias assumenda sapiente beatae voluptatum.</span>
+              <span class="category"><span><?php echo get_the_title( $p->post_parent ); ?></span></span>
+              <span class="title"><?php echo get_the_title( $p->ID ); ?></span>
+              <span class="desc"><?php echo the_field('mf_extract', $p->ID); ?></span>
             </span>
             <span class="img-container">
               <span class="img">
-                <img src="http://www.malcolm-france.com/v3/site/img/page/default.jpg" alt="" />
+              <?php echo get_the_post_thumbnail( $p->ID, '', array( 'class' => 'img-responsive' ) ); ?>
               </span>
             </span>
           </a>
         </article>
       </div>
-      <div class="col-sm-6">
-        <article>
-          <a href="#" class="grid grid-large" title="">
-            <span class="content">
-              <span class="category"><span>Dossier</span></span>
-              <span class="title">Lorem ipsum dolor sit amet</span>
-              <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque nulla doloremque mollitia, eaque recusandae quod, cupiditate molestias assumenda sapiente beatae voluptatum.</span>
-            </span>
-            <span class="img-container">
-              <span class="img">
-                <img src="http://www.malcolm-france.com/v3/site/img/page/default.jpg" alt="" />
-              </span>
-            </span>
-          </a>
-        </article>
-      </div>
-      <div class="clearfix visible-xs"></div>
-      <div class="col-sm-3">
-        <article>
-          <a href="#" class="grid" title="">
-            <span class="content">
-              <span class="category"><span>Dossier</span></span>
-              <span class="title">Lorem ipsum dolor sit amet</span>
-              <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque nulla doloremque mollitia, eaque recusandae quod, cupiditate molestias assumenda sapiente beatae voluptatum.</span>
-            </span>
-            <span class="img-container">
-              <span class="img">
-                <img src="http://www.malcolm-france.com/v3/site/img/page/default.jpg" alt="" />
-              </span>
-            </span>
-          </a>
-        </article>
-      </div>
-      <div class="col-sm-6">
-        <article>
-          <a href="#" class="grid grid-large" title="">
-            <span class="content">
-              <span class="category"><span>Dossier</span></span>
-              <span class="title">Lorem ipsum dolor sit amet</span>
-              <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque nulla doloremque mollitia, eaque recusandae quod, cupiditate molestias assumenda sapiente beatae voluptatum.</span>
-            </span>
-            <span class="img-container">
-              <span class="img">
-                <img src="http://www.malcolm-france.com/v3/site/img/page/default.jpg" alt="" />
-              </span>
-            </span>
-          </a>
-        </article>
-      </div>
-      <div class="clearfix visible-xs"></div>
-      <div class="col-sm-3">
-        <article>
-          <a href="#" class="grid" title="">
-            <span class="content">
-              <span class="category"><span>Dossier</span></span>
-              <span class="title">Lorem ipsum dolor sit amet</span>
-              <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque nulla doloremque mollitia, eaque recusandae quod, cupiditate molestias assumenda sapiente beatae voluptatum.</span>
-            </span>
-            <span class="img-container">
-              <span class="img">
-                <img src="http://www.malcolm-france.com/v3/site/img/page/default.jpg" alt="" />
-              </span>
-            </span>
-          </a>
-        </article>
-      </div>
-      <div class="col-sm-3">
-        <article>
-          <a href="#" class="grid" title="">
-            <span class="content">
-              <span class="category"><span>Dossier</span></span>
-              <span class="title">Lorem ipsum dolor sit amet</span>
-              <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque nulla doloremque mollitia, eaque recusandae quod, cupiditate molestias assumenda sapiente beatae voluptatum.</span>
-            </span>
-            <span class="img-container">
-              <span class="img">
-                <img src="http://www.malcolm-france.com/v3/site/img/page/default.jpg" alt="" />
-              </span>
-            </span>
-          </a>
-        </article>
-      </div>
-    </div><!-- /row -->
-  </section>
+			<?php endforeach; ?>
+			<?php endif; ?>
+		</div>
+	</section>
+	<?php endif; ?>
+  <?php endwhile; ?>
+  <?php endif; ?>
+
   <div class="row">
     <div class="col-md-8">
       <section class="social-networks">
