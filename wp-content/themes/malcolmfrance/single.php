@@ -16,9 +16,9 @@
 							if ( $values ) {
 							  $editors = array();
 							  foreach ( $values as $value ) {
-							    $link = get_author_posts_url( $value['ID'] ); //get the url
+							    $link = get_author_posts_url( $value['ID'] );
 							    $nicename = $value['nickname'];
-							    $editors[] = sprintf( '<a href="%s" title="">%s</a>', $link, $nicename ); //create a link for each author
+							    $editors[] = sprintf( '<a href="%s" title="">%s</a>', $link, $nicename );
 							  }
 							  echo 'Par ' . implode( ' &amp; ', $editors );
 							}

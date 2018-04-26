@@ -1,7 +1,7 @@
 <?php  /* Template Name: Videos List Page Template */  get_header(); ?>
 <main role="main" class="main-content">
 	<?php get_template_part('breadcrumb'); ?>
-  <?php 
+  <?php
     $current = $post->ID;
     $parent = $post->post_parent;
     $currentTitle = get_the_title();
@@ -50,10 +50,10 @@
 		if (!empty($parent)) {
 		    $kids = new WP_Query(
 		        array(
-							'post_parent' => $post->ID,
-							'post_type' => 'page',
-							'orderby' => 'menu_order',
-							'order' => 'ASC',
+				'post_parent' => $post->ID,
+				'post_type' => 'page',
+				'orderby' => 'menu_order',
+				'order' => 'ASC',
 	            'ignore_sticky_posts' => true,
 	            'paged' => $paged,
 		        )
@@ -63,11 +63,23 @@
 		    		echo '<div class="row">';
 		        while ($kids->have_posts()) {
 		            $kids->the_post();
+					$current = $post->ID;
+					$parent = $post->post_parent;
 								echo '<div class="col-sm-6">';
 								echo '<a href="' . get_the_permalink() . '" class="clearfix" title="' . get_the_title() . '">';
 								echo '<span class="content">';
-								echo '<span class="number">Épisode <span>1.01</span></span>';
-								echo '<span class="title">' . get_the_title() . '</span>';
+								echo '<span class="number">';
+								echo 'Épisode';
+								echo '<span>';
+								echo str_replace("Extraits saison ","",get_the_title( $parent ));
+								echo '.';
+								if( get_field('mf_episode_number', $current) < 10) :
+								echo '0';
+								endif;
+								echo the_field('mf_episode_number', $current);
+								echo '</span>';
+								echo '</span>';
+								echo '<span class="title">&laquo; ' . get_the_title() . ' &raquo;</span>';
 								echo '<span class="desc">';
 								echo the_field('mf_extract');
 								echo '</span>';

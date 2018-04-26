@@ -4,7 +4,7 @@
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-		<meta name="description" content="<?php bloginfo('description'); ?>">
+		<meta name="description" content="<?php malcolmfrance_excerpt('malcolmfrance_index'); ?>">
 		<meta name="author" content="Malcolm France">
 		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
 		<?php wp_head(); ?>
@@ -21,18 +21,42 @@
 		<!-- /Facebook -->
 		<meta property="og:site_name" content="malcolm-france.com">
 		<meta property="fb:app_id" content="654248557947123">
-		<meta property="og:title" content="<?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?>">
-		<meta property="og:description" content="<?php bloginfo('description'); ?>">
+		<?php if ( get_field('mf_share_title') ): ?>
+		<meta property="og:title" content="<?php the_field('mf_share_title'); ?>">
+		<?php else: ?>
+		<meta property="og:title" content="<?php wp_title(''); ?>">
+		<?php endif; ?>
+		<?php if ( get_field('mf_extract') ): ?>
+		<meta property="og:description" content="<?php the_field('mf_extract'); ?>">
+		<?php else: ?>
+		<meta property="og:description" content="<?php malcolmfrance_excerpt('malcolmfrance_index'); ?>">
+		<?php endif; ?>
 		<!--meta property="og:url" content=""-->
+		<?php $shareImage = get_field('mf_share_img'); if ( get_field('mf_share_img') ): ?>
+		<meta property="og:image" content="<?php echo $shareImage['url']; ?>">
+		<?php else: ?>
 		<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/page/default.jpg">
+		<?php endif; ?>
 		<meta property="og:type" content="website">
 		<!-- /Twitter -->
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:site" content="@malcolmfrance">
 		<meta name="twitter:creator" content="@malcolmfrance">
-		<meta name="twitter:title" content="<?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?>">
-		<meta name="twitter:description" content="<?php bloginfo('description'); ?>">
+		<?php if ( get_field('mf_share_title') ): ?>
+		<meta name="twitter:title" content="<?php the_field('mf_share_title'); ?>">
+		<?php else: ?>
+		<meta name="twitter:title" content="<?php wp_title(''); ?>">
+		<?php endif; ?>
+		<?php if ( get_field('mf_extract') ): ?>
+		<meta name="twitter:description" content="<?php the_field('mf_extract'); ?>">
+		<?php else: ?>
+		<meta name="twitter:description" content="<?php malcolmfrance_excerpt('malcolmfrance_index'); ?>">
+		<?php endif; ?>
+		<?php $shareImage = get_field('mf_share_img'); if ( get_field('mf_share_img') ): ?>
+		<meta name="twitter:image" content="<?php echo $shareImage['url']; ?>">
+		<?php else: ?>
 		<meta name="twitter:image" content="<?php echo get_template_directory_uri(); ?>/img/page/default.jpg">
+		<?php endif; ?>
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<script src="<?php echo get_template_directory_uri(); ?>/js/ie10-viewport-bug-workaround.js" type="text/javascript"></script>
 		<!-- Malcolm France shim and Respond.js IE8 support of Malcolm France elements and media queries -->
