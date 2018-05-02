@@ -72,7 +72,15 @@
         color: #e1584b;
       }
 
-      &.instagram {}
+      &.instagram {
+        border-color: #BC32A4;
+      }
+
+      &.instagram .fa {
+        background: linear-gradient(0deg, #BC32A4 0%, #E03768 50%, #F67C33 100%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
       &.pinterest {
         border-color: #b12324;
