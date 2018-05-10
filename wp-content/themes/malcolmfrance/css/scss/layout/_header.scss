@@ -314,6 +314,7 @@
       text-align: right;
 
       @media only screen and (max-width: 767px) {
+        border-bottom: 2px solid $color-grey-1;
         left: inherit;
         position: relative;
         right: inherit;
@@ -348,7 +349,7 @@
             color: $color-grey-1;
             display: block;
             font-size: 1.171875rem;
-            line-height: 19px;
+            line-height: 20px;
             padding: 14px 19px;
             position: relative;
             text-decoration: none;

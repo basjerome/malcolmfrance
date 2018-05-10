@@ -299,7 +299,7 @@ a:hover {
 		a:hover {
 			background-image: -webkit-gradient(linear, left top, left bottom, from($color-yellow), to($color-yellow));
 			background-image: linear-gradient(180deg, $color-yellow, $color-yellow);
-			background-position: 0 1rem;
+			background-position: 0 .95rem;
 			background-repeat: no-repeat;
 			background-size: 100% 100%;
 			color: $color-grey-1;
@@ -1122,7 +1122,7 @@ a:hover {
 						a:hover {
 							background-image: -webkit-gradient(linear, left top, left bottom, from($color-yellow), to($color-yellow));
 							background-image: linear-gradient(180deg, $color-yellow, $color-yellow);
-							background-position: 0 1rem;
+							background-position: 0 .95rem;
 							background-repeat: no-repeat;
 							background-size: 100% 100%;
 							color: $color-grey-1;
