@@ -6,7 +6,7 @@
 		<div class="row post-meta">
 			<div class="col-sm-6">
 				<span class="edit">
-					<?php edit_post_link( __( 'Edit', 'malcolmfrance' ), '<i class="fa fa-cog" aria-hidden="true"></i> ', '', null, '' ); ?>
+					<?php edit_post_link( __( 'Edit', 'malcolmfrance' ), '<i class="fas fa-cog" aria-hidden="true"></i> ', '', null, '' ); ?>
 				</span>
 			</div>
 		</div><!-- /post-meta end -->
@@ -19,7 +19,7 @@
 				<div class="col-md-6">
 					<?php if( have_rows('mf_product_carousel') ) : ?>
 					<div class="owl-container">
-						<button class="expand" type="button"><i class="fa fa-expand"></i></button>
+						<button class="expand" type="button"><i class="fas fa-expand"></i></button>
 						<div id="slideshow" class="owl-carousel">
 							<?php while( have_rows('mf_product_carousel') ): the_row();
 								$img = get_sub_field('mf_product_image');
@@ -83,13 +83,13 @@
 					<p>
 						<?php if( get_field('mf_product_amazon') ): ?>
 						<a href="<?php the_field('mf_product_amazon'); ?>" class="btn btn-yellow btn-block" target="_blank" title="<?php the_title(); ?>">
-							<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+							<i class="fas fa-shopping-cart" aria-hidden="true"></i>
 							Acheter sur <i class="icon-amazon">amazon</i>
 						</a>
 						<?php endif; ?>
 						<?php if( get_field('mf_product_fnac') ): ?>
 						<a href="<?php the_field('mf_product_fnac'); ?>" class="btn btn-yellow btn-block" target="_blank" title="<?php the_title(); ?>">
-							<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+							<i class="fas fa-shopping-cart" aria-hidden="true"></i>
 							Acheter sur <i class="icon-fnac">fnac</i>
 						</a>
 						<?php endif; ?>

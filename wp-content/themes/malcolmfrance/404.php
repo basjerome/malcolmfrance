@@ -11,7 +11,7 @@
 		<link href="//www.google-analytics.com" rel="dns-prefetch">
 		<link href="<?php echo get_template_directory_uri(); ?>/img/icon/favicon.png" rel="shortcut icon">
 		<link href="<?php echo get_template_directory_uri(); ?>/img/icon/favicon.png" rel="apple-touch-icon-precomposed">
-		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 		<link href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css" rel="stylesheet">
 		<link href="<?php echo get_template_directory_uri(); ?>/css/main.min.css" rel="stylesheet">
 		<!-- /Facebook -->
@@ -54,17 +54,17 @@
 		<div class="content">
 			<p><?php echo $var[$model][2]; ?></p>
 			<div class="button">
-				<a href="<?php echo home_url(); ?>" class="btn btn-yellow" title="Accueil Malcolm France">Retourner à l'accueil</a>
+				<a href="<?php echo home_url(); ?>" class="btn btn-yellow" title="Accueil Malcolm France"><i class="fas fa-home"></i> Retourner à l'accueil</a>
 			</div>
 			<div class="link">
-				<a href="#" class="" title="" data-toggle="modal" data-target="#errorReporting">Vous n'arrivez toujours pas à afficher la page <i class="fa fa-question-circle"></i></a>
+				<a href="#" class="" title="" data-toggle="modal" data-target="#errorReporting">Vous n'arrivez toujours pas à afficher la page <i class="fas fa-question-circle"></i></a>
 			</div>
 			<div class="video-controls">
 				<button class="play" type="button">
-					<i class="fa fa-pause"></i>
+					<i class="fas fa-pause"></i>
 				</button>
 				<button class="mute" type="button">
-					<i class="fa fa-volume-off"></i>
+					<i class="fas fa-volume-off"></i>
 				</button>
 			</div>
 		</div>

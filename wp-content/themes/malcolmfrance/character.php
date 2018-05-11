@@ -7,7 +7,7 @@
 		<div class="row post-meta">
 			<div class="col-sm-6">
 				<span class="edit">
-					<?php edit_post_link( __( 'Edit', 'malcolmfrance' ), '<i class="fa fa-cog" aria-hidden="true"></i> ', '', null, '' ); ?>
+					<?php edit_post_link( __( 'Edit', 'malcolmfrance' ), '<i class="fas fa-cog" aria-hidden="true"></i> ', '', null, '' ); ?>
 				</span>
 			</div>
 		</div><!-- /post-meta end -->
@@ -49,7 +49,7 @@
 				?>
 				<article class="col-md-4">
 					<a href="<?php the_permalink()?>" title="<?php the_title(); ?>">
-						<i class="fa fa-play-circle-o"></i>
+						<i class="far fa-play-circle"></i>
 						<span><?php the_title(); ?></span>
 						<img src="<?php echo the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="img-responsive">
 					</a>
@@ -146,7 +146,7 @@
 				<button class="btn btn-default" type="button"><i class="fa fa-ticket"></i> <span class="hidden-xs">Film</span></button>
 				<button class="btn btn-default" type="button"><i class="fa fa-television"></i> <span class="hidden-xs">Série</span></button>
 				<button class="btn btn-default" type="button"><i class="fa fa-film"></i> <span class="hidden-xs">Téléfilm</span></button>
-				<button class="btn btn-default" type="button"><i class="fa fa-pencil"></i> <span class="hidden-xs">Dessin animé</span></button>
+				<button class="btn btn-default" type="button"><i class="fas fa-edit"></i> <span class="hidden-xs">Dessin animé</span></button>
 				<button class="btn btn-default" type="button"><i class="fa fa-video-camera"></i> <span class="hidden-xs">Court-métrage</span></button>
 				<button class="btn btn-default" type="button"><i class="fa fa-cube"></i> <span class="hidden-xs">Autre</span></button>
 			</div>

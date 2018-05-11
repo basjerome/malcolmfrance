@@ -3,7 +3,7 @@
 ?>
 	<ul class="breadcrumb">
 		<li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="">
-			<a href="<?php echo home_url(); ?>" title="Accueil Malcolm France" itemprop="url"><span itemprop="title"><i class="fa fa-home"></i></span></a>
+			<a href="<?php echo home_url(); ?>" title="Accueil Malcolm France" itemprop="url"><span itemprop="title"><i class="fas fa-home"></i></span></a>
 		</li>
 		<?php
 			if (is_page()) {

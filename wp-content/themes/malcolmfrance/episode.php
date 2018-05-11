@@ -7,7 +7,7 @@
 	<div class="row post-meta">
 		<div class="col-sm-6">
 			<span class="edit">
-				<?php edit_post_link( __( 'Edit', 'malcolmfrance' ), '<i class="fa fa-cog" aria-hidden="true"></i> ', '', null, '' ); ?>
+				<?php edit_post_link( __( 'Edit', 'malcolmfrance' ), '<i class="fas fa-cog" aria-hidden="true"></i> ', '', null, '' ); ?>
 			</span>
 		</div>
 	</div><!-- /post-meta end -->
@@ -42,7 +42,7 @@
 
 	<?php if( get_field('mf_episode_images') ): ?>
 	<div class="owl-container">
-		<button class="expand" type="button"><i class="fa fa-expand"></i></button>
+		<button class="expand" type="button"><i class="fas fa-expand"></i></button>
 		<div id="slideshow" class="owl-carousel">
 			<?php while( have_rows('mf_episode_images') ): the_row();
 				$img = get_sub_field('mf_episode_image');
@@ -167,7 +167,7 @@
 			?>
 			<dt>
 				<a href="#intrigue-<?php echo $i; ?>" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="intrigue-<?php echo $i; ?>">
-					<span class="label"><i class="fa fa-arrow-circle-o-down"></i> <?php echo $label; ?></span> <?php echo $title; ?>
+					<span class="label"><i class="far fa-plus-square"></i> <?php echo $label; ?></span> <?php echo $title; ?>
 				</a>
 			</dt>
 			<dd class="collapse" id="intrigue-<?php echo $i; ?>">
@@ -223,7 +223,7 @@
 			<?php foreach( $posts as $p ): ?>
 			<div class="col-xs-6 col-md-4">
 				<a href="<?php echo get_permalink( $p->ID ); ?>" title="<?php echo get_the_title( $p->ID ); ?>">
-					<i class="fa fa-play-circle-o"></i>
+					<i class="far fa-play-circle"></i>
 					<span><?php echo get_the_title( $p->ID ); ?></span>
 					<?php echo get_the_post_thumbnail( $p->ID, '', array( 'class' => 'img-responsive' ) ); ?>
 				</a>

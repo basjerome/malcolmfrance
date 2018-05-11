@@ -221,7 +221,7 @@
             }
           }
 
-          .fa {
+          i {
             color: $color-white;
             font-size: 4.375rem;
             left: 50%;
@@ -295,7 +295,7 @@
             }
           }
 
-          .fa {
+          i {
             color: $color-white;
             font-size: 4.375rem;
             left: 50%;
@@ -545,7 +545,7 @@
                 @include transition(all, ease, .3s);
               }
 
-              .fa {
+              i {
                 font-size: 4.375rem;
                 left: 50%;
                 position: absolute;
@@ -636,7 +636,7 @@
             padding: 0;
             position: relative;
 
-            .fa {
+            i {
               font-size: 8.75rem;
               left: 50%;
               position: absolute;

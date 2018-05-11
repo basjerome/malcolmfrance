@@ -7,7 +7,7 @@
 		<div class="row post-meta">
 			<div class="col-sm-6">
 				<span class="edit">
-					<?php edit_post_link( __( 'Edit', 'malcolmfrance' ), '<i class="fa fa-cog" aria-hidden="true"></i> ', '', null, '' ); ?>
+					<?php edit_post_link( __( 'Edit', 'malcolmfrance' ), '<i class="fas fa-cog" aria-hidden="true"></i> ', '', null, '' ); ?>
 				</span>
 			</div>
 		</div><!-- /post-meta end -->
@@ -93,7 +93,7 @@
 				?>
 				<article class="col-md-4">
 					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-						<i class="fa fa-play-circle-o"></i>
+						<i class="far fa-play-circle"></i>
 						<span><?php the_title(); ?></span>
 					<img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="img-responsive">
 					</a>

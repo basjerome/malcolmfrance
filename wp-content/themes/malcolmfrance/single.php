@@ -10,7 +10,7 @@
 			<div class="row post-meta">
 				<div class="col-sm-6">
 					<span class="author" itemprop="author" itemscope itemtype="https://schema.org/Person">
-						<i class="fa fa-pencil"></i>
+						<i class="fas fa-edit"></i>
 						<?php
 							$values = get_field( 'mf_authors' );
 							if ( $values ) {
@@ -29,8 +29,8 @@
 					</span>
 				</div>
 				<div class="col-sm-6 text-right">
-					<span class="date"><i class="fa fa-calendar"></i> <?php the_time('l j F Y'); ?></span>
-					<span class="hour"><i class="fa fa-clock-o"></i> <?php the_time('g'); ?>H<?php the_time('i'); ?></span>
+					<span class="date"><i class="far fa-calendar-alt"></i> <?php the_time('l j F Y'); ?></span>
+					<span class="hour"><i class="far fa-clock"></i> <?php the_time('g'); ?>H<?php the_time('i'); ?></span>
 					<span class="comments"><i class="fa fa-commenting-o"></i> <a href="#disqus_thread" class="scroll-to" title="Voir les commentaires"><span class="disqus-comment-count" data-disqus-identifier="<?php the_permalink(); ?>">0 commentaire</span></a></span>
 				</div>
 			</div><!-- /post-meta end -->

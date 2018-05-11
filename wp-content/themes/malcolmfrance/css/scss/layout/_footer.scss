@@ -41,7 +41,7 @@
       @include border-radius(50%);
       @include transition(all, ease, .1s);
 
-      .fa {
+      i {
         left: 50%;
         position: absolute;
         top: 50%;
@@ -76,7 +76,7 @@
         border-color: #BC32A4;
       }
 
-      &.instagram .fa {
+      &.instagram i {
         background: linear-gradient(0deg, #BC32A4 0%, #E03768 50%, #F67C33 100%);
         background-clip: text;
         -webkit-text-fill-color: transparent;

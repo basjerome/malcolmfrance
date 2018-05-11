@@ -7,7 +7,7 @@
 		<div class="row post-meta">
 			<div class="col-sm-6">
 				<span class="edit">
-					<?php edit_post_link( __( 'Edit', 'malcolmfrance' ), '<i class="fa fa-cog" aria-hidden="true"></i> ', '', null, '' ); ?>
+					<?php edit_post_link( __( 'Edit', 'malcolmfrance' ), '<i class="fas fa-cog" aria-hidden="true"></i> ', '', null, '' ); ?>
 				</span>
 			</div>
 		</div><!-- /post-meta end -->

@@ -18,6 +18,8 @@
 					</article>
 				<?php endwhile; ?>
 			<?php endif; ?>
+			<br />
+			<p class="text-center"><a href="<?php echo home_url(); ?>/category/actualites/" class="btn btn-yellow"><i class="fas fa-plus-circle"></i> Toute l'actu</a></p>
 		</section>
 		<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-1')) ?>
 		<?php
@@ -72,7 +74,7 @@
 				</table>
 			</div>
 			<div class="text-center">
-				<a href="<?php echo home_url(); ?>/diffusions/" class="btn btn-yellow" title="Diffusions Malcolm">Toutes les diffusions</a>
+				<a href="<?php echo home_url(); ?>/diffusions/" class="btn btn-yellow" title="Diffusions Malcolm"><i class="fas fa-tv"></i> Toutes les diffusions</a>
 			</div>
 		</section>
 		<?php endif; ?>
@@ -84,7 +86,7 @@
 				<span class="product-price">29,99 €</span>
 			</a>
 			<div class="text-center">
-				<a href="shop.html" class="btn btn-yellow" title="Boutique Malcolm">Toute la boutique</a>
+				<a href="shop.html" class="btn btn-yellow" title="Boutique Malcolm"><i class="fas fa-shopping-cart"></i> Toute la boutique</a>
 			</div>
 		</section>
 		<section class="social-networks text-center">

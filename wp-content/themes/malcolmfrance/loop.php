@@ -7,8 +7,8 @@
 			</span>
 		<?php endif; ?>
 		<span class="post-meta">
-			<span class="date"><i class="fa fa-calendar"></i> <?php the_time('l j F Y'); ?></span>
-			<span class="hour"><i class="fa fa-clock-o"></i> <?php the_time('g'); ?>H<?php the_time('i'); ?></span>
+			<span class="date"><i class="far fa-calendar-alt"></i> <?php the_time('l j F Y'); ?></span>
+			<span class="hour"><i class="far fa-clock"></i> <?php the_time('g'); ?>H<?php the_time('i'); ?></span>
 		</span>
 		<span class="post-title"><?php the_title(); ?></span>
 		<span class="post-desc"><?php the_excerpt(); ?></span>

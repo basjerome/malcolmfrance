@@ -7,7 +7,7 @@
 		<div class="row post-meta">
 			<div class="col-sm-6">
 				<span class="edit">
-					<?php edit_post_link( __( 'Edit', 'malcolmfrance' ), '<i class="fa fa-cog" aria-hidden="true"></i> ', '', null, '' ); ?>
+					<?php edit_post_link( __( 'Edit', 'malcolmfrance' ), '<i class="fas fa-cog" aria-hidden="true"></i> ', '', null, '' ); ?>
 				</span>
 			</div>
 		</div><!-- /post-meta end -->
@@ -45,7 +45,7 @@
           ?>
           <dt>
             <a href="#block-<?php echo $i; ?>" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="block-<?php echo $i; ?>">
-              <span class="label"><i class="fa fa-arrow-circle-o-down"></i> <?php echo $question; ?> </span>
+              <span class="label"><i class="far fa-plus-square"></i> <?php echo $question; ?> </span>
             </a>
           </dt>
           <dd class="collapse" id="block-<?php echo $i; ?>">

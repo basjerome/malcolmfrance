@@ -83,7 +83,7 @@
                   <?php
                     $icon = get_field('mf_post_icons');
                     if( $icon == 'Vidéo' ) { ?>
-                    <i class="fa fa-play-circle-o"></i>
+                    <i class="far fa-play-circle"></i>
                   <?php } elseif ( $icon == 'Diaporama' ) { ?>
                     <i class="fa fa-camera"></i>
                   <?php } ?>
@@ -96,8 +96,8 @@
                     <span class="post-title"><?php the_title(); ?></span>
                     <span class="post-desc"><?php the_excerpt(); ?></span>
                     <span class="post-meta">
-                      <span class="date"><i class="fa fa-calendar"></i> <?php the_time('l j F Y'); ?></span>
-                      <span class="hour"><i class="fa fa-clock-o"></i> <?php the_time('g'); ?>H<?php the_time('i'); ?></span>
+                      <span class="date"><i class="far fa-calendar-alt"></i> <?php the_time('l j F Y'); ?></span>
+                      <span class="hour"><i class="far fa-clock"></i> <?php the_time('g'); ?>H<?php the_time('i'); ?></span>
                       <span class="comments"><i class="fa fa-commenting-o"></i> <span class="disqus-comment-count" data-disqus-identifier="<?php the_permalink(); ?>">0</span></span>
                     </span>
                   </span>
@@ -127,7 +127,7 @@
                 <?php
                   $icon = get_field('mf_post_icons');
                   if( $icon == 'Vidéo' ) { ?>
-                  <i class="fa fa-play-circle-o"></i>
+                  <i class="far fa-play-circle"></i>
                 <?php } elseif ( $icon == 'Diaporama' ) { ?>
                   <i class="fa fa-camera"></i>
                 <?php } ?>
@@ -139,8 +139,8 @@
                 <span class="post-title"><?php the_title(); ?></span>
                 <span class="post-desc"><?php the_excerpt(); ?></span>
                 <span class="post-meta">
-                  <span class="date"><i class="fa fa-calendar"></i> <?php the_time('l j F Y'); ?></span>
-                  <span class="hour"><i class="fa fa-clock-o"></i> <?php the_time('g'); ?>H<?php the_time('i'); ?></span>
+                  <span class="date"><i class="far fa-calendar-alt"></i> <?php the_time('l j F Y'); ?></span>
+                  <span class="hour"><i class="far fa-clock"></i> <?php the_time('g'); ?>H<?php the_time('i'); ?></span>
                   <span class="comments"><i class="fa fa-commenting-o"></i> <span class="disqus-comment-count" data-disqus-identifier="<?php the_permalink(); ?>">0</span></span>
                 </span>
               </a>
@@ -155,7 +155,7 @@
       $category_link = get_category_link($category_id);
     ?>
     <div class="text-center">
-      <a href="<?php echo esc_url( $category_link ); ?>" class="btn btn-yellow" title=""><i class="fa fa-plus-circle" aria-hidden="true"></i> Plus d'articles</a>
+      <a href="<?php echo esc_url( $category_link ); ?>" class="btn btn-yellow" title=""><i class="fas fa-plus-circle" aria-hidden="true"></i> Plus d'articles</a>
     </div>
   </section>
   <div class="row row-table">
@@ -179,7 +179,7 @@
           <div class="addthis addthis_sharing_toolbox" data-url="http://malcolm-france.com/v3/site/quote.html" data-title="« Panique au pique-nique » (Saison 1, Épisode 8)"></div>
         </div>
         <div class="text-center">
-          <a href="#" class="btn btn-yellow" title=""><i class="fa fa-plus-circle" aria-hidden="true"></i> Toutes les répliques cultes</a>
+          <a href="#" class="btn btn-yellow" title=""><i class="fas fa-plus-circle" aria-hidden="true"></i> Toutes les répliques cultes</a>
         </div>
       </section>
       <section class="gifs">
@@ -192,7 +192,7 @@
           <div class="addthis addthis_sharing_toolbox" data-url="https://media0.giphy.com/media/13PZ0dKw1J3LzO/giphy.gif" data-title="Gif Malcolm | Dewey vs nain de jardin"></div>
         </div>
         <div class="text-center">
-          <a href="#" class="btn btn-yellow" title=""><i class="fa fa-plus-circle" aria-hidden="true"></i> Tous les gifs</a>
+          <a href="#" class="btn btn-yellow" title=""><i class="fas fa-plus-circle" aria-hidden="true"></i> Tous les gifs</a>
         </div>
       </section>
     </div>
@@ -249,7 +249,7 @@
       </div>
       <?php endif; ?>
       <div class="text-center">
-        <a href="<?php echo home_url(); ?>/diffusions/" class="btn btn-yellow" title="Voir toutes les diffusion télé de Malcolm"><i class="fa fa-plus-circle" aria-hidden="true"></i> Toutes les diffusions</a>
+        <a href="<?php echo home_url(); ?>/diffusions/" class="btn btn-yellow" title="Voir toutes les diffusion télé de Malcolm"><i class="fas fa-tv" aria-hidden="true"></i> Toutes les diffusions</a>
       </div>
     </section>
   </div><!-- /row -->
@@ -261,7 +261,7 @@
       <div class="col-lg-7 col-md-7 col-right">
         <a href="#" title="">
           <span class="img-container">
-            <i class="fa fa-play-circle-o"></i>
+            <i class="far fa-play-circle"></i>
             <span class="img">
               <img src="http://www.malcolm-france.com/v3/site/img/page/default.jpg" alt="" />
             </span>
@@ -276,7 +276,7 @@
         <article>
           <a href="#" title="">
             <span class="img">
-              <i class="fa fa-play-circle-o"></i>
+              <i class="far fa-play-circle"></i>
               <img src="http://www.malcolm-france.com/v3/site/img/page/default.jpg" alt="" class="img-responsive" />
             </span>
             <span class="content">
@@ -288,7 +288,7 @@
         <article>
           <a href="#" title="">
             <span class="img">
-              <i class="fa fa-play-circle-o"></i>
+              <i class="far fa-play-circle"></i>
               <img src="http://www.malcolm-france.com/v3/site/img/page/default.jpg" alt="" class="img-responsive" />
             </span>
             <span class="content">
@@ -300,7 +300,7 @@
         <article>
           <a href="#" title="">
             <span class="img">
-              <i class="fa fa-play-circle-o"></i>
+              <i class="far fa-play-circle"></i>
               <img src="http://www.malcolm-france.com/v3/site/img/page/default.jpg" alt="" class="img-responsive" />
             </span>
             <span class="content">
@@ -310,7 +310,7 @@
           </a>
         </article>
         <div class="text-center">
-          <a href="#" class="btn btn-yellow" title=""><i class="fa fa-plus-circle" aria-hidden="true"></i> Toutes les vidéos</a>
+          <a href="#" class="btn btn-yellow" title=""><i class="fas fa-plus-circle" aria-hidden="true"></i> Toutes les vidéos</a>
         </div>
       </div><!-- /col-left -->
     </div><!-- /row -->
@@ -356,11 +356,11 @@
         <h2 class="title-highlight"><span>La communauté des fans</span></h2>
         <div class="row">
           <div class="col-sm-6">
-            <h3 class="title-highlight facebook"><a href="https://www.facebook.com/malcolmfrance" class="facebook" target="_blank" title="Rejoins-nous !" data-toggle="tooltip" data-placement="bottom" data-original-title="Malcolm France Facebook"><span><i class="fa fa-facebook" aria-hidden="true"></i></span></a></h3>
+            <h3 class="title-highlight facebook"><a href="https://www.facebook.com/malcolmfrance" class="facebook" target="_blank" title="Rejoins-nous !" data-toggle="tooltip" data-placement="bottom" data-original-title="Malcolm France Facebook"><span><i class="fab fa-facebook-f" aria-hidden="true"></i></span></a></h3>
             <div class="fb-page" data-href="https://www.facebook.com/malcolmfrance/" data-width="555" data-height="620" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><blockquote cite="https://www.facebook.com/malcolmfrance/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/malcolmfrance/">Malcolm France</a></blockquote></div>
           </div>
           <div class="col-sm-6">
-            <h3 class="title-highlight twitter"><a href="https://twitter.com/malcolmfrance" class="twitter" target="_blank" title="Rejoins-nous !" data-toggle="tooltip" data-placement="bottom" data-original-title="Malcolm France Twitter"><span><i class="fa fa-twitter" aria-hidden="true"></i></span></a></h3>
+            <h3 class="title-highlight twitter"><a href="https://twitter.com/malcolmfrance" class="twitter" target="_blank" title="Rejoins-nous !" data-toggle="tooltip" data-placement="bottom" data-original-title="Malcolm France Twitter"><span><i class="fab fa-twitter" aria-hidden="true"></i></span></a></h3>
             <a class="twitter-timeline"  href="https://twitter.com/hashtag/Malcolm" data-widget-id="978201833691926528">Tweets sur #Malcolm</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
           </div>
@@ -378,7 +378,7 @@
               <span class="price">
                 <span>97€<span>95</span></span>
               </span>
-              <span href="shop.html" class="btn btn-yellow" title="">Je le veux !</span>
+              <span href="shop.html" class="btn btn-yellow" title=""><i class="fas fa-shopping-cart"></i> Je le veux !</span>
             </a>
           </div><!-- /item -->
           <div class="item">
@@ -388,7 +388,7 @@
               <span class="price">
                 <span>97€<span>95</span></span>
               </span>
-              <span href="shop.html" class="btn btn-yellow" title="">Je le veux !</span>
+              <span href="shop.html" class="btn btn-yellow" title=""><i class="fas fa-shopping-cart"></i> Je le veux !</span>
             </a>
           </div><!-- /item -->
           <div class="item">
@@ -398,7 +398,7 @@
               <span class="price">
                 <span>97€<span>95</span></span>
               </span>
-              <span href="shop.html" class="btn btn-yellow" title="">Je le veux !</span>
+              <span href="shop.html" class="btn btn-yellow" title=""><i class="fas fa-shopping-cart"></i> Je le veux !</span>
             </a>
           </div><!-- /item -->
         </div><!-- /owl-carousel -->
