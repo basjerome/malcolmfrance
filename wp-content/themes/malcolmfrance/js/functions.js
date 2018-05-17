@@ -57,7 +57,7 @@ function navInit(){
           }
           else {
             hoverNav = true;
-            $('.sub-menu', this).fadeIn(300);
+            $('.sub-menu', this).fadeIn(0);
           }
           $(this).addClass('active');
           if( $('.main-header nav ul.category > li.current').length ) {
@@ -69,7 +69,7 @@ function navInit(){
           }
           else {
             hoverNav = false;
-            $('.sub-menu', this).fadeOut(300);
+            $('.sub-menu', this).fadeOut(0);
           }
           $(this).removeClass('active');
           if( $('.main-header nav ul.category > li.current-off').length ) {

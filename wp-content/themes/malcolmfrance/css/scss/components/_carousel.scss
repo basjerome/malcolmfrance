@@ -259,7 +259,7 @@
   &#shopCarousel {
     margin-right: -15px;
     margin-left: -15px;
-    padding-top: 60px;
+    padding-top: 85px;
     width: auto;
 
     .owl-item {
@@ -278,8 +278,9 @@
         a:hover {
 
           .btn-yellow {
-            background: $color-grey-1 !important;
-            color: $color-yellow !important;
+            background: $color-yellow !important;
+            border-color: $color-yellow !important;
+            color: $color-grey-1 !important;
           }
         }
 

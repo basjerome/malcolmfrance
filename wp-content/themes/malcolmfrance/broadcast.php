@@ -55,6 +55,8 @@
 								$strtotimecurrentDate = strtotime($currentDate);
 								$date = get_sub_field('mf_broadcasts_date', false, false);
 								$date = new DateTime($date);
+								$dateformatstring = "l j F Y G:i";
+								$unixtimestamp = strtotime(get_sub_field('mf_broadcasts_date', false, false));
 								$strtotimedate = strtotime($date->format('l j F Y G:i'));
 								$episode = get_sub_field('mf_broadcasts_episode');
 								$channel = get_sub_field('mf_broadcasts_channel');
@@ -63,7 +65,7 @@
 							<tr itemscope="" itemtype="http://schema.org/Event">
 								<td>
 									<meta itemprop="startDate" content="<?php echo $date->format('c'); ?>">
-									<?php echo $date->format('l j F Y G:i'); ?>
+									<?php echo date_i18n($dateformatstring, $unixtimestamp); ?>
 								</td>
 								<td>
 									<?php foreach( $episode as $ep ): ?>

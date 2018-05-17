@@ -356,13 +356,15 @@
         <h2 class="title-highlight"><span>La communauté des fans</span></h2>
         <div class="row">
           <div class="col-sm-6">
-            <h3 class="title-highlight facebook"><a href="https://www.facebook.com/malcolmfrance" class="facebook" target="_blank" title="Rejoins-nous !" data-toggle="tooltip" data-placement="bottom" data-original-title="Malcolm France Facebook"><span><i class="fab fa-facebook-f" aria-hidden="true"></i></span></a></h3>
+            <h3 class="title-highlight facebook"><i class="fab fa-facebook-f"></i></h3>
             <div class="fb-page" data-href="https://www.facebook.com/malcolmfrance/" data-width="555" data-height="620" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><blockquote cite="https://www.facebook.com/malcolmfrance/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/malcolmfrance/">Malcolm France</a></blockquote></div>
+            <div class="text-center"><a href="https://www.facebook.com/malcolmfrance" class="btn btn-yellow" target="_blank" title="Rejoins-nous !"><span><i class="fas fa-thumbs-up"></i> Nous rejoindre</span></a></div>
           </div>
           <div class="col-sm-6">
-            <h3 class="title-highlight twitter"><a href="https://twitter.com/malcolmfrance" class="twitter" target="_blank" title="Rejoins-nous !" data-toggle="tooltip" data-placement="bottom" data-original-title="Malcolm France Twitter"><span><i class="fab fa-twitter" aria-hidden="true"></i></span></a></h3>
-            <a class="twitter-timeline"  href="https://twitter.com/hashtag/Malcolm" data-widget-id="978201833691926528">Tweets sur #Malcolm</a>
+            <h3 class="title-highlight twitter"><i class="fab fa-twitter"></i></h3>
+            <a class="twitter-timeline" href="https://twitter.com/hashtag/Malcolm" data-widget-id="978201833691926528">Tweets sur #Malcolm</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            <div class="text-center"><a href="https://twitter.com/malcolmfrance" class="btn btn-yellow" target="_blank" title="Rejoins-nous !"><span><i class="fas fa-thumbs-up"></i> Nous rejoindre</span></a></div>
           </div>
         </div><!-- /row -->
       </section>
@@ -372,33 +374,33 @@
         <h2 class="title-highlight"><span>La boutique</span></h2>
         <div id="shopCarousel" class="owl-carousel">
           <div class="item">
-            <a href="shop.html" title="">
+            <a href="/boutique/dvd-malcolm/" title="">
               <img src="https://images-na.ssl-images-amazon.com/images/I/71g8jTodGYL._SX522_.jpg" alt="" class="img-responsive" />
               <span class="title">Coffret Intégrale Malcolm, saisons 1 à 7</span>
               <span class="price">
                 <span>97€<span>95</span></span>
               </span>
-              <span href="shop.html" class="btn btn-yellow" title=""><i class="fas fa-shopping-cart"></i> Je le veux !</span>
+              <span class="btn btn-yellow"><i class="fas fa-shopping-cart"></i> Je le veux !</span>
             </a>
           </div><!-- /item -->
           <div class="item">
-            <a href="shop.html" title="">
+            <a href="/boutique/dvd-malcolm/" title="">
               <img src="https://images-na.ssl-images-amazon.com/images/I/81wSd9dLJHL._SY679_.jpg" alt="" class="img-responsive" />
               <span class="title">Coffret Intégrale Malcolm, saisons 1 à 7</span>
               <span class="price">
                 <span>97€<span>95</span></span>
               </span>
-              <span href="shop.html" class="btn btn-yellow" title=""><i class="fas fa-shopping-cart"></i> Je le veux !</span>
+              <span class="btn btn-yellow"><i class="fas fa-shopping-cart"></i> Je le veux !</span>
             </a>
           </div><!-- /item -->
           <div class="item">
-            <a href="shop.html" title="">
+            <a href="/boutique/dvd-malcolm/" title="">
               <img src="https://images-na.ssl-images-amazon.com/images/I/71g8jTodGYL._SX522_.jpg" alt="" class="img-responsive" />
               <span class="title">Coffret Intégrale Malcolm, saisons 1 à 7</span>
               <span class="price">
                 <span>97€<span>95</span></span>
               </span>
-              <span href="shop.html" class="btn btn-yellow" title=""><i class="fas fa-shopping-cart"></i> Je le veux !</span>
+              <span class="btn btn-yellow"><i class="fas fa-shopping-cart"></i> Je le veux !</span>
             </a>
           </div><!-- /item -->
         </div><!-- /owl-carousel -->

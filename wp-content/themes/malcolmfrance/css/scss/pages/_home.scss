@@ -906,6 +906,7 @@
       $SOCIAL NETWORKS
     \*---------------*/
     .social-networks {
+      font-size: 0;
       margin-bottom: 30px;
 
       @media only screen and (max-width: 991px) {
@@ -922,18 +923,21 @@
         }
 
         &.facebook {
-
-          a:hover {
-            color: #3a5ba2;
-          }
+          color: #3a5ba2;
+          font-size: 3.125rem;
         }
 
         &.twitter {
-
-          a:hover {
-            color: #55acee;
-          }
+          color: #55acee;
+          font-size: 3.125rem;
         }
+      }
+
+      .btn-yellow,
+      .btn-yellow:focus,
+      .btn-yellow:hover {
+        line-height: 33px;
+        margin-top: 15px;
       }
     }
 
