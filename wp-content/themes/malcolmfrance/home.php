@@ -372,6 +372,7 @@
     <div class="col-md-4">
       <section class="shop">
         <h2 class="title-highlight"><span>La boutique</span></h2>
+        <h3 class="title-highlight shop"><i class="fas fa-shopping-cart"></i></h3>
         <div id="shopCarousel" class="owl-carousel">
           <div class="item">
             <a href="/boutique/dvd-malcolm/" title="">

@@ -150,7 +150,9 @@
 								background-position: 0 .75rem;
 								background-repeat: no-repeat;
 								background-size: 100% 100%;
+								border-bottom: 1px solid $color-yellow;
 								color: $color-grey-1;
+								padding-top: 1px;
 								text-decoration: none;
 								@include transition(all, ease, .1s);
 							}

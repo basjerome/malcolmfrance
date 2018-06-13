@@ -949,6 +949,20 @@
     .shop {
       margin-bottom: 30px;
 
+      .title-highlight {
+
+        a,
+        a:focus,
+        a:hover {
+          color: $color-yellow;
+          @include transition(all, ease, .3s);
+        }
+
+        &.shop {
+          font-size: 3.125rem;
+        }
+      }
+
       .owl-container {
         background-color: $color-white;
 

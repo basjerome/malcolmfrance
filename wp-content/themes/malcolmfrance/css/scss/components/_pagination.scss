@@ -21,9 +21,9 @@ ul.page-numbers {
 
     > a,
     > span {
-      background-color: $color-yellow;
-      border: 1px solid $color-yellow;
-      color: $color-grey-1;
+      background-color: $color-grey-1;
+      border: 1px solid $color-grey-1;
+      color: $color-yellow;
       display: inline-block;
       font-size: 0.75rem;
       line-height: 19px;
@@ -34,13 +34,13 @@ ul.page-numbers {
 
       &:hover,
       &:focus {
-        background-color: $color-dark-grey;
-        border-color: $color-grey-1;
-        color: $color-yellow;
+        background-color: $color-yellow;
+        border-color: $color-yellow;
+        color: $color-grey-1;
 
         .arrow-left,
         .arrow-right {
-          background-position: 0 -11px;
+          background-position: 0 0;
         }
 
         .arrow-left {
@@ -56,7 +56,7 @@ ul.page-numbers {
 
       .arrow-left,
       .arrow-right {
-        background: no-repeat 0 0;
+        background: no-repeat 0 -11px;
         content: "";
         display: inline-block;
         height: 11px;
@@ -106,9 +106,9 @@ ul.page-numbers {
   .current,
   .current:hover,
   .current:focus {
-    background-color: $color-dark-grey;
-    border-color: $color-grey-1;
-    color: $color-yellow;
+      background-color: $color-yellow;
+      border-color: $color-yellow;
+      color: $color-grey-1;
   }
 
   > .disabled {
@@ -125,7 +125,7 @@ ul.page-numbers {
 
       .arrow-left,
       .arrow-right {
-        background-position: 0 0;
+        background-position: 0 -11px;
         -webkit-animation: none;
                 animation: none;
       }

@@ -97,7 +97,7 @@
 							$url = get_sub_field('mf_actor_social_networks_url');
 							$icon = get_sub_field('mf_actor_social_networks_icon');
 						?>
-						<a href="<?php echo $url; ?>" class="btn btn-yellow" target="_blank" title="<?php the_field('mf_actor_firstname'); ?> <?php the_field('mf_actor_lastname'); ?> sur <?php echo $title; ?>"><i class="fa fa-<?php echo $icon; ?>"></i></a>
+						<a href="<?php echo $url; ?>" class="btn btn-yellow" target="_blank" title="<?php the_field('mf_actor_firstname'); ?> <?php the_field('mf_actor_lastname'); ?> sur <?php echo $title; ?>"><i class="fa-<?php echo $icon; ?>"></i></a>
 						<?php endwhile; ?>
 					</p>
 				</div>
