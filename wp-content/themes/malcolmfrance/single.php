@@ -9,8 +9,10 @@
 			<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 			<div class="row post-meta">
 				<div class="col-sm-6">
+					<span class="edit">
+						<?php edit_post_link( __( 'Edit', 'malcolmfrance' ), '<i class="fas fa-cog" aria-hidden="true"></i> ', '', null, '' ); ?>
+					</span>
 					<span class="author" itemprop="author" itemscope itemtype="https://schema.org/Person">
-						<i class="fas fa-edit"></i>
 						<?php
 							$values = get_field( 'mf_authors' );
 							if ( $values ) {

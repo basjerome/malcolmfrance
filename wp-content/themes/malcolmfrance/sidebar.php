@@ -22,12 +22,12 @@
 			<p class="text-center"><a href="<?php echo home_url(); ?>/category/actualites/" class="btn btn-yellow"><i class="fas fa-plus-circle"></i> Toute l'actu</a></p>
 		</section>
 		<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-1')) ?>
-		<?php
-			$i= 0;
-			if( have_rows('mf_broadcasts', 652) ) :
-		?>
 		<section class="broadcasts">
 			<h4 class="title"><span>Diffusions</span></h4>
+			<?php
+				$i= 0;
+				if( have_rows('mf_broadcasts', 652) ) :
+			?>
 			<div class="table-responsive">
 				<table class="table table-hover table-condensed">
 					<thead>
@@ -39,15 +39,15 @@
 					</thead>
 					<tbody>
 						<?php while( have_rows('mf_broadcasts', 652) ): the_row();
-              $currentDate = date( 'l j F Y G:i', current_time( 'timestamp', 1 ) );
+              				$currentDate = date( 'l j F Y G:i', current_time( 'timestamp', 1 ) );
 							$strtotimecurrentDate = strtotime($currentDate);
-              $date = get_sub_field('mf_broadcasts_date', false, false);
+              				$date = get_sub_field('mf_broadcasts_date', false, false);
 							$date = new DateTime($date);
 							$dateformatstring = "l j F Y G:i";
 							$unixtimestamp = strtotime(get_sub_field('mf_broadcasts_date', false, false));
-              $strtotimedate = strtotime($date->format('l j F Y G:i'));
+              				$strtotimedate = strtotime($date->format('l j F Y G:i'));
 							$episode = get_sub_field('mf_broadcasts_episode');
-              $channel = get_sub_field('mf_broadcasts_channel');
+              				$channel = get_sub_field('mf_broadcasts_channel');
 						?>
 						<?php if( $i < 5 && $strtotimecurrentDate < $strtotimedate ) : ?>
 						<tr itemscope="" itemtype="http://schema.org/Event">
@@ -75,11 +75,16 @@
 					</tbody>
 				</table>
 			</div>
+			<?php else: ?>
+			<div class="clearfix">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/bkg/broadcasts.png" alt="" class="img-responsive">
+				<p>Aucune diffusion sur les chaînes de télévision française pour le moment.</p>
+            </div>
+			<?php endif; ?>
 			<div class="text-center">
 				<a href="<?php echo home_url(); ?>/diffusions/" class="btn btn-yellow" title="Diffusions Malcolm"><i class="fas fa-tv"></i> Toutes les diffusions</a>
 			</div>
 		</section>
-		<?php endif; ?>
 		<section class="shop">
 			<h4 class="title"><span>Boutique</span></h4>
 			<a href="#" class="clearfix" title="Malcolm : l'intégrale de la saison 1 &Eacute;dition POP-UP">
