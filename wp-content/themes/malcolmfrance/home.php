@@ -2,65 +2,23 @@
 <main role="main" class="main-content">
   <?php the_content(); ?>
   <div class="carousel-container">
-    <div id="mainCarousel" class="owl-carousel">
-      <div class="item">
-        <div class="content">
-          <h3 class="subtitle"><span>Audiences</span></h3>
-          <h2 class="title"><span>Déprogrammé</span></h2>
+    <?php if( have_rows('mf_homepage_carousel') ): ?>
+      <div id="mainCarousel" class="owl-carousel">
+        <?php while( have_rows('mf_homepage_carousel') ): the_row();
+          $image = get_sub_field('mf_homepage_carousel_img');
+          $category = get_sub_field('mf_homepage_carousel_category');
+          $title = get_sub_field('mf_homepage_carousel_title');
+          $url = get_sub_field('mf_homepage_carousel_url');
+        ?>
+        <div class="item" style="background-image: url('<?php echo $image['url']; ?>');" onclick="location.href='<?php echo $url; ?>';">
+          <div class="content">
+            <h3 class="subtitle"><span><?php echo $category; ?></span></h3>
+            <h2 class="title"><span><?php echo $title; ?></span></h2>
+          </div>
         </div>
-        <ul class="parallax" id="parallax-0"
-            data-calibrate-x="false"
-            data-calibrate-y="true"
-            data-invert-x="false"
-            data-invert-y="true"
-            data-limit-x="false"
-            data-limit-y="10"
-            data-scalar-x="7"
-            data-scalar-y="0"
-            data-origin-x="0.0"
-            data-origin-y="0.0">
-          <li class="layer" data-depth="0.10">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/test/slide-02-bkg.jpg" alt="" class="img-responsive" />
-          </li>
-          <li class="layer" data-depth="0.20">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/test/slide-02-bkg.png" alt="" class="img-responsive" />
-          </li>
-          <li class="layer" data-depth="0.40" data-invert-y="false">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/test/slide-02-m6.png" alt="" class="img-responsive" />
-          </li>
-          <li class="layer" data-depth="0.60">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/test/slide-02-malcolm.png" alt="" class="img-responsive" />
-          </li>
-        </ul>
+        <?php endwhile; ?>
       </div>
-      <div class="item">
-        <div class="content">
-          <h3 class="subtitle"><span>Boutique</span></h3>
-          <h2 class="title"><span>Découvrez le nouveau<br />coffret collector</span></h2>
-        </div>
-        <ul class="parallax" id="parallax-1"
-            data-calibrate-x="false"
-            data-calibrate-y="true"
-            data-invert-x="false"
-            data-invert-y="true"
-            data-limit-x="false"
-            data-limit-y="10"
-            data-scalar-x="7"
-            data-scalar-y="0"
-            data-origin-x="0.0"
-            data-origin-y="0.0">
-          <li class="layer" data-depth="0.60">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/test/slide-01-stevie.png" alt="" class="img-responsive" />
-          </li>
-          <li class="layer" data-depth="0.20">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/test/slide-01-malcolm.png" alt="" class="img-responsive" />
-          </li>
-          <li class="layer" data-depth="0.40">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/test/slide-01-logo.png" alt="" class="img-responsive" />
-          </li>
-        </ul>
-      </div>
-    </div>
+    <?php endif; ?>
   </div>
   <section class="news">
     <h2 class="title-highlight"><span>L'actu récente</span></h2>
@@ -253,6 +211,24 @@
       </div>
     </section>
   </div><!-- /row -->
+
+
+
+  <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+  <?php if( get_field('mf_homepage_videos') ): ?>
+    <?php
+      $posts = get_field('mf_homepage_videos');
+      if( $posts ):
+    ?>
+    <?php foreach( $posts as $p ): ?>
+      <?php /*
+      <?php echo get_the_title( $p->post_parent ); ?>
+      <?php echo get_the_title( $p->ID ); ?>
+      <?php echo get_permalink( $p->ID ); ?>
+      <?php echo get_the_post_thumbnail( $p->ID, '', array( 'class' => 'img-responsive' ) ); ?>
+      */ ?>
+    <?php endforeach; ?>
+    <?php endif; ?>
   <section class="tv-area">
     <div class="row">
       <div class="col-lg-5 col-md-5 col-left">
@@ -315,6 +291,11 @@
       </div><!-- /col-left -->
     </div><!-- /row -->
   </section>
+  <?php endif; ?>
+  <?php endwhile; ?>
+  <?php endif; ?>
+
+
 
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 	<?php if( get_field('mf_homepage_selection') ): $i=0; ?>
