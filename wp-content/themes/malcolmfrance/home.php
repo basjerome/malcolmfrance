@@ -233,16 +233,23 @@
             <a href="<?php echo get_permalink( $p->ID ); ?>" title="<?php echo get_the_title( $p->ID ); ?>">
               <?php if( $i === 1 ) : ?>
                 <span class="img-container">
-              <?php endif; ?>
-              <span class="img">
-                <i class="far fa-play-circle"></i>
-                <?php echo get_the_post_thumbnail( $p->ID, '', array( 'class' => 'img-responsive' ) ); ?>
-              </span>
-              <span class="content">
-                <span class="category"><span><?php echo get_the_title( $p->post_parent ); ?></span></span>
-                <span class="title"><?php echo get_the_title( $p->ID ); ?></span>
-              </span>
-              <?php if( $i === 1 ) : ?>
+                  <i class="far fa-play-circle"></i>
+                  <span class="img">
+                    <?php echo get_the_post_thumbnail( $p->ID, '', array( 'class' => 'img-responsive' ) ); ?>
+                  </span>
+                  <span class="content">
+                    <span class="category"><span><?php echo get_the_title( $p->post_parent ); ?></span></span>
+                    <span class="title"><?php echo get_the_title( $p->ID ); ?></span>
+                  </span>
+                </span>
+              <?php else: ?>
+                <span class="img">
+                  <i class="far fa-play-circle"></i>
+                  <?php echo get_the_post_thumbnail( $p->ID, '', array( 'class' => 'img-responsive' ) ); ?>
+                </span>
+                <span class="content">
+                  <span class="category"><span><?php echo get_the_title( $p->post_parent ); ?></span></span>
+                  <span class="title"><?php echo get_the_title( $p->ID ); ?></span>
                 </span>
               <?php endif; ?>
             </a>
