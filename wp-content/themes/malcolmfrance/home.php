@@ -211,80 +211,47 @@
       </div>
     </section>
   </div><!-- /row -->
-
-
-
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-  <?php if( get_field('mf_homepage_videos') ): ?>
-    <?php
-      $posts = get_field('mf_homepage_videos');
-      if( $posts ):
-    ?>
-    <?php foreach( $posts as $p ): ?>
-      <?php /*
-      <?php echo get_the_title( $p->post_parent ); ?>
-      <?php echo get_the_title( $p->ID ); ?>
-      <?php echo get_permalink( $p->ID ); ?>
-      <?php echo get_the_post_thumbnail( $p->ID, '', array( 'class' => 'img-responsive' ) ); ?>
-      */ ?>
-    <?php endforeach; ?>
-    <?php endif; ?>
+  <?php if( get_field('mf_homepage_videos') ): $i=0; ?>
   <section class="tv-area">
     <div class="row">
       <div class="col-lg-5 col-md-5 col-left">
         <h2 class="title"><span>Le coin télé</span></h2>
       </div>
-      <div class="col-lg-7 col-md-7 col-right">
-        <a href="#" title="">
-          <span class="img-container">
-            <i class="far fa-play-circle"></i>
-            <span class="img">
-              <img src="http://www.malcolm-france.com/v3/site/img/page/default.jpg" alt="" />
-            </span>
-            <span class="content">
-              <span class="category"><span>Extrait</span></span>
-              <span class="title">Candyman, la chanson !</span>
-            </span>
-          </span>
-        </a>
-      </div><!-- /col-right -->
-      <div class="col-lg-5 col-md-5 col-left">
-        <article>
-          <a href="#" title="">
-            <span class="img">
-              <i class="far fa-play-circle"></i>
-              <img src="http://www.malcolm-france.com/v3/site/img/page/default.jpg" alt="" class="img-responsive" />
-            </span>
-            <span class="content">
-              <span class="category"><span>Extrait</span></span>
-              <span class="title">Titre de l'extrait numéro 1</span>
-            </span>
-          </a>
-        </article>
-        <article>
-          <a href="#" title="">
-            <span class="img">
-              <i class="far fa-play-circle"></i>
-              <img src="http://www.malcolm-france.com/v3/site/img/page/default.jpg" alt="" class="img-responsive" />
-            </span>
-            <span class="content">
-              <span class="category"><span>Extrait</span></span>
-              <span class="title">Titre de l'extrait numéro 2</span>
-            </span>
-          </a>
-        </article>
-        <article>
-          <a href="#" title="">
-            <span class="img">
-              <i class="far fa-play-circle"></i>
-              <img src="http://www.malcolm-france.com/v3/site/img/page/default.jpg" alt="" class="img-responsive" />
-            </span>
-            <span class="content">
-              <span class="category"><span>Extrait</span></span>
-              <span class="title">Titre de l'extrait numéro 3</span>
-            </span>
-          </a>
-        </article>
+      <?php
+        $posts = get_field('mf_homepage_videos');
+        if( $posts ):
+      ?>
+        <?php foreach( $posts as $p ): $i++; ?>
+          <?php if( $i === 1 ) : ?>
+            <div class="col-lg-7 col-md-7 col-right">
+          <?php endif; ?>
+          <?php if( $i === 2 ) : ?>
+            <div class="col-lg-5 col-md-5 col-left">
+          <?php endif; ?>
+          <article>
+            <a href="<?php echo get_permalink( $p->ID ); ?>" title="<?php echo get_the_title( $p->ID ); ?>">
+              <?php if( $i === 1 ) : ?>
+                <span class="img-container">
+              <?php endif; ?>
+              <span class="img">
+                <i class="far fa-play-circle"></i>
+                <?php echo get_the_post_thumbnail( $p->ID, '', array( 'class' => 'img-responsive' ) ); ?>
+              </span>
+              <span class="content">
+                <span class="category"><span><?php echo get_the_title( $p->post_parent ); ?></span></span>
+                <span class="title"><?php echo get_the_title( $p->ID ); ?></span>
+              </span>
+              <?php if( $i === 1 ) : ?>
+                </span>
+              <?php endif; ?>
+            </a>
+          </article>
+          <?php if( $i === 1 ) : ?>
+            </div><!-- /col-right -->
+          <?php endif; ?>
+        <?php endforeach; ?>
+        <?php endif; ?>
         <div class="text-center">
           <a href="#" class="btn btn-yellow" title=""><i class="fas fa-plus-circle" aria-hidden="true"></i> Toutes les vidéos</a>
         </div>
@@ -294,9 +261,6 @@
   <?php endif; ?>
   <?php endwhile; ?>
   <?php endif; ?>
-
-
-
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 	<?php if( get_field('mf_homepage_selection') ): $i=0; ?>
   <section class="other">
