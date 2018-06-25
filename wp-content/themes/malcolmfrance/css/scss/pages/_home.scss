@@ -679,12 +679,12 @@
               .category {
                 color: $color-white;
                 display: block;
-                font-size: 1rem;
+                font-size: 0.875rem;;
                 line-height: 1;
                 margin-bottom: 5px;
 
                 @media only screen and (min-width: 992px) {
-                  font-size: 1.5rem;
+                  font-size: 1rem;
                 }
 
                 span {

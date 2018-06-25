@@ -1,5 +1,12 @@
 <?php /* Template Name: Home Page Template */ get_header(); ?>
 <main role="main" class="main-content">
+    <div class="row post-meta">
+      <div class="col-sm-6">
+        <span class="edit">
+          <?php edit_post_link( __( 'Edit', 'malcolmfrance' ), '<i class="fas fa-cog" aria-hidden="true"></i> ', '', null, '' ); ?>
+        </span>
+      </div>
+    </div><!-- /post-meta end -->
   <?php the_content(); ?>
   <div class="carousel-container">
     <?php if( have_rows('mf_homepage_carousel') ): ?>
@@ -8,7 +15,18 @@
           $image = get_sub_field('mf_homepage_carousel_img');
           $category = get_sub_field('mf_homepage_carousel_category');
           $title = get_sub_field('mf_homepage_carousel_title');
-          $url = get_sub_field('mf_homepage_carousel_url');
+          if( have_rows('mf_homepage_carousel_url') ):
+              while ( have_rows('mf_homepage_carousel_url') ) : the_row();
+                  if( get_row_layout() == 'internal' ):
+                    $url = get_sub_field('mf_homepage_carousel_internal_url');
+                    $url = 'internal';
+                  elseif( get_row_layout() == 'external' ): 
+                    $link = get_sub_field('mf_homepage_carousel_external_url');
+                    $url = $link['url'];
+                    $url = 'external';
+                  endif;
+              endwhile;
+          endif;
         ?>
         <div class="item" style="background-image: url('<?php echo $image['url']; ?>');" onclick="location.href='<?php echo $url; ?>';">
           <div class="content">
@@ -140,19 +158,50 @@
           <a href="#" class="btn btn-yellow" title=""><i class="fas fa-plus-circle" aria-hidden="true"></i> Toutes les répliques cultes</a>
         </div>
       </section>
-      <section class="gifs">
-        <h2 class="title-highlight"><span>Gifs</span></h2>
-        <div class="embed-responsive embed-responsive-16by9">
-          <img src="https://media0.giphy.com/media/13PZ0dKw1J3LzO/giphy.gif" alt="" class="img-responsive" data-static="https://media0.giphy.com/media/13PZ0dKw1J3LzO/giphy.gif" data-animated="https://media0.giphy.com/media/13PZ0dKw1J3LzO/giphy.gif">
-        </div>
-        <div class="share">
-          <h5 class="title">Partager</h5>
-          <div class="addthis addthis_sharing_toolbox" data-url="https://media0.giphy.com/media/13PZ0dKw1J3LzO/giphy.gif" data-title="Gif Malcolm | Dewey vs nain de jardin"></div>
-        </div>
-        <div class="text-center">
-          <a href="#" class="btn btn-yellow" title=""><i class="fas fa-plus-circle" aria-hidden="true"></i> Tous les gifs</a>
-        </div>
-      </section>
+
+
+
+  <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+  <?php if( get_field('mf_homepage_gifs') ): ?>
+  <section class="gifs">
+    <h2 class="title-highlight"><span>Gifs</span></h2>
+    <div class="row">
+      <?php
+        $posts = get_field('mf_homepage_gifs');
+        $i = 0;
+        if( $posts ):
+          shuffle( $posts );
+      ?>
+        <?php foreach( $posts as $p ): $i++; if($i==2) break; ?>
+          <?php while( have_rows('mf_episode_gifs', $p->ID) ): the_row();
+            $gif = get_sub_field('mf_episode_gif');
+            if( $gif ):
+              shuffle( $gif );
+          ?>
+            <div class="embed-responsive embed-responsive-16by9">
+              <a href="https://giphy.com/gifs/<?php echo $gif; ?>" target="_blank" title="">
+                <img src="https://i.giphy.com/media/<?php echo $gif; ?>/giphy.webp" class="img-responsive" />
+              </a>
+            </div>
+            <div class="share">
+              <h5 class="title">Partager</h5>
+              <div class="addthis addthis_sharing_toolbox" data-url="https://giphy.com/gifs/<?php echo $gif; ?>"></div>
+            </div>
+            <?php endif; ?>
+          <?php endwhile; ?>
+        <?php endforeach; ?>
+      <?php endif; ?>
+      <div class="text-center">
+        <a href="https://giphy.com/channel/malcolmfrance" class="btn btn-yellow" target="_blank" title="Tous les gifs de la série Malcolm"><i class="fas fa-plus-circle" aria-hidden="true"></i> Tous les gifs</a>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
+  <?php endwhile; ?>
+  <?php endif; ?>
+
+
+
     </div>
     <section class="broadcasts col-md-6 col-table-cell clearfix">
       <h2 class="title-highlight"><span>Diffusion télé</span></h2>
@@ -301,7 +350,6 @@
 	<?php endif; ?>
   <?php endwhile; ?>
   <?php endif; ?>
-
   <div class="row">
     <div class="col-md-8">
       <section class="social-networks">

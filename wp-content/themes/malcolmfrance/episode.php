@@ -233,6 +233,7 @@
 		</div>
 	</section>
 	<?php endif; ?>
+	
 	<?php if( get_field('mf_episode_gifs') ): ?>
 	<section class="gifs">
 		<h3 class="section-title"><span>Gifs</span></h3>

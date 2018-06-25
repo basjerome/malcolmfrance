@@ -249,8 +249,15 @@
         .owl-prev,
         .owl-next {
           background-color: transparent;
-          bottom: 0;
-          top: 0;
+          bottom: 46px;
+        }
+
+        .owl-prev {
+          left: 15px;
+        }
+
+        .owl-next {
+          right: 15px;
         }
       }
     }
